@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "955355157041",
+    "firebase_url": "https://retten-ade52.firebaseio.com",
+    "project_id": "retten-ade52",
+    "storage_bucket": "retten-ade52.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955355157041:android:23bb201547bfeed3",
+        "android_client_info": {
+          "package_name": "com.example.retten.retten"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955355157041-lgauj5qf817t2lo8mbuk8tn9p7uktuvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVPXeSYU6aOQxdzP5vX9GqlgBcz7ddJaE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
