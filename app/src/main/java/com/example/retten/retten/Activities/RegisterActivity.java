@@ -75,7 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-            Toast.makeText( context: RegisterActivity.this, resId: "Please Accept Requested Permission", Toast.LENGTH_SHORT).show();
+            Toast.makeText( RegisterActivity.this,  "Please Accept Requested Permission", Toast.LENGTH_SHORT).show();
 
         }
         else
