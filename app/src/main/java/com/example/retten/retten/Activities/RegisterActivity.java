@@ -52,10 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
-
     private void openGallery(){
         //TODO: open gallery intent and
 
@@ -69,16 +66,13 @@ public class RegisterActivity extends AppCompatActivity {
     private void checkAndRequestForPermission() {
 
         if (ContextCompat.checkSelfPermission ( RegisterActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
-
         {
             if (ActivityCompat.shouldShowRequestPermissionRationale(  RegisterActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE )){
 
+                Toast.makeText( RegisterActivity.this,  "Please Accept Requested Permission", Toast.LENGTH_SHORT).show();
 
-
-            Toast.makeText( RegisterActivity.this,  "Please Accept Requested Permission", Toast.LENGTH_SHORT).show();
-
-        }
-        else
+            }
+            else
             {
 
                 ActivityCompat.requestPermissions( RegisterActivity.this,
@@ -86,10 +80,6 @@ public class RegisterActivity extends AppCompatActivity {
                     PreqCode);
 
             }
-
-
-            else
-
 
             {openGallery();}
         }
