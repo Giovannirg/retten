@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.regBtn);
         loginProgress = findViewById(R.id.progressBar2);
         mAuth = FirebaseAuth.getInstance();
-        HomeActivity = new Intent(this,com.example.retten.retten.Activities.class);
+        HomeActivity = new Intent(this,com.example.retten.retten.Activities.HomeActivity.class);
         loginPhoto = findViewById(R.id.regUserPhoto);
         loginPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
