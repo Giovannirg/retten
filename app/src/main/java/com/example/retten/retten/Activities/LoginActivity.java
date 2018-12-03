@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.retten.retten.R;
@@ -22,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText userMail,userPassword;
     private Button btnLogin;
-    private progressBar2 loginProgress;
+    private ProgressBar loginProgress;
     private FirebaseAuth mAuth;
     private Intent HomeActivity;
     private ImageView loginPhoto;
