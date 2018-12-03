@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -20,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private EditText userMail,userPassword;
-    private button btnLogin;
+    private Button btnLogin;
     private progressBar2 loginProgress;
     private FirebaseAuth mAuth;
     private Intent HomeActivity;
