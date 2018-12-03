@@ -14,7 +14,10 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.retten.retten.R;
@@ -37,15 +40,14 @@ public class RegisterActivity extends AppCompatActivity {
 
     ImageView ImgUserPhoto;
     static int PreqCode = 1;
-    static int REQUESTCODE = 1;
+    static int REQUESCODE = 1;
     Uri pickedImgUri;
 
     private EditText userEmail, userPassword, userPassword2, userName;
-    private progressBar loadingProgress;
-    private button regBtn;
+    private ProgressBar loadingProgress;
+    private Button regBtn;
 
     private FirebaseAuth mAuth;
-
 
 
     @Override
@@ -53,23 +55,22 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        //inu Views
+        //ini views
         userEmail = findViewById(R.id.regMail);
         userPassword = findViewById(R.id.regPassword);
         userPassword2 = findViewById(R.id.regPassword2);
         userName = findViewById(R.id.regName);
         loadingProgress = findViewById(R.id.progressBar2);
         regBtn = findViewById(R.id.regBtn);
-
         loadingProgress.setVisibility(View.INVISIBLE);
 
 
         mAuth = FirebaseAuth.getInstance();
 
-        regBtn.setOnClickListener(new NewOnClickListener () {
-            @Override
 
-            Public void onClick(View view) {
+        regBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
                 regBtn.setVisibility(View.INVISIBLE);
                 loadingProgress.setVisibility(View.VISIBLE);
@@ -78,25 +79,36 @@ public class RegisterActivity extends AppCompatActivity {
                 final String password2 = userPassword2.getText().toString();
                 final String name = userName.getText().toString();
 
-                if (email.isEmpty() || password.isEmpty() || password2.isEmpty() || name.isEmpty() || !password.equals(password2)) {
+                if( email.isEmpty() || name.isEmpty() || password.isEmpty()  || !password.equals(password2)) {
 
-                    //Fehlermeldung
 
-                    showMessage("Bitte überprufen Sie Ihre Information");
+                    // something goes wrong : all fields must be filled
+                    // we need to display an error message
+                    showMessage("Please Verify all fields") ;
+                    regBtn.setVisibility(View.VISIBLE);
+                    loadingProgress.setVisibility(View.INVISIBLE);
+
 
                 }
+                else {
+                    // everything is ok and all fields are filled now we can start creating user account
+                    // CreateUserAccount method will try to create the user if the email is valid
+
+                    CreateUserAccount(email,name,password);
+                }
+
+
+
+
+
+
+
+
 
             }
         });
 
-
-
-
-
-
-
-
-        ImgUserPhoto = findViewById(R.id.regUserPhoto);
+        ImgUserPhoto = findViewById(R.id.regUserPhoto) ;
 
         ImgUserPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,9 +117,17 @@ public class RegisterActivity extends AppCompatActivity {
                 if (Build.VERSION.SDK_INT >= 22) {
 
                     checkAndRequestForPermission();
-                } else {
+
+
+                }
+                else
+                {
                     openGallery();
                 }
+
+
+
+
 
             }
         });
@@ -115,152 +135,168 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-//update Profilbild und Name
-    private void updateUserInfo (final String name, Uri pickedImgUri, final FirebaseUser currentUser){
-
-        //lädt Profilbild hoch und bekommt die URL
-
-        StorageReference_m mStorage = FirebaseStorage.getInstance().getReference().child("users_photos");
-        final StorageReference imageFilePath = ((StorageReference) mStorage).child(pickedImgUri.getLastPathSegment());
-        imageFilePath.putFile(pickedImgUri) .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                //Bild erfolgreich hochgeladen und URL des Bilds zeigen
+    private void CreateUserAccount(String email, final String name, String password) {
 
 
-                imageFilePath.getDownloadUrl().addOnSuccessListener(new onSuccessListener<Uri>(){
+        // this method create user account with specific email and password
+
+        mAuth.createUserWithEmailAndPassword(email,password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onSuccess(Uri uri) {
-                        //URL enthält username
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
 
-                        UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
-                                .setDisplayName(name)
-                                .setPhotoUri(uri)
-                                build();
-
-
-                        currentUser.updateProfile(profileUpdate)
-                                .addOnCompleteListener(new onCompleteListener<Void>(){
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task){
-                                    if (task.isSucessful()) {
-                                            //Benutzer Info Updatet
-                                        showMessage("Anmeldung Erfolgreich");
-                                           updateUI();
-                                    }
-                                }
-
-                                });
+                            // user account created successfully
+                            showMessage("Account created");
+                            // after we created user account we need to update his profile picture and name
+                            updateUserInfo( name ,pickedImgUri,mAuth.getCurrentUser());
 
 
-                    });
 
+                        }
+                        else
+                        {
 
+                            // account creation failed
+                            showMessage("account creation failed" + task.getException().getMessage());
+                            regBtn.setVisibility(View.VISIBLE);
+                            loadingProgress.setVisibility(View.INVISIBLE);
+
+                        }
+                    }
                 });
 
 
-            }
-        })
+
+
+
+
+
 
     }
 
-private void updateUI (){
+
+    // update user photo and name
+    private void updateUserInfo(final String name, Uri pickedImgUri, final FirebaseUser currentUser) {
+
+        // first we need to upload user photo to firebase storage and get url
+
+        StorageReference mStorage = FirebaseStorage.getInstance().getReference().child("users_photos");
+        final StorageReference imageFilePath = mStorage.child(pickedImgUri.getLastPathSegment());
+        imageFilePath.putFile(pickedImgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                // image uploaded succesfully
+                // now we can get our image url
+
+                imageFilePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+
+                        // uri contain user image url
+
+
+                        UserProfileChangeRequest profleUpdate = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(name)
+                                .setPhotoUri(uri)
+                                .build();
+
+
+                        currentUser.updateProfile(profleUpdate)
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+
+                                        if (task.isSuccessful()) {
+                                            // user info updated successfully
+                                            showMessage("Register Complete");
+                                            updateUI();
+                                        }
+
+                                    }
+                                });
+
+                    }
+                });
+
+
+
+
+
+            }
+        });
+
+
+
+
+
+
+    }
+
+    private void updateUI() {
+
         Intent homeActivity = new Intent(getApplicationContext(),HomeActivity.class);
-        startActivity (homeActivity);
+        startActivity(homeActivity);
         finish();
 
-}
 
+    }
 
-    //Toast Message fuer die Fehlermeldung
+    // simple method to show toast message
     private void showMessage(String message) {
 
-        Toast.makeText( getApplicationContext(), message, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
+
     }
 
     private void openGallery() {
-        //TODO: open gallery intent and
+        //TODO: open gallery intent and wait for user to pick an image !
 
         Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
         galleryIntent.setType("image/*");
-        startActivityForResult(galleryIntent, REQUESTCODE);
-
-
+        startActivityForResult(galleryIntent,REQUESCODE);
     }
 
     private void checkAndRequestForPermission() {
 
+
         if (ContextCompat.checkSelfPermission(RegisterActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(RegisterActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
 
-            if (ActivityCompat.shouldShowRequestPermissionRationale(RegisterActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE))
+                Toast.makeText(RegisterActivity.this,"Please accept for required permission",Toast.LENGTH_SHORT).show();
 
+            }
+
+            else
             {
-
-
-                Toast.makeText(RegisterActivity.this, "Please Accept Requested Permission", Toast.LENGTH_SHORT).show();
-
-            } else
-
-
                 ActivityCompat.requestPermissions(RegisterActivity.this,
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                         PreqCode);
-
-
-        } else
-
-            openGallery();
-
-
-    }
-
-
-    private void createUserAccount(String email, String name, String password ) {
-
-    mAuth.CreateUserWithEmailAndPassword(email, password)
-    .addOnCompleteListener( activity: this, new OnCompleteListener <AuthResult>() {
-
-        @Override
-
-        public void OnComplete(@NonNull Task<AuthResult> task){
-            if (task.isSucessfull())
-            {
-                    //user account erzeugt
-                showMessage("Konto erfolgreich erzeugt");
-                //Updaten Profilbild und Name
-                updateUserInfo (name, pickedImgUri, mAuth.getCurrentUser());
-
             }
-
-            else {
-
-                showMessage("Konto könnte nicht geschpeicher werden" + task.getException().getMessage());
-                regBtn.setVisibility(View.VISIBLE);
-                loadingProgress.setVisibility(View.Invisible);
-            }
-
-
-
 
         }
+        else
+            openGallery();
 
-
-
-
-    });
-
+    }
 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == RESULT_OK && requestCode == REQUESTCODE && data != null) {
-            // Bild erfolgreich ausgewählt, Referenz soll gespeichert werden
-            pickedImgUri = data.getData();
+        if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null ) {
+
+            // the user has successfully picked an image
+            // we need to save its reference to a Uri variable
+            pickedImgUri = data.getData() ;
             ImgUserPhoto.setImageURI(pickedImgUri);
+
+
         }
+
 
     }
 }
