@@ -35,13 +35,13 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        userMail = findViewById(R.id.regMail);
-        userPassword = findViewById(R.id.login_password);
-        btnLogin = findViewById(R.id.regBtn);
-        loginProgress = findViewById(R.id.progressBar2);
+        userMail = findViewById(R.id.userMail);
+        userPassword = findViewById(R.id.userPassword);
+        btnLogin = findViewById(R.id.loginBtn);
+        loginProgress = findViewById(R.id.loginProgress);
         mAuth = FirebaseAuth.getInstance();
         HomeActivity = new Intent(this,com.example.retten.retten.Activities.HomeActivity.class);
-        loginPhoto = findViewById(R.id.regUserPhoto);
+        loginPhoto = findViewById(R.id.login_photo);
         loginPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
