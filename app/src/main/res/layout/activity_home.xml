@@ -19,11 +19,9 @@
             <ImageView
                 android:layout_gravity="center"
                 android:id="@+id/Icon_Produkt_Liste"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                app:srcCompat="@drawable/produktliste"
-                tools:layout_editor_absoluteX="117dp"
-                tools:layout_editor_absoluteY="55dp" />
+                android:layout_width="174dp"
+                android:layout_height="218dp"
+                app:srcCompat="@drawable/produkliste" />
 
             <ImageView
                 android:layout_gravity="center"
