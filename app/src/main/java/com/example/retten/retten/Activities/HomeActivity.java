@@ -1,6 +1,7 @@
 package com.example.retten.retten.Activities;
 
 
+import com.example.retten.retten.database.DataHolder;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +25,8 @@ import com.example.retten.retten.R;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_home);
+
+
             mDatabase = FirebaseDatabase.getInstance().getReference();
             addNewProduct("ID1", "product1", "category1", 13.50);
         }
