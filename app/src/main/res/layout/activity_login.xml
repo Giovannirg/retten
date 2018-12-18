@@ -74,8 +74,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/reg_btn_style"
-        android:text="Login"
+        android:background="@drawable/button_style"
+        android:text="@string/login"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,6 +91,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
-        app:layout_constraintTop_toTopOf="@+id/btnLogin" />
+        app:layout_constraintTop_toTopOf="@+id/btnLogin"
+        tools:ignore="UnknownId" />
 
 </android.support.constraint.ConstraintLayout>
