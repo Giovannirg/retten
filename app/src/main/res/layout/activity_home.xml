@@ -6,54 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".Activities.HomeActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-<<<<<<< HEAD
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-    </LinearLayout>
-=======
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical" >
 
-        <ImageView
-            android:id="@+id/Icon_Produkt_Liste"
-            android:layout_width="151dp"
-            android:layout_height="141dp"
-            app:srcCompat="@drawable/produktliste"
-            tools:layout_editor_absoluteX="117dp"
-            tools:layout_editor_absoluteY="55dp" />
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/Icon_Produkt_Liste"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/produktliste"
+                tools:layout_editor_absoluteX="117dp"
+                tools:layout_editor_absoluteY="55dp" />
 
-        <ImageView
-            android:id="@+id/Icon_Maerten"
-            android:layout_width="178dp"
-            android:layout_height="142dp"
-            app:srcCompat="@drawable/maerten" />
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/Icon_Reserviert"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/res_produkt"
+                tools:layout_editor_absoluteX="93dp"
+                tools:layout_editor_absoluteY="225dp" />
 
-        <ImageView
-            android:id="@+id/Icon_Produkten"
-            android:layout_width="wrap_content"
-            android:layout_height="144dp"
-            app:srcCompat="@drawable/Produkten" />
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/Icon_Produkten"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/Produkten" />
 
-        <ImageView
-            android:id="@+id/Icon_VkBestaetigung"
-            android:layout_width="182dp"
-            android:layout_height="134dp"
-            app:srcCompat="@drawable/vbesteatigung"
-            tools:layout_editor_absoluteX="101dp"
-            tools:layout_editor_absoluteY="417dp" />
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/Icon_Maerten"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/maerten" />
 
-        <ImageView
-            android:id="@+id/Icon_Reserviert"
-            android:layout_width="180dp"
-            android:layout_height="165dp"
-            app:srcCompat="@drawable/res_produkt"
-            tools:layout_editor_absoluteX="93dp"
-            tools:layout_editor_absoluteY="225dp" />
-    </LinearLayout>
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/Icon_VkBestaetigung"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/vbesteatigung"
+                tools:layout_editor_absoluteX="101dp"
+                tools:layout_editor_absoluteY="417dp" />
+        </LinearLayout>
+    </ScrollView>
 
->>>>>>> 9b5873b224673a1af7e7d2cb3819df95c494b173
 </android.support.constraint.ConstraintLayout>
