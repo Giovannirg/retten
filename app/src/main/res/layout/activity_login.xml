@@ -94,4 +94,12 @@
         app:layout_constraintTop_toTopOf="@+id/btnLogin"
         tools:ignore="UnknownId" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="128dp"
+        android:layout_height="96dp"
+        app:srcCompat="@drawable/logo"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="2dp" />
+
 </android.support.constraint.ConstraintLayout>
