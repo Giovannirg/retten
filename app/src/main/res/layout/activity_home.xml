@@ -37,7 +37,7 @@
                 android:id="@+id/Icon_Produkten"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
-                app:srcCompat="@drawable/Produkten" />
+                app:srcCompat="@drawable/produkten" />
 
             <ImageView
                 android:layout_gravity="center"
