@@ -24,7 +24,13 @@
         <activity
             android:name=".Activities.search"
             android:label="@string/title_activity_search"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Activities.seller_page" />
+        <activity android:name=".Activities.cart_item" />
+        <activity android:name=".Activities.activity_shopping_cart_window" />
+        <activity android:name=".list_item" />
+        <activity android:name=".Activities.individual_product_seller" />
+        <activity android:name=".Activities.individual_product"></activity>
     </application>
 
 </manifest>
