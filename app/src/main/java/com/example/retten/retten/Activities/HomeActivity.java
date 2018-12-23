@@ -12,14 +12,14 @@ import com.google.firebase.database.ValueEventListener;
 import com.example.retten.retten.database.Product;
 
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+/*import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toolbar;
+import android.widget.Toolbar;*/
 
 import com.example.retten.retten.R;
 
