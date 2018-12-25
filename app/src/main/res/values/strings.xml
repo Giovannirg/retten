@@ -3,4 +3,5 @@
     <string name="login">Login</string>
     <string name="title_activity_search">search</string>
     <string name="ifsellerlistempty">ifSellerListEmpty</string>
+    <string name="ip">ip</string>>
 </resources>
