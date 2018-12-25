@@ -12,11 +12,15 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.retten.retten.R;
+import com.example.retten.retten.database.DataHolder;
+import com.example.retten.retten.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.time.Instant;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private ProgressBar loginProgress;
     private FirebaseAuth mAuth;
+    private FirebaseUser user;
     private Intent HomeActivity;
     private ImageView loginPhoto;
 
@@ -45,7 +50,6 @@ public class LoginActivity extends AppCompatActivity {
         loginPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent registerActivity = new Intent(getApplicationContext(),RegisterActivity.class);
                 startActivity(registerActivity);
                 finish();
@@ -83,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void signIn(String mail, String password) {
+    private void signIn(final String mail, String password) {
 
 
         mAuth.signInWithEmailAndPassword(mail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -95,6 +99,11 @@ public class LoginActivity extends AppCompatActivity {
 
                     loginProgress.setVisibility(View.INVISIBLE);
                     btnLogin.setVisibility(View.VISIBLE);
+                    User m_user =new User();
+                    m_user.set_email(mail);
+                    m_user.set_UID(mAuth.getUid());
+                    user = mAuth.getCurrentUser();
+                    m_user.set_firebaseUser(user);
                     updateUI();
 
                 }
@@ -113,9 +122,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void updateUI() {
-
-        startActivity(HomeActivity);
-        finish();
+        Intent inent = new Intent(this,HomeActivity.class);
+        startActivity(inent);
 
     }
 
@@ -128,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
+        user = mAuth.getCurrentUser();
 
         if(user != null) {
             //user is already connected  so we need to redirect him to home page

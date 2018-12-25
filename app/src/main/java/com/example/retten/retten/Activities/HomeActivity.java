@@ -2,6 +2,7 @@ package com.example.retten.retten.Activities;
 
 
 import com.example.retten.retten.database.DataHolder;
+import com.example.retten.retten.model.Supermarkt;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,6 +21,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.view.View;
@@ -75,11 +77,16 @@ public class HomeActivity extends AppCompatActivity {
         @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         @Override
         protected void onCreate(Bundle savedInstanceState) {
-
             super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_home);
 
-            if(getIntent().getExtras().getBoolean("isuserseller"))
+            if (DataHolder.getInstance().getUser() instanceof Supermarkt)
             {
+                findViewById(R.id.Icon_Produkten).setVisibility(View.GONE);
+                findViewById(R.id.Icon_Maerten).setVisibility(View.GONE);
+                findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.VISIBLE);
+                findViewById(R.id.Icon_Reserviert).setVisibility(View.VISIBLE);
+                findViewById(R.id.Icon_VkBestaetigung).setVisibility(View.VISIBLE);
                 setContentView(R.layout.activity_seller_page);
                 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
                 toolbar.setTitle("Supermarkt");
@@ -147,6 +154,15 @@ public class HomeActivity extends AppCompatActivity {
 
                 });
             }
+            else
+            {
+                findViewById(R.id.Icon_Produkten).setVisibility(View.VISIBLE);
+                findViewById(R.id.Icon_Maerten).setVisibility(View.VISIBLE);
+                findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.GONE);
+                findViewById(R.id.Icon_Reserviert).setVisibility(View.GONE);
+                findViewById(R.id.Icon_VkBestaetigung).setVisibility(View.GONE);
+            }
+
         }
 
     public static ArrayList<ShoppingItem> setUpList(DataSnapshot dataSnapshot) {
