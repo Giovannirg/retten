@@ -1,25 +1,51 @@
 package com.example.retten.retten.Activities;
 
-class ShoppingItem {
-    public String getTitle() {
-        return title;
+import java.io.Serializable;
+import java.text.NumberFormat;
+
+/**
+ * Created by akshay on 4/4/17.
+ */
+
+public class ShoppingItem implements Serializable{
+
+    private String name, type, description, productID;
+    private int price, quantity;
+
+    public ShoppingItem(String productId, String name, String type, String description, int price, int quantity){
+        this.productID = productId;
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.price = price;
+        this.quantity = quantity;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setQuantity(int quantity){
+        this.quantity = quantity;
     }
-
-    String title;
 
     public String getProductID() {
         return productID;
     }
 
-    public void setProductID(String productID) {
-        this.productID = productID;
+    public String getTitle() {
+        return name;
     }
 
-    String productID;
+    public String getType() {
+        return type;
+    }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public String getPrice() {
+        return NumberFormat.getCurrencyInstance().format(price);
+    }
 }
-

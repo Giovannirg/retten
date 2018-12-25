@@ -15,9 +15,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-/**
- * Created by akshay on 4/4/17.
- */
+
 
 public class ShoppingListAdapter extends ArrayAdapter<ShoppingItem> {
 
