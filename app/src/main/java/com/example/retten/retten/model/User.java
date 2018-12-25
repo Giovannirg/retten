@@ -80,6 +80,8 @@ public class User {
     String m_vorname;
     String m_nachname;
     Addresse m_addresse;
+    String m_phone;
+
 
 
 

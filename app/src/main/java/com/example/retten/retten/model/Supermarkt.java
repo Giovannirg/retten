@@ -6,43 +6,43 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.List;
 
 public class Supermarkt extends User {
-    public String getM_Marktname() {
+    public String get_Marktname() {
         return m_Marktname;
     }
 
-    public void setM_Marktname(String m_Marktname) {
+    public void set_Marktname(String m_Marktname) {
         this.m_Marktname = m_Marktname;
     }
 
-    public String getM_Hausetage() {
+    public String get_Hausetage() {
         return m_Hausetage;
     }
 
-    public void setM_Hausetage(String m_Hausetage) {
+    public void set_Hausetage(String m_Hausetage) {
         this.m_Hausetage = m_Hausetage;
     }
 
-    public String getM_Öffnungszeit() {
+    public String get_Öffnungszeit() {
         return m_Öffnungszeit;
     }
 
-    public void setM_Öffnungszeit(String m_Öffnungszeit) {
+    public void set_Öffnungszeit(String m_Öffnungszeit) {
         this.m_Öffnungszeit = m_Öffnungszeit;
     }
 
-    public String getM_Schließzeit() {
+    public String get_Schließzeit() {
         return m_Schließzeit;
     }
 
-    public void setM_Schließzeit(String m_Schließzeit) {
+    public void set_Schließzeit(String m_Schließzeit) {
         this.m_Schließzeit = m_Schließzeit;
     }
 
-    public String getM_Öffnungstage() {
+    public String get_Öffnungstage() {
         return m_Öffnungstage;
     }
 
-    public void setM_Öffnungstage(String m_Öffnungstage) {
+    public void set_Öffnungstage(String m_Öffnungstage) {
         this.m_Öffnungstage = m_Öffnungstage;
     }
 
