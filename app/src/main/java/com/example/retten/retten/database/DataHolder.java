@@ -39,13 +39,17 @@ public class DataHolder {
             String n = UUID.randomUUID().toString();
             userRef.child(n).push();
             userRef.child(n).child("address").setValue(supermarkt.get_addresse().get_streetName());
-            userRef.child(n).child("hausnummer").setValue(supermarkt.get_addresse().get_housNumber());
+            userRef.child(n).child("hausnummer").setValue(supermarkt.get_addresse().get_houseNumber());
             userRef.child(n).child("hausstage").setValue(supermarkt.get_Hausetage());
             userRef.child(n).child("name").setValue(supermarkt.get_vorname());
             userRef.child(n).child("closedtime").setValue(supermarkt.get_Schließzeit());
             userRef.child(n).child("opentime").setValue(supermarkt.get_Öffnungszeit());
             userRef.child(n).child("opendays").setValue(supermarkt.get_Öffnungstage());
             userRef.child(n).child("phone").setValue(supermarkt.get_phone());
+            userRef.child(n).child("pzl").setValue(supermarkt.get_addresse().get_postNumber());
+            userRef.child(n).child("City").setValue(supermarkt.get_addresse().get_city());
+            userRef.child(n).child("email").setValue(user.getEmail());
+            userRef.child(n).child("Password").setValue(user.getUid());
             return true;
 
 
@@ -59,4 +63,37 @@ public class DataHolder {
             return false;
         }
     }
+
+    public boolean setUserinData (FirebaseUser user , User benutzer) {
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        userRef = database.getReference("/User");
+
+        try {
+            String n = UUID.randomUUID().toString();
+            userRef.child(n).push();
+            userRef.child(n).child("address").setValue(benutzer.get_addresse().get_streetName());
+            userRef.child(n).child("hausnummer").setValue(benutzer.get_addresse().get_houseNumber());
+
+            userRef.child(n).child("name").setValue(benutzer.get_vorname());
+            userRef.child(n).child("Last_name").setValue(benutzer.get_nachname());
+            userRef.child(n).child("phone").setValue(benutzer.get_phone());
+            userRef.child(n).child("pzl").setValue(benutzer.get_addresse().get_postNumber());
+            userRef.child(n).child("City").setValue(benutzer.get_addresse().get_city());
+            userRef.child(n).child("email").setValue(user.getEmail());
+            userRef.child(n).child("Password").setValue(user.getUid());
+            return true;
+
+
+
+
+
+        }
+
+        catch (Exception e){
+
+            return false;
+        }
+    }
+
 }
