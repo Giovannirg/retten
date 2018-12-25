@@ -3,5 +3,6 @@
     <string name="login">Login</string>
     <string name="title_activity_search">search</string>
     <string name="ifsellerlistempty">ifSellerListEmpty</string>
-    <string name="ip">ip</string>>
+    <string name="ip">ip</string>
+    <string name="quantity_available">Quantity Available:</string>>
 </resources>

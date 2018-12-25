@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.retten.retten.R;
 import com.squareup.picasso.Picasso;
 
 import java.text.NumberFormat;
@@ -37,7 +38,7 @@ public class ShoppingCartAdapter extends ArrayAdapter {
         View listItemView = convertView;
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.cart_item, parent, false
+                    R.layout.activity_cart_item, parent, false
             );
         }
 
