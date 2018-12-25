@@ -13,7 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".Activities.RegisterActivity" />
         <activity android:name=".Activities.HomeActivity" />
         <activity android:name=".Activities.LoginActivity">
@@ -31,6 +30,8 @@
         <activity android:name=".Activities.cart_item" />
         <activity android:name=".Activities.ShoppingCartWindow" />
         <activity android:name=".Activities.IndividualProduct" />
-        <activity android:name=".Activities.IndividualProductSeller"/>
+        <activity android:name=".Activities.IndividualProductSeller" />
+        <activity android:name=".Activities.check_out_screen"></activity>
     </application>
+
 </manifest>
