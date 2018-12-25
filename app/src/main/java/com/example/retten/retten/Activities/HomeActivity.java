@@ -2,6 +2,7 @@ package com.example.retten.retten.Activities;
 
 
 import com.example.retten.retten.database.DataHolder;
+import com.example.retten.retten.model.Supermarkt;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -78,6 +79,14 @@ public class HomeActivity extends AppCompatActivity {
 
             super.onCreate(savedInstanceState);
 
+            if (DataHolder.getInstance().getUser() instanceof Supermarkt)
+            {
+
+            }
+            else
+            {
+
+            }
             if(getIntent().getExtras().getBoolean("isuserseller"))
             {
                 setContentView(R.layout.activity_seller_page);
