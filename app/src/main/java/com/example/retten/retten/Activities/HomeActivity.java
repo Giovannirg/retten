@@ -87,7 +87,12 @@ public class HomeActivity extends AppCompatActivity {
                 findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.VISIBLE);
                 findViewById(R.id.Icon_Reserviert).setVisibility(View.VISIBLE);
                 findViewById(R.id.Icon_VkBestaetigung).setVisibility(View.VISIBLE);
-                setContentView(R.layout.activity_seller_page);
+                findViewById(R.id.text_Icon_Produkt_Liste).setVisibility(View.VISIBLE);
+                findViewById(R.id.text_Icon_Reserviert).setVisibility(View.VISIBLE);
+                findViewById(R.id.text_Icon_VkBestaetigung).setVisibility(View.VISIBLE);
+                findViewById(R.id.text_Icon_Produkten).setVisibility(View.GONE);
+                findViewById(R.id.text_Icon_Maerten).setVisibility(View.GONE);
+
                 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
                 toolbar.setTitle("Supermarkt");
                 setSupportActionBar(toolbar);
@@ -158,9 +163,15 @@ public class HomeActivity extends AppCompatActivity {
             {
                 findViewById(R.id.Icon_Produkten).setVisibility(View.VISIBLE);
                 findViewById(R.id.Icon_Maerten).setVisibility(View.VISIBLE);
+                findViewById(R.id.text_Icon_Produkten).setVisibility(View.VISIBLE);
+                findViewById(R.id.text_Icon_Maerten).setVisibility(View.VISIBLE);
                 findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.GONE);
                 findViewById(R.id.Icon_Reserviert).setVisibility(View.GONE);
                 findViewById(R.id.Icon_VkBestaetigung).setVisibility(View.GONE);
+                findViewById(R.id.text_Icon_Produkt_Liste).setVisibility(View.GONE);
+                findViewById(R.id.text_Icon_Reserviert).setVisibility(View.GONE);
+                findViewById(R.id.text_Icon_VkBestaetigung).setVisibility(View.GONE);
+
             }
 
         }

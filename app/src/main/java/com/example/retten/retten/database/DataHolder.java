@@ -45,7 +45,8 @@ public class DataHolder {
             userRef.child(n).child("closedtime").setValue(supermarkt.get_Schließzeit());
             userRef.child(n).child("opentime").setValue(supermarkt.get_Öffnungszeit());
             userRef.child(n).child("opendays").setValue(supermarkt.get_Öffnungstage());
-            userRef.child(n).child("phone").setValue(supermarkt.get);
+            userRef.child(n).child("phone").setValue(supermarkt.get_phone());
+            return true;
 
 
 

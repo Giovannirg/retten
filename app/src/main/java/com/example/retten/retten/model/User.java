@@ -80,6 +80,15 @@ public class User {
     String m_vorname;
     String m_nachname;
     Addresse m_addresse;
+
+    public String get_phone() {
+        return m_phone;
+    }
+
+    public void set_phone(String m_phone) {
+        this.m_phone = m_phone;
+    }
+
     String m_phone;
 
 
