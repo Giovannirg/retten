@@ -21,6 +21,8 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.retten.retten.R;
+import com.example.retten.retten.database.DataHolder;
+import com.example.retten.retten.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -135,7 +137,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void CreateUserAccount(String email, final String name, String password) {
+    private void CreateUserAccount(final String email, final String name, String password) {
 
 
         // this method create user account with specific email and password
@@ -148,11 +150,15 @@ public class RegisterActivity extends AppCompatActivity {
 
                             // user account created successfully
                             showMessage("Account created");
+
+
+                            User user =new User();
+                            user.set_UID(mAuth.getUid());
+                            user.set_email(email);
+                            user.set_firebaseUser(mAuth.getCurrentUser());
+                            DataHolder.getInstance().setUserinData(mAuth.getCurrentUser(),user);
                             // after we created user account we need to update his profile picture and name
                             updateUserInfo( name ,pickedImgUri,mAuth.getCurrentUser());
-
-
-
                         }
                         else
                         {
@@ -236,11 +242,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void updateUI() {
 
-        Intent homeActivity = new Intent(getApplicationContext(),HomeActivity.class);
+        Intent homeActivity = new Intent(this,HomeActivity.class);
         startActivity(homeActivity);
-        finish();
-
-
     }
 
     // simple method to show toast message

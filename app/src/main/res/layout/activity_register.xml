@@ -109,7 +109,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/reg_btn_style"
+        android:background="@drawable/button_style"
         android:text="Register"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -133,5 +133,6 @@
         android:layout_height="85dp"
         app:srcCompat="@drawable/logo"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>

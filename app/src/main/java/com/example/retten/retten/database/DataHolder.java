@@ -38,6 +38,7 @@ public class DataHolder {
         try {
             String n = UUID.randomUUID().toString();
             userRef.child(n).push();
+            userRef.child(n).child("isSupermarkt").setValue(true);
             userRef.child(n).child("address").setValue(supermarkt.get_addresse().get_streetName());
             userRef.child(n).child("hausnummer").setValue(supermarkt.get_addresse().get_houseNumber());
             userRef.child(n).child("hausstage").setValue(supermarkt.get_Hausetage());
@@ -72,6 +73,7 @@ public class DataHolder {
         try {
             String n = UUID.randomUUID().toString();
             userRef.child(n).push();
+            userRef.child(n).child("isSupermarkt").setValue(false);
             userRef.child(n).child("address").setValue(benutzer.get_addresse().get_streetName());
             userRef.child(n).child("hausnummer").setValue(benutzer.get_addresse().get_houseNumber());
 

@@ -60,6 +60,12 @@ public class User {
     }
 
     public User(){
+        this.m_nachname="";
+        this.m_vorname="";
+        m_addresse =new Addresse();
+        this.m_email="";
+        this.m_UID="";
+        this.m_id="";
     }
 
     public User(String email,String UID,FirebaseUser user,String id,String m_vorname,String m_nachname,Addresse addresse){

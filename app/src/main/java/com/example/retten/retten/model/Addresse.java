@@ -11,7 +11,14 @@ public class Addresse {
 
     }
     public Addresse()
-    {}
+    {
+
+        this.m_streetName="";
+        this.m_houseNumber="";
+        this.m_postNumber="";
+        this.m_city="";
+
+    }
 
     String m_streetName;
 
