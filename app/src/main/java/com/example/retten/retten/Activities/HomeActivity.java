@@ -28,6 +28,8 @@ import android.widget.Toolbar;
 
 import com.example.retten.retten.R;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 
@@ -103,7 +105,7 @@ public class HomeActivity extends AppCompatActivity {
                             shoppingItemView.setVisibility(View.VISIBLE);
                             ifSellerListEmpty.setVisibility(View.GONE);
 
-                            shoppingItems = setupList(dataSnapshot.child("products"));
+                            shoppingItems = setUpList(dataSnapshot.child("products"));
                             adapter = new ShoppingListAdapter(getApplicationContext(), shoppingItems);
                             shoppingItemView.setAdapter(adapter);
 

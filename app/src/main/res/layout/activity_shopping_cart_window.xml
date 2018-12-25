@@ -4,7 +4,7 @@
     android:id="@+id/shoppingCartWindowLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.search">
+    tools:context=".Activities.ShoppingCartWindow">
 
     <TextView
         android:id="@+id/shoppingCartTitle"
