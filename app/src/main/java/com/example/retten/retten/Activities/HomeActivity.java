@@ -147,6 +147,38 @@ public class HomeActivity extends AppCompatActivity {
             }
         }
 
+    public static ArrayList<ShoppingItem> setUpList(DataSnapshot dataSnapshot) {
+
+        ArrayList<ShoppingItem> items  = new ArrayList<ShoppingItem>();
+
+        for (DataSnapshot snap : dataSnapshot.getChildren()){
+
+            int itemPrice = -1, quantity = 0;
+
+            try{
+                itemPrice = Integer.valueOf(NumberFormat.getCurrencyInstance()
+                        .parse(String.valueOf(snap.child("price").getValue()))
+                        .toString());
+            } catch (ParseException e){
+                e.printStackTrace();
+            }
+
+            quantity = Integer.valueOf(snap.child("quantity").getValue().toString());
+            items.add(new ShoppingItem(
+                    snap.child("productID").getValue().toString(),
+                    snap.child("title").getValue().toString(),
+                    snap.child("type").getValue().toString(),
+                    snap.child("description").getValue().toString(),
+                    itemPrice,
+                    quantity
+            ));
+        }
+
+        return items;
+
+    }
+
+
     private void setSupportActionBar(Toolbar toolbar) {
     }
 
