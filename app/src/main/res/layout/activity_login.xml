@@ -100,6 +100,7 @@
         android:layout_height="96dp"
         app:srcCompat="@drawable/logo"
         tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="2dp" />
+        tools:layout_editor_absoluteY="2dp"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

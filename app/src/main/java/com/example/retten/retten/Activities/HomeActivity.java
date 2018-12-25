@@ -12,6 +12,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import com.example.retten.retten.database.Product;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
@@ -171,6 +173,22 @@ public class HomeActivity extends AppCompatActivity {
                 findViewById(R.id.text_Icon_Produkt_Liste).setVisibility(View.GONE);
                 findViewById(R.id.text_Icon_Reserviert).setVisibility(View.GONE);
                 findViewById(R.id.text_Icon_VkBestaetigung).setVisibility(View.GONE);
+                ImageView produkten =findViewById(R.id.Icon_Produkten);
+                produkten.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent =new Intent(view.getContext(),search.class);
+                        startActivity(intent);
+                    }
+                });
+                ImageView Maerten =findViewById(R.id.Icon_Maerten);
+                Maerten.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent =new Intent(view.getContext(),search.class);
+                        startActivity(intent);
+                    }
+                });
 
             }
 

@@ -150,10 +150,9 @@ public class RegisterActivity extends AppCompatActivity {
 
                             // user account created successfully
                             showMessage("Account created");
-
-
                             User user =new User();
                             user.set_UID(mAuth.getUid());
+                            user.set_vorname(name);
                             user.set_email(email);
                             user.set_firebaseUser(mAuth.getCurrentUser());
                             DataHolder.getInstance().setUserinData(mAuth.getCurrentUser(),user);

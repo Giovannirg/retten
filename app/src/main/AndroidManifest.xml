@@ -31,7 +31,7 @@
         <activity android:name=".Activities.ShoppingCartWindow" />
         <activity android:name=".Activities.IndividualProduct" />
         <activity android:name=".Activities.IndividualProductSeller" />
-        <activity android:name=".Activities.check_out_screen"></activity>
+        <activity android:name=".Activities.CheckOutScreen"></activity>
     </application>
 
 </manifest>
