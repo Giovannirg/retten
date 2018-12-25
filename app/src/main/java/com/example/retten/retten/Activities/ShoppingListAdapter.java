@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.retten.retten.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.retten.retten">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -12,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".Activities.RegisterActivity" />
         <activity android:name=".Activities.HomeActivity" />
         <activity android:name=".Activities.LoginActivity">
@@ -27,10 +29,8 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".Activities.seller_page" />
         <activity android:name=".Activities.cart_item" />
-        <activity android:name=".Activities.activity_shopping_cart_window" />
-        <activity android:name=".list_item" />
-        <activity android:name=".Activities.individual_product_seller" />
-        <activity android:name=".Activities.individual_product"></activity>
+        <activity android:name=".Activities.ShoppingCartWindow" />
+        <activity android:name=".Activities.IndividualProduct" />
+        <activity android:name=".Activities.IndividualProductSeller"/>
     </application>
-
 </manifest>

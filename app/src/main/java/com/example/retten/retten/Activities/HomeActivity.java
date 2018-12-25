@@ -11,30 +11,37 @@ import com.google.firebase.database.ValueEventListener;
 
 import com.example.retten.retten.database.Product;
 
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-/*import android.os.Bundle;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toolbar;*/
+import android.widget.Toolbar;
 
 import com.example.retten.retten.R;
 
+import java.util.ArrayList;
 
 
-    public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
         private DatabaseReference mDatabase;
 
 
-        public final String TAG = MainAppPage.class.getSimpleName();
+        public final String TAG = HomeActivity.class.getSimpleName();
         ListView shoppingItemView;
         ShoppingListAdapter adapter;
         EditText toolbar;
 
+        FirebaseDatabase database;
         TextView ifSellerListEmpty;
         Button addProduct;
 
@@ -42,7 +49,7 @@ import com.example.retten.retten.R;
         private ArrayList<ShoppingItem> shoppingItems;
 
 
-        @Override
+       /* @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_home);
@@ -51,6 +58,7 @@ import com.example.retten.retten.R;
             mDatabase = FirebaseDatabase.getInstance().getReference();
             addNewProduct("ID1", "product1", "category1", 13.50);
         }
+        */
 
 
         private void addNewProduct(String productId, String productname, String productcategory, double price) {
@@ -62,30 +70,25 @@ import com.example.retten.retten.R;
 
 
 
+        @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         @Override
         protected void onCreate(Bundle savedInstanceState) {
 
             super.onCreate(savedInstanceState);
 
-            if(getIntent().getExtras().getBoolean("isuserseller")){
-                setContentView(R.layout.activity_seller_main_page);
-
+            if(getIntent().getExtras().getBoolean("isuserseller"))
+            {
+                setContentView(R.layout.activity_seller_page);
                 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
                 toolbar.setTitle("Supermarkt");
                 setSupportActionBar(toolbar);
-
-                searchbar = (EditText)findViewById(R.id.searchBar);
-
-                progressBar = (ProgressBar) findViewById(R.id.sellerPageProgressBar);
+                final EditText searchbar = (EditText)findViewById(R.id.searchBar);
+                final ProgressBar progressBar = (ProgressBar) findViewById(R.id.sellerPageProgressBar);
                 progressBar.setVisibility(View.VISIBLE);
-
                 addProduct = (Button) findViewById(R.id.sellerAddProduct);
                 shoppingItemView = (ListView) findViewById(R.id.sellerProductList);
-
                 ifSellerListEmpty = (TextView) findViewById(R.id.ifSellerListEmpty);
-
                 addProduct = (Button) findViewById(R.id.sellerAddProduct);
-
                 DatabaseReference myref = database.getReference("sellers/" +
                         FirebaseAuth.getInstance().getCurrentUser().getUid());
                 myref.addValueEventListener(new ValueEventListener() {
@@ -100,7 +103,7 @@ import com.example.retten.retten.R;
                             shoppingItemView.setVisibility(View.VISIBLE);
                             ifSellerListEmpty.setVisibility(View.GONE);
 
-                            shoppingItems = setUpList(dataSnapshot.child("products"));
+                            shoppingItems = setupList(dataSnapshot.child("products"));
                             adapter = new ShoppingListAdapter(getApplicationContext(), shoppingItems);
                             shoppingItemView.setAdapter(adapter);
 
@@ -134,8 +137,17 @@ import com.example.retten.retten.R;
                         progressBar.setVisibility(View.GONE);
                     }
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
 
 
+                });
+            }
+        }
 
-
+    private void setSupportActionBar(Toolbar toolbar) {
     }
+
+}

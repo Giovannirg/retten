@@ -9,7 +9,8 @@
     android:paddingEnd="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:paddingStart="16dp">
+    android:paddingStart="16dp"
+    tools:context=".Activities.ShoppingCartWindow">
 
     <ImageView
         android:id="@+id/itemIcon"
