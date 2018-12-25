@@ -21,6 +21,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.view.View;
@@ -76,19 +77,16 @@ public class HomeActivity extends AppCompatActivity {
         @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         @Override
         protected void onCreate(Bundle savedInstanceState) {
-
             super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_home);
 
             if (DataHolder.getInstance().getUser() instanceof Supermarkt)
             {
-
-            }
-            else
-            {
-
-            }
-            if(getIntent().getExtras().getBoolean("isuserseller"))
-            {
+                findViewById(R.id.Icon_Produkten).setVisibility(View.GONE);
+                findViewById(R.id.Icon_Maerten).setVisibility(View.GONE);
+                findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.VISIBLE);
+                findViewById(R.id.Icon_Reserviert).setVisibility(View.VISIBLE);
+                findViewById(R.id.Icon_VkBestaetigung).setVisibility(View.VISIBLE);
                 setContentView(R.layout.activity_seller_page);
                 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
                 toolbar.setTitle("Supermarkt");
@@ -156,6 +154,15 @@ public class HomeActivity extends AppCompatActivity {
 
                 });
             }
+            else
+            {
+                findViewById(R.id.Icon_Produkten).setVisibility(View.VISIBLE);
+                findViewById(R.id.Icon_Maerten).setVisibility(View.VISIBLE);
+                findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.GONE);
+                findViewById(R.id.Icon_Reserviert).setVisibility(View.GONE);
+                findViewById(R.id.Icon_VkBestaetigung).setVisibility(View.GONE);
+            }
+
         }
 
     public static ArrayList<ShoppingItem> setUpList(DataSnapshot dataSnapshot) {
