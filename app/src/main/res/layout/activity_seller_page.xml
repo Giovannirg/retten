@@ -73,7 +73,7 @@
         android:paddingTop="8dp"
         android:visibility="gone"
         android:layout_centerInParent="true"
-        android:text="@string/ifSellerListEmpty"
+        android:text="@string/ifsellerlistempty"
         />
 
 
