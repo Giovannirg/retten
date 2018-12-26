@@ -95,6 +95,34 @@ public class HomeActivity extends AppCompatActivity {
                 findViewById(R.id.text_Icon_Produkten).setVisibility(View.GONE);
                 findViewById(R.id.text_Icon_Maerten).setVisibility(View.GONE);
 
+                ImageView produkliste =findViewById(R.id.Icon_Produkt_Liste);
+                produkliste.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent =new Intent(view.getContext(),seller_page.class);
+                        startActivity(intent);
+                    }
+                });
+                ImageView res_Produkt =findViewById(R.id.Icon_Reserviert);
+                res_Produkt.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent =new Intent(view.getContext(),search.class);
+                        startActivity(intent);
+                    }
+                });
+
+                ImageView Verkaufsbestätigung =findViewById(R.id.Icon_VkBestaetigung);
+                Verkaufsbestätigung.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent =new Intent(view.getContext(),search.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+
                 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
                 toolbar.setTitle("Supermarkt");
                 setSupportActionBar(toolbar);
@@ -107,7 +135,7 @@ public class HomeActivity extends AppCompatActivity {
                 addProduct = (Button) findViewById(R.id.sellerAddProduct);
                 DatabaseReference myref = database.getReference("sellers/" +
                         FirebaseAuth.getInstance().getCurrentUser().getUid());
-                myref.addValueEventListener(new ValueEventListener() {
+                mDatabase.addValueEventListener(new ValueEventListener() {
 
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {

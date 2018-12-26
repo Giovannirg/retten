@@ -23,6 +23,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/userphoto" />
 
+    <TextView
+        android:id="@+id/newUserRegistration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:layout_weight="0.5"
+        android:text="neuer Benützer? Tap um anzumelden"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="109dp" />
+
     <EditText
         android:id="@+id/userMail"
         android:layout_width="265dp"
@@ -34,7 +46,7 @@
         android:layout_marginBottom="4dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
-        android:hint="Mail Adress"
+        android:hint="Mail Address"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,6 +93,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userPassword" />
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="forgot password?"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn"
+        tools:layout_editor_absoluteX="131dp" />
+
+
+
 
 
     <ProgressBar

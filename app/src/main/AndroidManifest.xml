@@ -31,7 +31,9 @@
         <activity android:name=".Activities.ShoppingCartWindow" />
         <activity android:name=".Activities.IndividualProduct" />
         <activity android:name=".Activities.IndividualProductSeller" />
-        <activity android:name=".Activities.CheckOutScreen"></activity>
+        <activity android:name=".Activities.CheckOutScreen" />
+        <activity android:name=".Activities.AddProductForm" />
+        <activity android:name=".Activities.forgotPassword"></activity>
     </application>
 
 </manifest>

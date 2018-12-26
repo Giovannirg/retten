@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.retten.retten.R;
@@ -28,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText userMail,userPassword;
     private Button btnLogin;
     private ProgressBar loginProgress;
+    private TextView  resetPassword;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     private Intent HomeActivity;
@@ -44,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         userPassword = findViewById(R.id.userPassword);
         btnLogin = findViewById(R.id.loginBtn);
         loginProgress = findViewById(R.id.loginProgress);
+        resetPassword = findViewById(R.id.forgotPassword);
         mAuth = FirebaseAuth.getInstance();
         HomeActivity = new Intent(this,com.example.retten.retten.Activities.HomeActivity.class);
         loginPhoto = findViewById(R.id.login_photo);
@@ -52,9 +55,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent registerActivity = new Intent(getApplicationContext(),RegisterActivity.class);
                 startActivity(registerActivity);
-                finish();
+                finish(); }
+        });
 
-
+        resetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, forgotPassword.class));
             }
         });
 
@@ -85,7 +92,11 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+
+
     }
+
+
 
     private void signIn(final String mail, String password) {
 
@@ -119,7 +130,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+
     }
+
+
 
     private void updateUI() {
         Intent inent = new Intent(this,HomeActivity.class);
@@ -131,6 +145,8 @@ public class LoginActivity extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(),text,Toast.LENGTH_LONG).show();
     }
+
+
 
 
     @Override
