@@ -63,7 +63,7 @@
         android:drawableLeft="@drawable/ic_add_black_24dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:text="Add Product"/>
+        android:text="Produkt\n hinzufügen"/>
 
 
     <TextView

@@ -44,7 +44,7 @@ public class IndividualProductSeller extends AppCompatActivity {
     Button removeProduct;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef;
+    DatabaseReference mDatabase;
     private DataSnapshot dataSnapshot;
 
     @Override
@@ -55,29 +55,29 @@ public class IndividualProductSeller extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.individualProductPageProgressBarSeller);
         progressBar.setVisibility(View.VISIBLE);
 
-        item = (ShoppingItem) getIntent().getSerializableExtra("product");
+        item = (ShoppingItem) getIntent().getSerializableExtra("Produkt");
         quantity = item.getQuantity();
 
         removeProduct = (Button) findViewById(R.id.deleteProductSeller);
 
-        myRef = database.getReference("sellers/" +
+        mDatabase = database.getReference("sellers/" +
                 FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         removeProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
                     ArrayList<ShoppingItem> productList = new ArrayList<>();
 
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        // for getting the list of products. shuold probably make this a new class tbh.
-                        for (DataSnapshot snap : dataSnapshot.child("products").getChildren()) {
+                        // for getting the list of products. should probably make this a new class tbh.
+                        for (DataSnapshot snap : dataSnapshot.child("Produkten").getChildren()) {
                             int itemPrice = -1;
                             try {
                                 itemPrice = Integer.valueOf(NumberFormat.getCurrencyInstance()
-                                        .parse(String.valueOf(snap.child("price").getValue()))
+                                        .parse(String.valueOf(snap.child("Preis").getValue()))
                                         .toString());
                             } catch (ParseException e) {
                                 e.printStackTrace();
@@ -101,14 +101,14 @@ public class IndividualProductSeller extends AppCompatActivity {
                             }
                         }
                         if(productList.size() == 0){
-                            myRef.child("isProdsEmpty").setValue(Boolean.TRUE.toString());
+                            mDatabase.child("isProdsEmpty").setValue(Boolean.TRUE.toString());
                             productList.add(new ShoppingItem("", "", "", "", -1, -1));
                         }
 
                         Map<String, Object> seller_products = new HashMap<>();
-                        seller_products.put("products", productList);
-                        myRef.updateChildren(seller_products);
-                        Toast.makeText(getApplicationContext(), "Removed!", Toast.LENGTH_SHORT).show();
+                        seller_products.put("Produkten", productList);
+                        mDatabase.updateChildren(seller_products);
+                        Toast.makeText(getApplicationContext(), "gelöscht!", Toast.LENGTH_SHORT).show();
                         finish();
                     }
 
