@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private EditText userMail,userPassword;
-    private Button btnLogin;
+    private Button btnLogin, newuserbutton;
     private ProgressBar loginProgress;
     private TextView  resetPassword;
     private FirebaseAuth mAuth;
@@ -45,12 +45,21 @@ public class LoginActivity extends AppCompatActivity {
         userMail = findViewById(R.id.userMail);
         userPassword = findViewById(R.id.userPassword);
         btnLogin = findViewById(R.id.loginBtn);
+        newuserbutton = findViewById(R.id.newuserbutton);
         loginProgress = findViewById(R.id.loginProgress);
         resetPassword = findViewById(R.id.forgotPassword);
         mAuth = FirebaseAuth.getInstance();
         HomeActivity = new Intent(this,com.example.retten.retten.Activities.HomeActivity.class);
         loginPhoto = findViewById(R.id.login_photo);
         loginPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent registerActivity = new Intent(getApplicationContext(),RegisterActivity.class);
+                startActivity(registerActivity);
+                finish(); }
+        });
+
+        newuserbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent registerActivity = new Intent(getApplicationContext(),RegisterActivity.class);

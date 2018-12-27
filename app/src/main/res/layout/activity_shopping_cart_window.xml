@@ -10,11 +10,16 @@
         android:id="@+id/shoppingCartTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Warenkorb"
         android:textColor="@android:color/black"
-        android:textSize="32sp"
-        android:text="Einkaufswagen"/>
+        android:textSize="32sp" />
 
     <LinearLayout
         android:id="@+id/buttonLinearLayout"
@@ -27,23 +32,26 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:backgroundTint="#eeeeee"
+            android:background="@drawable/button_style"
             android:maxLines="2"
-            android:text="weiter\nEinkaufen"/>
+            android:text="weiter\nEinkaufen"
+            android:textColor="#fff"/>
         <Button
             android:id="@+id/clearCart"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:backgroundTint="#eeeeee"
-            android:text="Alles löschen"/>
+            android:background="@drawable/button_style"
+            android:text="Alles löschen"
+            android:textColor="#fff"/>
         <Button
             android:id="@+id/checkOut"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:backgroundTint="#eeeeee"
-            android:text="zur Kase"/>
+            android:background="@drawable/button_style"
+            android:text="zur Kase"
+            android:textColor="#fff"/>
 
     </LinearLayout>
 
