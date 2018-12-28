@@ -33,7 +33,8 @@
         <activity android:name=".Activities.IndividualProductSeller" />
         <activity android:name=".Activities.CheckOutScreen" />
         <activity android:name=".Activities.AddProductForm" />
-        <activity android:name=".Activities.forgotPassword"></activity>
+        <activity android:name=".Activities.forgotPassword" />
+        <activity android:name=".Activities.AdminPage"></activity>
     </application>
 
 </manifest>

@@ -65,6 +65,40 @@ public class DataHolder {
         }
     }
 
+
+
+   /* public boolean setAdmininData (FirebaseUser user , Admin admin) {
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        userRef = database.getReference("/User");
+
+        try {
+            String n = UUID.randomUUID().toString();
+            userRef.child(n).push();
+            userRef.child(n).child("isAdmin").setValue(true);
+            userRef.child(n).child("name").setValue(admin.get_vorname());
+            userRef.child(n).child("email").setValue(user.getEmail());
+            userRef.child(n).child("Password").setValue(user.getUid());
+            return true;
+
+
+
+
+
+        }
+
+        catch (Exception e){
+
+            return false;
+        }
+    }*/
+
+
+
+
+
+
+
     public boolean setUserinData (FirebaseUser user , User benutzer) {
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -74,6 +108,8 @@ public class DataHolder {
             String n = UUID.randomUUID().toString();
             userRef.child(n).push();
             userRef.child(n).child("isSupermarkt").setValue(false);
+
+            userRef.child(n).child("isAdmin").setValue(false);
             userRef.child(n).child("address").setValue(benutzer.get_addresse().get_streetName());
             userRef.child(n).child("hausnummer").setValue(benutzer.get_addresse().get_houseNumber());
 

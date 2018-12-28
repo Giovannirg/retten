@@ -42,37 +42,6 @@ public class HomeActivity extends AppCompatActivity {
         private DatabaseReference mDatabase;
 
 
-        public final String TAG = HomeActivity.class.getSimpleName();
-        ListView shoppingItemView;
-        ShoppingListAdapter adapter;
-        EditText toolbar;
-
-        FirebaseDatabase database;
-        TextView ifSellerListEmpty;
-        Button addProduct;
-
-        private Boolean exit = false;
-        private ArrayList<ShoppingItem> shoppingItems;
-
-
-       /* @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_home);
-
-
-            mDatabase = FirebaseDatabase.getInstance().getReference();
-            addNewProduct("ID1", "product1", "category1", 13.50);
-        }
-        */
-
-
-        private void addNewProduct(String productId, String productname, String productcategory, double price) {
-            Product product = new Product(productId, productname, productcategory, price );
-
-            mDatabase.child("products").child(productId).setValue(product);
-
-        }
 
 
 
@@ -82,8 +51,10 @@ public class HomeActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_home);
 
-            if (DataHolder.getInstance().getUser() instanceof Supermarkt)
-            {
+            if(DataHolder.getInstance().getUser("isAdmin", true )){
+                setContentView(R.layout.activity_admin_page);}
+
+            if (DataHolder.getInstance().getUser() instanceof Supermarkt) {
                 findViewById(R.id.Icon_Produkten).setVisibility(View.GONE);
                 findViewById(R.id.Icon_Maerten).setVisibility(View.GONE);
                 findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.VISIBLE);
@@ -95,25 +66,59 @@ public class HomeActivity extends AppCompatActivity {
                 findViewById(R.id.text_Icon_Produkten).setVisibility(View.GONE);
                 findViewById(R.id.text_Icon_Maerten).setVisibility(View.GONE);
 
-                ImageView produkliste =findViewById(R.id.Icon_Produkt_Liste);
+                ImageView produkliste = findViewById(R.id.Icon_Produkt_Liste);
                 produkliste.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent =new Intent(view.getContext(),seller_page.class);
+                        Intent intent = new Intent(view.getContext(), seller_page.class);
                         startActivity(intent);
                     }
                 });
-                ImageView res_Produkt =findViewById(R.id.Icon_Reserviert);
+                ImageView res_Produkt = findViewById(R.id.Icon_Reserviert);
                 res_Produkt.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent =new Intent(view.getContext(),search.class);
+                        Intent intent = new Intent(view.getContext(), search.class);
                         startActivity(intent);
                     }
                 });
 
-                ImageView Verkaufsbestätigung =findViewById(R.id.Icon_VkBestaetigung);
+                ImageView Verkaufsbestätigung = findViewById(R.id.Icon_VkBestaetigung);
                 Verkaufsbestätigung.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(view.getContext(), search.class);
+                        startActivity(intent);
+                    }
+                });
+
+            }
+
+
+
+
+            else
+            {
+                findViewById(R.id.Icon_Produkten).setVisibility(View.VISIBLE);
+                findViewById(R.id.Icon_Maerten).setVisibility(View.VISIBLE);
+                findViewById(R.id.text_Icon_Produkten).setVisibility(View.VISIBLE);
+                findViewById(R.id.text_Icon_Maerten).setVisibility(View.VISIBLE);
+                findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.GONE);
+                findViewById(R.id.Icon_Reserviert).setVisibility(View.GONE);
+                findViewById(R.id.Icon_VkBestaetigung).setVisibility(View.GONE);
+                findViewById(R.id.text_Icon_Produkt_Liste).setVisibility(View.GONE);
+                findViewById(R.id.text_Icon_Reserviert).setVisibility(View.GONE);
+                findViewById(R.id.text_Icon_VkBestaetigung).setVisibility(View.GONE);
+                ImageView produkten =findViewById(R.id.Icon_Produkten);
+                produkten.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent =new Intent(view.getContext(),search.class);
+                        startActivity(intent);
+                    }
+                });
+                ImageView Maerten =findViewById(R.id.Icon_Maerten);
+                Maerten.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent =new Intent(view.getContext(),search.class);
@@ -121,10 +126,12 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
 
+            }
 
+        }
 
-                Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-                toolbar.setTitle("Supermarkt");
+                /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+                toolbar.setTitle(" Supermarkt");
                 setSupportActionBar(toolbar);
                 final EditText searchbar = (EditText)findViewById(R.id.searchBar);
                 final ProgressBar progressBar = (ProgressBar) findViewById(R.id.sellerPageProgressBar);
@@ -189,40 +196,9 @@ public class HomeActivity extends AppCompatActivity {
 
                 });
             }
-            else
-            {
-                findViewById(R.id.Icon_Produkten).setVisibility(View.VISIBLE);
-                findViewById(R.id.Icon_Maerten).setVisibility(View.VISIBLE);
-                findViewById(R.id.text_Icon_Produkten).setVisibility(View.VISIBLE);
-                findViewById(R.id.text_Icon_Maerten).setVisibility(View.VISIBLE);
-                findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.GONE);
-                findViewById(R.id.Icon_Reserviert).setVisibility(View.GONE);
-                findViewById(R.id.Icon_VkBestaetigung).setVisibility(View.GONE);
-                findViewById(R.id.text_Icon_Produkt_Liste).setVisibility(View.GONE);
-                findViewById(R.id.text_Icon_Reserviert).setVisibility(View.GONE);
-                findViewById(R.id.text_Icon_VkBestaetigung).setVisibility(View.GONE);
-                ImageView produkten =findViewById(R.id.Icon_Produkten);
-                produkten.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent =new Intent(view.getContext(),search.class);
-                        startActivity(intent);
-                    }
-                });
-                ImageView Maerten =findViewById(R.id.Icon_Maerten);
-                Maerten.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent =new Intent(view.getContext(),search.class);
-                        startActivity(intent);
-                    }
-                });
 
-            }
 
-        }
-
-    public static ArrayList<ShoppingItem> setUpList(DataSnapshot dataSnapshot) {
+   /* public static ArrayList<ShoppingItem> setUpList(DataSnapshot dataSnapshot) {
 
         ArrayList<ShoppingItem> items  = new ArrayList<ShoppingItem>();
 
@@ -255,6 +231,6 @@ public class HomeActivity extends AppCompatActivity {
 
 
     private void setSupportActionBar(Toolbar toolbar) {
-    }
+    }*/
 
-}
+            }

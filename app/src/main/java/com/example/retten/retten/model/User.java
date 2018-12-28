@@ -51,6 +51,8 @@ public class User {
         this.m_nachname = m_nachname;
     }
 
+    public boolean admin (boolean m_admin){ return m_admin;}
+
     public Addresse get_addresse() {
         return m_addresse;
     }
@@ -58,6 +60,8 @@ public class User {
     public void set_addresse(Addresse m_addresse) {
         this.m_addresse = m_addresse;
     }
+
+
 
     public User(){
         this.m_nachname="";
