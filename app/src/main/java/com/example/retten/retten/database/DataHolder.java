@@ -1,10 +1,17 @@
 package com.example.retten.retten.database;
 
+import android.support.annotation.NonNull;
+
+import com.example.retten.retten.model.Addresse;
 import com.example.retten.retten.model.Supermarkt;
 import com.example.retten.retten.model.User;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 import java.util.UUID;
@@ -96,7 +103,39 @@ public class DataHolder {
 
 
 
+    public boolean getUserData (String email,String password) {
+        try {
+            Query query = FirebaseDatabase.getInstance().getReference("/User").orderByChild("email").equalTo(email);
+            query.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot d: dataSnapshot.getChildren()) {
+                        DataHolder.getInstance().setUser(new User());
+                        DataHolder.getInstance().getUser().set_vorname((String) d.child("name").getValue());
+                        DataHolder.getInstance().getUser().set_phone((String)d.child("phone").getValue());
+                        DataHolder.getInstance().getUser().set_UID((String)d.child("password").getValue());
+                        DataHolder.getInstance().getUser().set_email((String)d.child("email").getValue());
+                        Addresse addresse =new Addresse();
+                        addresse.set_streetName((String)d.child("address").getValue());
+                        addresse.set_city((String)d.child("city").getValue());
+                        addresse.set_postNumber((String)d.child("pzl").getValue());
+                        addresse.set_houseNumber((String)d.child("hausnummer").getValue());
+                        DataHolder.getInstance().getUser().set_addresse(addresse);
+                        DataHolder.getInstance().getUser().setAdmin((boolean)d.child("isAdmin").getValue());
+                        DataHolder.getInstance().getUser().set_id((String)d.getKey());
+                    }
+                }
 
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
 
 
     public boolean setUserinData (FirebaseUser user , User benutzer) {
@@ -117,7 +156,7 @@ public class DataHolder {
             userRef.child(n).child("Last_name").setValue(benutzer.get_nachname());
             userRef.child(n).child("phone").setValue(benutzer.get_phone());
             userRef.child(n).child("pzl").setValue(benutzer.get_addresse().get_postNumber());
-            userRef.child(n).child("City").setValue(benutzer.get_addresse().get_city());
+            userRef.child(n).child("city").setValue(benutzer.get_addresse().get_city());
             userRef.child(n).child("email").setValue(user.getEmail());
             userRef.child(n).child("Password").setValue(user.getUid());
             return true;

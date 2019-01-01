@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    private void signIn(final String mail, String password) {
+    private void signIn(final String mail, final String password) {
 
 
         mAuth.signInWithEmailAndPassword(mail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -124,6 +124,7 @@ public class LoginActivity extends AppCompatActivity {
                     m_user.set_UID(mAuth.getUid());
                     user = mAuth.getCurrentUser();
                     m_user.set_firebaseUser(user);
+                    DataHolder.getInstance().getUserData(mail,password);
                     updateUI();
 
                 }

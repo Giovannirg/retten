@@ -3,6 +3,8 @@ package com.example.retten.retten.Activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.retten.retten.R;
+
 public class AddSupermarktActivity extends AppCompatActivity {
 
     @Override

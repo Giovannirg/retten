@@ -65,8 +65,8 @@ public class Supermarkt extends User {
             String m_Hausetage,
             String m_Öffnungszeit,
             String m_Schließzeit,
-            String m_Öffnungstage){
-        super(m_email,m_UID,m_firebaseUser,m_id,m_vorname,m_nachname,m_addresse);
+            String m_Öffnungstage,boolean isAdmin){
+        super(m_email,m_UID,m_firebaseUser,m_id,m_vorname,m_nachname,m_addresse,isAdmin);
         this.m_Marktname=m_Marktname;
         this.m_Hausetage=m_Hausetage;
         this.m_Öffnungszeit=m_Öffnungszeit;

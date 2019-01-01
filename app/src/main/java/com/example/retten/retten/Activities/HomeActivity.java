@@ -51,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_home);
 
-            if(DataHolder.getInstance().getUser("isAdmin", true )){
+            if(DataHolder.getInstance().getUser().isAdmin()){
                 setContentView(R.layout.activity_admin_page);}
 
             if (DataHolder.getInstance().getUser() instanceof Supermarkt) {

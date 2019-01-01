@@ -70,9 +70,10 @@ public class User {
         this.m_email="";
         this.m_UID="";
         this.m_id="";
+        isAdmin=false;
     }
 
-    public User(String email,String UID,FirebaseUser user,String id,String m_vorname,String m_nachname,Addresse addresse){
+    public User(String email,String UID,FirebaseUser user,String id,String m_vorname,String m_nachname,Addresse addresse,boolean isAdmin){
         this.m_addresse=addresse;
         this.m_email=email;
         this.m_UID=UID;
@@ -80,9 +81,19 @@ public class User {
         this.m_id=id;
         this.m_vorname=m_vorname;
         this.m_nachname=m_nachname;
+        this.isAdmin=isAdmin;
 
     }
 
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    boolean isAdmin;
     String m_email;
     String m_UID;
     FirebaseUser m_firebaseUser;
