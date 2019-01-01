@@ -148,6 +148,7 @@ public class LoginActivity extends AppCompatActivity {
     private void updateUI() {
 
 
+            DataHolder.getInstance().getUserData(userMail.getText().toString(),userPassword.getText().toString());
             Intent inent = new Intent(this, HomeActivity.class);
             startActivity(inent);
 
