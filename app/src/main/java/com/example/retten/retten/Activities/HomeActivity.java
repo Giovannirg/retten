@@ -52,12 +52,12 @@ public class HomeActivity extends AppCompatActivity {
             setContentView(R.layout.activity_home);
 
 
-            if(DataHolder.getInstance().getUser() !=null) {
+        /*    if(DataHolder.getInstance().getUser() !=null) {
                 if (DataHolder.getInstance().getUser().isAdmin()){
                     // what the fuck is that ????
                     setContentView(R.layout.activity_admin_page);
                 }
-            }
+            }*/
             if (DataHolder.getInstance().getUser() instanceof Supermarkt) {
                 findViewById(R.id.Icon_Produkten).setVisibility(View.GONE);
                 findViewById(R.id.Icon_Maerten).setVisibility(View.GONE);

@@ -1,5 +1,6 @@
 package com.example.retten.retten.model;
 
+import com.example.retten.retten.Activities.HomeActivity;
 import com.google.firebase.auth.FirebaseUser;
 
 public class User {
@@ -85,7 +86,7 @@ public class User {
 
     }
 
-    public boolean isAdmin() {
+    public boolean isAdmin(HomeActivity homeActivity, boolean b) {
         return isAdmin;
     }
 
