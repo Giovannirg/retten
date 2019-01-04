@@ -52,7 +52,7 @@ public class HomeActivity extends AppCompatActivity {
             setContentView(R.layout.activity_home);
 
 
-          if(DataHolder.getInstance().getUser() !=null) {
+        /*  if(DataHolder.getInstance().getUser() !=null) {
                 if (DataHolder.getInstance().getUser().isAdmin()){
 
                     findViewById(R.id.Icon_Produkten).setVisibility(View.GONE);
@@ -69,7 +69,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 }
 
-          }
+          }*/
 
 
             if (DataHolder.getInstance().getUser() instanceof Supermarkt) {
