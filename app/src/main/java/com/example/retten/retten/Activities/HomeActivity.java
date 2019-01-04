@@ -65,18 +65,7 @@ public class HomeActivity extends AppCompatActivity {
                     findViewById(R.id.text_Icon_VkBestaetigung).setVisibility(View.GONE);
                     findViewById(R.id.text_Icon_Produkten).setVisibility(View.GONE);
                     findViewById(R.id.text_Icon_Maerten).setVisibility(View.GONE);
-
-
-
                     ImageView produkliste = findViewById(R.id.Icon_Produkt_Liste);
-                    produkliste.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent = new Intent(this, AdminPage.class);
-                            startActivity(intent);
-
-                }
-            });
 
                 }
 
