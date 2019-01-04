@@ -110,19 +110,37 @@ public class DataHolder {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     for (DataSnapshot d: dataSnapshot.getChildren()) {
-                        DataHolder.getInstance().setUser(new User());
-                        DataHolder.getInstance().getUser().set_vorname((String) d.child("name").getValue());
-                        DataHolder.getInstance().getUser().set_phone((String)d.child("phone").getValue());
-                        DataHolder.getInstance().getUser().set_UID((String)d.child("password").getValue());
-                        DataHolder.getInstance().getUser().set_email((String)d.child("email").getValue());
-                        Addresse addresse =new Addresse();
-                        addresse.set_streetName((String)d.child("address").getValue());
-                        addresse.set_city((String)d.child("city").getValue());
-                        addresse.set_postNumber((String)d.child("pzl").getValue());
-                        addresse.set_houseNumber((String)d.child("hausnummer").getValue());
-                        DataHolder.getInstance().getUser().set_addresse(addresse);
-                        DataHolder.getInstance().getUser().setAdmin((boolean)d.child("isAdmin").getValue());
-                        DataHolder.getInstance().getUser().set_id((String)d.getKey());
+                        if(d.child("isSupermarkt").getValue()==true)
+                        {
+                            DataHolder.getInstance().setUser(new Supermarkt());
+                            DataHolder.getInstance().getUser().set_vorname((String) d.child("name").getValue());
+                            DataHolder.getInstance().getUser().set_phone((String)d.child("phone").getValue());
+                            DataHolder.getInstance().getUser().set_UID((String)d.child("password").getValue());
+                            DataHolder.getInstance().getUser().set_email((String)d.child("email").getValue());
+                            Addresse addresse =new Addresse();
+                            addresse.set_streetName((String)d.child("address").getValue());
+                            addresse.set_city((String)d.child("city").getValue());
+                            addresse.set_postNumber((String)d.child("pzl").getValue());
+                            addresse.set_houseNumber((String)d.child("hausnummer").getValue());
+                            DataHolder.getInstance().getUser().set_addresse(addresse);
+                            DataHolder.getInstance().getUser().setAdmin((boolean)d.child("isAdmin").getValue());
+                            DataHolder.getInstance().getUser().set_id((String)d.getKey());
+                        }
+                        else {
+                            DataHolder.getInstance().setUser(new User());
+                            DataHolder.getInstance().getUser().set_vorname((String) d.child("name").getValue());
+                            DataHolder.getInstance().getUser().set_phone((String) d.child("phone").getValue());
+                            DataHolder.getInstance().getUser().set_UID((String) d.child("password").getValue());
+                            DataHolder.getInstance().getUser().set_email((String) d.child("email").getValue());
+                            Addresse addresse = new Addresse();
+                            addresse.set_streetName((String) d.child("address").getValue());
+                            addresse.set_city((String) d.child("city").getValue());
+                            addresse.set_postNumber((String) d.child("pzl").getValue());
+                            addresse.set_houseNumber((String) d.child("hausnummer").getValue());
+                            DataHolder.getInstance().getUser().set_addresse(addresse);
+                            DataHolder.getInstance().getUser().setAdmin((boolean) d.child("isAdmin").getValue());
+                            DataHolder.getInstance().getUser().set_id((String) d.getKey());
+                        }
                     }
                 }
 
