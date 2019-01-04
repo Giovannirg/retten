@@ -1,6 +1,7 @@
 package com.example.retten.retten.Activities;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseUser user;
     private Intent HomeActivity;
     private ImageView loginPhoto;
+    private int progressStatus = 0;
+    private Handler handler = new Handler();
 
 
 
@@ -147,7 +150,31 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUI() {
         DataHolder.getInstance().getUserData(mAuth.getCurrentUser().getEmail(),userPassword.getText().toString());
-        for (int i=0; i < 5000; i++){}
+        loginProgress = (ProgressBar) findViewById(R.id.loginProgress);
+
+        Thread thread = new Thread(new Runnable() {
+            public void run() {
+                while (progressStatus < 100) {
+                    progressStatus += 30;
+                    // Update the progress bar and display the
+                    //current value in the text view
+                    handler.post(new Runnable() {
+                        public void run() {
+                            loginProgress.setProgress(progressStatus);
+
+
+                        }
+                    });
+                    try {
+                        // Sleep for 200 milliseconds.
+                        Thread.sleep(1500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        thread.start();
 
             Intent inent = new Intent(this, HomeActivity.class);
             startActivity(inent);
