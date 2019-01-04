@@ -52,6 +52,10 @@ public class LoginActivity extends AppCompatActivity {
         loginProgress = findViewById(R.id.loginProgress);
         resetPassword = findViewById(R.id.forgotPassword);
         mAuth = FirebaseAuth.getInstance();
+
+
+
+
         HomeActivity = new Intent(this,com.example.retten.retten.Activities.HomeActivity.class);
         loginPhoto = findViewById(R.id.login_photo);
         loginPhoto.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                 else
                 {
                     signIn(mail,password);
+
                 }
 
 
@@ -102,7 +107,6 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
 
 
 
@@ -149,40 +153,40 @@ public class LoginActivity extends AppCompatActivity {
      Thread thread=new Thread();
 
     private void updateUI() {
-        DataHolder.getInstance().getUserData(mAuth.getCurrentUser().getEmail(),userPassword.getText().toString());
-        loginProgress = (ProgressBar) findViewById(R.id.loginProgress);
 
-        thread = new Thread(new Runnable() {
-            public void run() {
-                while (progressStatus < 100) {
-                    progressStatus += 10;
-                    // Update the progress bar and display the
-                    //current value in the text view
-                    handler.post(new Runnable() {
-                        public void run() {
-                            DataHolder.getInstance().getUserData(mAuth.getCurrentUser().getEmail(),userPassword.getText().toString());
-                            loginProgress.setProgress(progressStatus);
-                            if (progressStatus > 100) {
-                                loginProgress.setVisibility(View.GONE);
-                                thread.interrupt();
+        if(mAuth.getCurrentUser()!=null)
+        { loginProgress = (ProgressBar) findViewById(R.id.loginProgress);
+            thread = new Thread(new Runnable() {
+                public void run() {
+                    while (progressStatus < 100) {
+                        progressStatus += 40;
+                        // Update the progress bar and display the
+                        //current value in the text view
+                        handler.post(new Runnable() {
+                            public void run() {
+                                DataHolder.getInstance().getUserData(mAuth.getCurrentUser().getEmail(),userPassword.getText().toString());
+                                loginProgress.setProgress(progressStatus);
+                                if (progressStatus > 100) {
+                                    loginProgress.setVisibility(View.GONE);
+
+                                    Intent inent = new Intent(getApplicationContext(),HomeActivity.class);
+                                    startActivity(inent);
+                                    thread.interrupt();
+                                }
+
                             }
-
+                        });
+                        try {
+                            // Sleep for 200 milliseconds.
+                            Thread.sleep(1500);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
                         }
-                    });
-                    try {
-                        // Sleep for 200 milliseconds.
-                        Thread.sleep(1500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
                     }
                 }
-            }
-        });
-        thread.start();
-
-            Intent inent = new Intent(this, HomeActivity.class);
-            startActivity(inent);
-
+            });
+            thread.start();
+        }
 
 
     }
@@ -200,11 +204,44 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         user = mAuth.getCurrentUser();
 
-        if(user != null) {
-            //user is already connected  so we need to redirect him to home page
-            updateUI();
+        if(mAuth.getCurrentUser()!=null)
+        {
 
+
+            loginProgress = (ProgressBar) findViewById(R.id.loginProgress);
+            thread = new Thread(new Runnable() {
+                public void run() {
+                    while (progressStatus < 100) {
+                        progressStatus += 30;
+                        // Update the progress bar and display the
+                        //current value in the text view
+                        handler.post(new Runnable() {
+                            public void run() {
+                                DataHolder.getInstance().getUserData(mAuth.getCurrentUser().getEmail(),userPassword.getText().toString());
+                                loginProgress.setProgress(progressStatus);
+                                if (progressStatus > 100) {
+                                    loginProgress.setVisibility(View.GONE);
+
+                                    Intent inent = new Intent(getApplicationContext(),HomeActivity.class);
+                                    startActivity(inent);
+                                    thread.interrupt();
+                                }
+
+                            }
+                        });
+                        try {
+                            // Sleep for 200 milliseconds.
+                            Thread.sleep(300);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            });
+            thread.start();
         }
+
+
 
 
 

@@ -110,7 +110,7 @@ public class DataHolder {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     for (DataSnapshot d: dataSnapshot.getChildren()) {
-                        if(d.child("isSupermarkt").getValue()==true)
+                        if((boolean)d.child("isSupermarkt").getValue()==true)
                         {
                             DataHolder.getInstance().setUser(new Supermarkt());
                             DataHolder.getInstance().getUser().set_vorname((String) d.child("name").getValue());
@@ -123,7 +123,7 @@ public class DataHolder {
                             addresse.set_postNumber((String)d.child("pzl").getValue());
                             addresse.set_houseNumber((String)d.child("hausnummer").getValue());
                             DataHolder.getInstance().getUser().set_addresse(addresse);
-                            DataHolder.getInstance().getUser().setAdmin((boolean)d.child("isAdmin").getValue());
+                         //   DataHolder.getInstance().getUser().setAdmin((boolean)d.child("isAdmin").getValue());
                             DataHolder.getInstance().getUser().set_id((String)d.getKey());
                         }
                         else {
