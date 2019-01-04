@@ -159,7 +159,7 @@ public class AdminPage extends AppCompatActivity {
 
 
                             user.set_firebaseUser(mAuth.getCurrentUser());
-                            DataHolder.getInstance().setUserinData(mAuth.getCurrentUser(),user);
+                            DataHolder.getInstance().setSupermarktinData(mAuth.getCurrentUser(),user);
                             // after we created user account we need to update his profile picture and name
                             updateUserInfo( name ,pickedImgUri,mAuth.getCurrentUser());
                         }
