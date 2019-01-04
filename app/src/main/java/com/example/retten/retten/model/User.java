@@ -86,7 +86,7 @@ public class User {
 
     }
 
-    public boolean isAdmin(HomeActivity homeActivity, boolean b) {
+    public boolean isAdmin() {
         return isAdmin;
     }
 
