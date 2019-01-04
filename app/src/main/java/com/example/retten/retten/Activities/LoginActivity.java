@@ -146,22 +146,26 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-
+     Thread thread=new Thread();
 
     private void updateUI() {
         DataHolder.getInstance().getUserData(mAuth.getCurrentUser().getEmail(),userPassword.getText().toString());
         loginProgress = (ProgressBar) findViewById(R.id.loginProgress);
 
-        Thread thread = new Thread(new Runnable() {
+        thread = new Thread(new Runnable() {
             public void run() {
                 while (progressStatus < 100) {
-                    progressStatus += 30;
+                    progressStatus += 10;
                     // Update the progress bar and display the
                     //current value in the text view
                     handler.post(new Runnable() {
                         public void run() {
+                            DataHolder.getInstance().getUserData(mAuth.getCurrentUser().getEmail(),userPassword.getText().toString());
                             loginProgress.setProgress(progressStatus);
-
+                            if (progressStatus > 100) {
+                                loginProgress.setVisibility(View.GONE);
+                                thread.interrupt();
+                            }
 
                         }
                     });
