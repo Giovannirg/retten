@@ -1,5 +1,6 @@
 package com.example.retten.retten.Activities;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,6 +15,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcode;
+import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcodeDetectorOptions;
+import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -24,6 +28,7 @@ import java.util.Map;
 public class AddProductForm extends AppCompatActivity {
 
     TextView productid, title, type, description, price, quantity;
+    Bitmap bitmap;
 
     DatabaseReference mDatabase;
 
@@ -35,12 +40,25 @@ public class AddProductForm extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference("sellers/" +
                 FirebaseAuth.getInstance().getCurrentUser().getUid());
 
+
+
         productid = (TextView) findViewById(R.id.addProductId);
         title = (TextView) findViewById(R.id.addProductTitle);
         type = (TextView) findViewById(R.id.addProductType);
         description = (TextView) findViewById(R.id.addProductDescription);
         price = (TextView) findViewById(R.id.addProductPrice);
         quantity = (TextView) findViewById(R.id.addProductQuantity);
+
+                //Barcode scanner
+
+        FirebaseVisionBarcodeDetectorOptions options =
+                new FirebaseVisionBarcodeDetectorOptions.Builder()
+                        .setBarcodeFormats(
+                                FirebaseVisionBarcode.FORMAT_QR_CODE,
+                                FirebaseVisionBarcode.FORMAT_AZTEC)
+                        .build();
+
+        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
 
         findViewById(R.id.addProductSubmit).setOnClickListener(new View.OnClickListener() {
 

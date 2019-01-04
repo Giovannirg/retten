@@ -17,9 +17,7 @@
         <activity android:name=".Activities.HomeActivity" />
         <activity android:name=".Activities.LoginActivity">
 
-            <meta-data
-                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
-                android:value="barcode"/>
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,6 +38,11 @@
         <activity android:name=".Activities.forgotPassword" />
         <activity android:name=".Activities.AdminPage" />
         <activity android:name=".Activities.AddSupermarktActivity"></activity>
+
+        <meta-data
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="barcode"/>
+
     </application>
 
 </manifest>

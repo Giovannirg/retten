@@ -92,6 +92,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Verkaufsbestätigung"/>
+
+            <Button
+                android:id="@+id/AddSupermarkt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
         </LinearLayout>
     </ScrollView>
 

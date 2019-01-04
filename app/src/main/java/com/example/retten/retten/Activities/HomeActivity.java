@@ -128,6 +128,14 @@ public class HomeActivity extends AppCompatActivity {
                 findViewById(R.id.text_Icon_Reserviert).setVisibility(View.GONE);
                 findViewById(R.id.text_Icon_VkBestaetigung).setVisibility(View.GONE);
                 ImageView produkten =findViewById(R.id.Icon_Produkten);
+                Button button =findViewById(R.id.AddSupermarkt);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(v.getContext(), AdminPage.class);
+                        startActivity(intent);
+                    }
+                });
                 produkten.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

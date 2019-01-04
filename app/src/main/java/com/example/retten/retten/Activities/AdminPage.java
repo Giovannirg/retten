@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.retten.retten.R;
 import com.example.retten.retten.database.DataHolder;
+import com.example.retten.retten.model.Supermarkt;
 import com.example.retten.retten.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -150,10 +151,12 @@ public class AdminPage extends AppCompatActivity {
 
                             // user account created successfully
                             showMessage("Account created");
-                            User user =new User();
+                            Supermarkt user =new Supermarkt();
                             user.set_UID(mAuth.getUid());
                             user.set_vorname(name);
                             user.set_email(email);
+
+
 
                             user.set_firebaseUser(mAuth.getCurrentUser());
                             DataHolder.getInstance().setUserinData(mAuth.getCurrentUser(),user);
