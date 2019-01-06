@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"></com.wonderkiln.camerakit.CameraView>
 
-   <edmt.dev.androidqrcodefirebase.Helper.GraphicOverlay
+   <com.example.retten.retten.Helpers.GraphicOverlay
        android:id="@+id/graphic_overlay"
        android:layout_width="match_parent"
        android:layout_height="match_parent" />
