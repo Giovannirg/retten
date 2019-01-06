@@ -101,11 +101,11 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
 
-                ImageView Verkaufsbestätigung = findViewById(R.id.Icon_VkBestaetigung);
-                Verkaufsbestätigung.setOnClickListener(new View.OnClickListener() {
+                ImageView Verkaufsbestaetigung = findViewById(R.id.Icon_VkBestaetigung);
+                Verkaufsbestaetigung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(view.getContext(), search.class);
+                        Intent intent = new Intent(view.getContext(), SaleConfirm.class);
                         startActivity(intent);
                     }
                 });

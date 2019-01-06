@@ -2,6 +2,6 @@
 <resources>
     <color name="actionbar_opacity">#33000000</color>
     <color name="colorPrimary">#02bcff92</color>
-    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorAccent">#479722</color>
 </resources>

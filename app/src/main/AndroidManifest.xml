@@ -16,11 +16,9 @@
         <activity android:name=".Activities.RegisterActivity" />
         <activity android:name=".Activities.HomeActivity" />
         <activity android:name=".Activities.LoginActivity">
-
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -37,12 +35,13 @@
         <activity android:name=".Activities.AddProductForm" />
         <activity android:name=".Activities.forgotPassword" />
         <activity android:name=".Activities.AdminPage" />
-        <activity android:name=".Activities.AddSupermarktActivity"></activity>
+        <activity android:name=".Activities.AddSupermarktActivity" />
 
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
-            android:value="barcode"/>
+            android:value="barcode" />
 
+        <activity android:name=".Activities.sale_confirm"></activity>
     </application>
 
 </manifest>
