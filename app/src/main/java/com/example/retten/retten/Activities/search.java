@@ -95,7 +95,7 @@ public class search extends AppCompatActivity {
 
             ifSellerListEmpty = (TextView) findViewById(R.id.ifSellerListEmpty);
 
-            addProduct = (Button) findViewById(R.id.sellerAddProduct);
+            // addProduct = (Button) findViewById(R.id.sellerAddProduct);
 
             DatabaseReference myref = database.getReference("sellers/" +
                     FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -111,7 +111,7 @@ public class search extends AppCompatActivity {
                         shoppingItemView.setVisibility(View.VISIBLE);
                         ifSellerListEmpty.setVisibility(View.GONE);
 
-                        shoppingItems = setUpList(dataSnapshot.child("Produkten"));
+                        shoppingItems = setUpList(dataSnapshot.child("Product"));
                         adapter = new ShoppingListAdapter(getApplicationContext(), shoppingItems);
                         shoppingItemView.setAdapter(adapter);
 

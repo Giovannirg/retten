@@ -51,14 +51,14 @@ public class AddProductForm extends AppCompatActivity {
 
                 //Barcode scanner
 
-        FirebaseVisionBarcodeDetectorOptions options =
+  /*      FirebaseVisionBarcodeDetectorOptions options =
                 new FirebaseVisionBarcodeDetectorOptions.Builder()
                         .setBarcodeFormats(
                                 FirebaseVisionBarcode.FORMAT_QR_CODE,
                                 FirebaseVisionBarcode.FORMAT_AZTEC)
                         .build();
 
-        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
+        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);*/
 
         findViewById(R.id.addProductSubmit).setOnClickListener(new View.OnClickListener() {
 
