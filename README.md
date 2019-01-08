@@ -9,16 +9,16 @@
 ### Projekt Softwareentwicklung - WiSe 18/19 
 
 HTW Berlin
+lal
+alain check
 
+##### [Max Ruhnau](https://github.com/MaxArne) 
 
+##### [Giovanni Rodriguez](https://github.com/whiterabbit-ce) 
 
-##### [Alain C. Mendy]() 
+##### [Alain C.Mendy](https://github.com/amendy) 
 
-##### []() 
-
-##### []() 
-
-##### []() 
+##### [Paul Senff]() 
 
 </center>
 </div>
@@ -61,9 +61,9 @@ HTW Berlin
 
 
 
-## Layout <a name="Design"></a>
+## Design <a name="Design"></a>
 
-## Implementierung der Datenbank in Firebase < a name= "dbFirebase"></a>
+## Implementierung der Datenbank in Firebase <a name="dbFirebase"></a>
 
 
 
