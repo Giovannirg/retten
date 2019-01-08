@@ -1,4 +1,5 @@
 package com.example.retten.retten.Activities;
+//package com.example.retten.retten.model;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -27,8 +28,13 @@ import java.util.Map;
 
 public class AddProductForm extends AppCompatActivity {
 
+  // public void set_pUID(String m_pUID) {this.m_pUID = m_pUID;}
+
+
     TextView productid, title, type, description, price, quantity;
     Bitmap bitmap;
+
+
 
     DatabaseReference mDatabase;
 
@@ -37,11 +43,13 @@ public class AddProductForm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product_form);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("sellers/" +
+
+
+        mDatabase = FirebaseDatabase.getInstance().getReference("Products/" +
                 FirebaseAuth.getInstance().getCurrentUser().getUid());
 
 
-
+      //  m_pUID.set_pUID(mAuth.getUid());
         productid = (TextView) findViewById(R.id.addProductId);
         title = (TextView) findViewById(R.id.addProductTitle);
         type = (TextView) findViewById(R.id.addProductType);
@@ -51,14 +59,14 @@ public class AddProductForm extends AppCompatActivity {
 
                 //Barcode scanner
 
-  /*      FirebaseVisionBarcodeDetectorOptions options =
+      /* FirebaseVisionBarcodeDetectorOptions options =
                 new FirebaseVisionBarcodeDetectorOptions.Builder()
                         .setBarcodeFormats(
                                 FirebaseVisionBarcode.FORMAT_QR_CODE,
                                 FirebaseVisionBarcode.FORMAT_AZTEC)
-                        .build();
+                        .build();*/
 
-        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);*/
+        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
 
         findViewById(R.id.addProductSubmit).setOnClickListener(new View.OnClickListener() {
 
