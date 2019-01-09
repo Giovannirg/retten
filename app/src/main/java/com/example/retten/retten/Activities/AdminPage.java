@@ -121,7 +121,7 @@ public class AdminPage extends AppCompatActivity {
             }
         });
 
-        ImgUserPhoto = findViewById(R.id.regUserPhoto) ;
+        ImgUserPhoto = findViewById(R.id.regLogo) ;
 
         ImgUserPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
