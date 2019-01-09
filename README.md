@@ -62,7 +62,7 @@ HTW Berlin
 ## Datenbank
 
 
-![Datenbank](https://i.imgur.com/...)
+![Datenbank](<a href="https://imgur.com/eSOT5mS"><img src="https://i.imgur.com/eSOT5mS.jpg" title="source: imgur.com" /></a>)
 
 2. Zustandsdiagramm
 
