@@ -44,7 +44,7 @@ public class AdminPage extends AppCompatActivity {
     static int REQUESCODE = 1;
     Uri pickedImgUri;
 
-    private EditText userEmail, userPassword, userPassword2, userName;
+    private EditText userEmail, userPassword, userPassword2, userName, userPZL, userCity, userStreet, superOpen, superClosed, superDays;
     private ProgressBar loadingProgress;
     private Button regBtn;
 
@@ -61,6 +61,12 @@ public class AdminPage extends AppCompatActivity {
         userPassword = findViewById(R.id.regPassword);
         userPassword2 = findViewById(R.id.regPassword2);
         userName = findViewById(R.id.regName);
+        userPZL = findViewById(R.id.regPZL);
+        userStreet = findViewById(R.id.regStreet);
+        userCity = findViewById(R.id.regCity);
+        superClosed = findViewById(R.id.regClosed);
+        superOpen = findViewById(R.id.regOpen);
+        superDays = findViewById(R.id.regDays);
         loadingProgress = findViewById(R.id.regProgressBar2);
         regBtn = findViewById(R.id.regBtn);
         loadingProgress.setVisibility(View.INVISIBLE);
@@ -79,6 +85,12 @@ public class AdminPage extends AppCompatActivity {
                 final String password = userPassword.getText().toString();
                 final String password2 = userPassword2.getText().toString();
                 final String name = userName.getText().toString();
+                final String street = userStreet.getText().toString();
+                final String PZL = userPZL.getText().toString();
+                final String city = userCity.getText().toString();
+                final String open = superOpen.getText().toString();
+                final String closed = superClosed.getText().toString();
+                final String days = superDays.getText().toString();
 
                 if( email.isEmpty() || name.isEmpty() || password.isEmpty()  || !password.equals(password2)) {
 
@@ -95,7 +107,7 @@ public class AdminPage extends AppCompatActivity {
                     // everything is ok and all fields are filled now we can start creating user account
                     // CreateUserAccount method will try to create the user if the email is valid
 
-                    CreateUserAccount(email,name,password);
+                    CreateUserAccount(email,name,password, street, PZL, city, open, closed, days);
                 }
 
 
@@ -109,7 +121,7 @@ public class AdminPage extends AppCompatActivity {
             }
         });
 
-        ImgUserPhoto = findViewById(R.id.regUserPhoto) ;
+        ImgUserPhoto = findViewById(R.id.regLogo) ;
 
         ImgUserPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,7 +148,7 @@ public class AdminPage extends AppCompatActivity {
 
     }
 
-    private void CreateUserAccount(final String email, final String name, String password) {
+    private void CreateUserAccount(final String email, final String name, String password, final String street, final String PZL, final String city, final String open, final String closed, final String days) {
 
 
 

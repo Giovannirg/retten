@@ -7,7 +7,7 @@ public class Addresse {
         this.m_streetName=m_streetName;
         this.m_houseNumber=m_houseNumber;
         this.m_postNumber=m_postNumber;
-        this.m_city=m_city;
+        this.m_city = m_city;
 
     }
     public Addresse()
