@@ -55,15 +55,18 @@ HTW Berlin
 
 1. Produktmodelle
 
-![use cases](https://i.imgur.com/...)
+![Datenbank](https://i.imgur.com/...)
 
-2. ERD
+2. Zustandsdiagramm
 
-![ERD](https://i.imgur.com/...)
+![Zustandsdiagramm](https://i.imgur.com/...)
 
-3. Class Diagram
+3. Widgets
 
-![Class Diagram](https://i.imgur.com/...)
+![Widgets](https://i.imgur.com/...)
+
+
+
 
 
 
