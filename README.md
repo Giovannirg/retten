@@ -66,7 +66,7 @@ HTW Berlin
 
 2. Zustandsdiagramm
 
-![Zustandsdiagramm](https://imgur.com/a/uNg67tl)
+![Zustandsdiagramm](<a href="https://imgur.com/dbI6BT8"><img src="https://i.imgur.com/dbI6BT8.jpg" title="source: imgur.com" /></a>)
 
 3. Widgets
 
