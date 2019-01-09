@@ -9,8 +9,8 @@
 ### Projekt Softwareentwicklung - WiSe 18/19 
 
 HTW Berlin
-lal
-alain check
+
+
 
 ##### [Max Ruhnau](https://github.com/MaxArne) 
 
@@ -29,25 +29,31 @@ alain check
 #### Inhaltsverzeichnis
 
 1. [Einführung](#introduction)
-2. [Layout](#Design)
-3. [Implementierung der Datenbank in Firebase](#dbFirebase)
-4. [Implementierung der Datenbank in Android Studio](#dbAndroid)
-   1. [build.gradle](#build.gradle)
-   2. [db.java](#db.java)
-   3. [.java](#.java)
+2. [Produktmodelle](#Modellierung)
+
+3. [Implementierung](#Implementierung DB)
+4. [Implementierung der Anwendung](#db)
+   a. [Implementierung der Datenbank in Firebase](#dbFirebase)
+   b. [Datenbank in Android Studio](#dbAndroidStudio)
+   c. [Design](#Design)
+   d. [Testing](#Test)
        
-5. 
+5. [Zusammenfassung](#Fazit)
 
 
 
 ## Einführung <a name="introduction"></a>
 
-## Informelle Beschreibung 
+## Abstrakt
+
+##Produktidee
+
+#Ziele 
 .....
 
 ## UML
 
-1. Use Cases
+1. Produktmodelle
 
 ![use cases](https://i.imgur.com/...)
 
