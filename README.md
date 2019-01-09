@@ -30,13 +30,18 @@ HTW Berlin
 
 1. [Einführung](#introduction)
 2. [Produktmodelle](#Modellierung)
+   1. [Datenbank](#db)
+   2. [Zustandsdiagramm](#ZD)
+   3. [Widgets](#Widgets)
+   4. [Programme](#Programm)
 
+   
 3. [Implementierung](#Implementierung DB)
 4. [Implementierung der Anwendung](#db)
-   a. [Implementierung der Datenbank in Firebase](#dbFirebase)
-   b. [Datenbank in Android Studio](#dbAndroidStudio)
-   c. [Design](#Design)
-   d. [Testing](#Test)
+   1. [Implementierung der Datenbank in Firebase](#dbFirebase)
+   2. [Datenbank in Android Studio](#dbAndroidStudio)
+   3. [Design](#Design)
+   4. [Testing](#Test)
        
 5. [Zusammenfassung](#Fazit)
 
@@ -46,14 +51,16 @@ HTW Berlin
 
 ## Abstrakt
 
-##Produktidee
+## Produktidee
 
-#Ziele 
+## Ziele 
+
+## Produktmodelle <a name="Produktmodelle"></a>
+
 .....
 
-## UML
+## Datenbank
 
-1. Produktmodelle
 
 ![Datenbank](https://i.imgur.com/...)
 
@@ -70,7 +77,7 @@ HTW Berlin
 
 
 
-## Design <a name="Design"></a>
+## Implementierung der Anwendung <a name="#db"></a>
 
 ## Implementierung der Datenbank in Firebase <a name="dbFirebase"></a>
 
@@ -80,7 +87,10 @@ HTW Berlin
 
 
 
-## Implementierung der Datenbank in Android Studio <a name="dbJava"></a>
+## Implementierung in Android Studio <a name="dbAndroidStudio"></a>
+
+
+
 
 
 
