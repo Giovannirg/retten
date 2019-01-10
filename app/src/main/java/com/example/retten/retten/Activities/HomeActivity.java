@@ -39,7 +39,7 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
-        private DatabaseReference mDatabase;
+      //  private DatabaseReference mDatabase;
 
 
 
@@ -52,90 +52,17 @@ public class HomeActivity extends AppCompatActivity {
             setContentView(R.layout.activity_home);
 
 
-        /*  if(DataHolder.getInstance().getUser() !=null) {
-                if (DataHolder.getInstance().getUser().isAdmin()){
-
-                    findViewById(R.id.Icon_Produkten).setVisibility(View.GONE);
-                    findViewById(R.id.Icon_Maerten).setVisibility(View.GONE);
-                    findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.GONE);
-                    findViewById(R.id.Icon_Reserviert).setVisibility(View.GONE);
-                    findViewById(R.id.Icon_VkBestaetigung).setVisibility(View.GONE);
-                    findViewById(R.id.text_Icon_Produkt_Liste).setVisibility(View.VISIBLE);
-                    findViewById(R.id.text_Icon_Reserviert).setVisibility(View.GONE);
-                    findViewById(R.id.text_Icon_VkBestaetigung).setVisibility(View.GONE);
-                    findViewById(R.id.text_Icon_Produkten).setVisibility(View.GONE);
-                    findViewById(R.id.text_Icon_Maerten).setVisibility(View.GONE);
-                    ImageView produkliste = findViewById(R.id.Icon_Produkt_Liste);
-
-                }
-
-          }*/
-
-
-            if (DataHolder.getInstance().getUser() instanceof Supermarkt) {
-                findViewById(R.id.Icon_Produkten).setVisibility(View.GONE);
-                findViewById(R.id.Icon_Maerten).setVisibility(View.GONE);
-                findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.VISIBLE);
-                findViewById(R.id.Icon_Reserviert).setVisibility(View.VISIBLE);
-                findViewById(R.id.Icon_VkBestaetigung).setVisibility(View.VISIBLE);
-                findViewById(R.id.text_Icon_Produkt_Liste).setVisibility(View.VISIBLE);
-                findViewById(R.id.text_Icon_Reserviert).setVisibility(View.VISIBLE);
-                findViewById(R.id.text_Icon_VkBestaetigung).setVisibility(View.VISIBLE);
-                findViewById(R.id.text_Icon_Produkten).setVisibility(View.GONE);
-                findViewById(R.id.text_Icon_Maerten).setVisibility(View.GONE);
-
-                ImageView produkliste = findViewById(R.id.Icon_Produkt_Liste);
-                produkliste.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(view.getContext(), seller_page.class);
-                        startActivity(intent);
-                    }
-                });
-                ImageView res_Produkt = findViewById(R.id.Icon_Reserviert);
-                res_Produkt.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(view.getContext(), search.class);
-                        startActivity(intent);
-                    }
-                });
-
-                ImageView Verkaufsbestaetigung = findViewById(R.id.Icon_VkBestaetigung);
-                Verkaufsbestaetigung.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(view.getContext(), SaleConfirm.class);
-                        startActivity(intent);
-                    }
-                });
-
-            }
 
 
 
 
-            else
-            {
                 findViewById(R.id.Icon_Produkten).setVisibility(View.VISIBLE);
                 findViewById(R.id.Icon_Maerten).setVisibility(View.VISIBLE);
                 findViewById(R.id.text_Icon_Produkten).setVisibility(View.VISIBLE);
                 findViewById(R.id.text_Icon_Maerten).setVisibility(View.VISIBLE);
-                findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.GONE);
-                findViewById(R.id.Icon_Reserviert).setVisibility(View.GONE);
-                findViewById(R.id.Icon_VkBestaetigung).setVisibility(View.GONE);
-                findViewById(R.id.text_Icon_Produkt_Liste).setVisibility(View.GONE);
-                findViewById(R.id.text_Icon_Reserviert).setVisibility(View.GONE);
-                findViewById(R.id.text_Icon_VkBestaetigung).setVisibility(View.GONE);
+
                 ImageView produkten =findViewById(R.id.Icon_Produkten);
-                Button button =findViewById(R.id.AddSupermarkt);
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(v.getContext(), AdminPage.class);
-                        startActivity(intent);
-                    }
-                });
+
                 produkten.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -152,7 +79,7 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
 
-            }
+            //}
 
         }
 

@@ -2,35 +2,69 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
     android:id="@+id/Logo"
     android:layout_width="match_parent"
 
-    android:background="#ffffff"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context=".Activities.AdminPage">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
 
     <EditText
         android:id="@+id/regPZL"
         android:layout_width="120dp"
         android:layout_height="43dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
         android:hint="PZL"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="196dp"
-        tools:layout_editor_absoluteY="373dp" />
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regStreet" />
 
     <EditText
         android:id="@+id/regDays"
         android:layout_width="124dp"
         android:layout_height="42dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
         android:hint="Von-Bis"
-        android:inputType="textPassword"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/regCity3"
-        app:layout_constraintStart_toStartOf="@+id/regOpen"
-        tools:layout_editor_absoluteY="493dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regOpen"
+        app:layout_constraintVertical_bias="0.179" />
 
     <EditText
         android:id="@+id/regClosed"
@@ -38,27 +72,31 @@
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
         android:hint="Schließt um"
-        android:inputType="textPassword"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toEndOf="@+id/regOpen"
-        tools:layout_editor_absoluteY="428dp" />
+        app:layout_constraintTop_toBottomOf="@+id/regPZL" />
 
     <EditText
         android:id="@+id/regOpen"
         android:layout_width="124dp"
         android:layout_height="45dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
         android:hint="Öffnet um"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/regCity"
-        tools:layout_editor_absoluteY="428dp" />
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regCity" />
 
     <EditText
         android:id="@+id/regCity"
@@ -66,16 +104,17 @@
         android:layout_height="44dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
         android:hint="Städt "
-        android:inputType="textPassword"
+        android:inputType="text"
         app:layout_constraintEnd_toStartOf="@+id/regPZL"
         app:layout_constraintHorizontal_bias="0.724"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="373dp" />
+        app:layout_constraintTop_toBottomOf="@+id/regStreet" />
 
     <EditText
         android:id="@+id/regStreet"
@@ -85,19 +124,22 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="216dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
         android:hint="Straße"
-        android:inputType="textPassword"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="322dp" />
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/regLogo"
         android:layout_width="121dp"
         android:layout_height="88dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="68dp"
         android:layout_marginRight="68dp"
@@ -105,15 +147,10 @@
         android:src="@drawable/userphoto"
         app:layout_constraintBottom_toTopOf="@+id/regName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/LogoReg"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.36" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/regName"
@@ -121,6 +158,7 @@
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/reg_edittext_style"
@@ -128,9 +166,9 @@
         android:hint="Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.427"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="108dp" />
+        app:layout_constraintTop_toBottomOf="@+id/LogoReg" />
 
     <EditText
         android:id="@+id/regMail"
@@ -138,7 +176,7 @@
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/reg_edittext_style"
@@ -146,7 +184,7 @@
         android:hint="E-mail"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regName" />
 
@@ -156,7 +194,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/reg_edittext_style"
@@ -164,9 +202,9 @@
         android:hint="Passwort"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toBottomOf="@+id/regMail" />
 
     <EditText
         android:id="@+id/regPassword2"
@@ -184,10 +222,10 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/regStreet"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.427"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regPassword"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/regBtn"
@@ -196,18 +234,16 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/button_style"
         android:text="Supermarkt \n Registrieren"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.752"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regPassword2"
-        app:layout_constraintVertical_bias="0.865" />
+        app:layout_constraintStart_toEndOf="@+id/regDays"
+        app:layout_constraintTop_toBottomOf="@+id/regClosed" />
 
     <ProgressBar
         android:id="@+id/regProgressBar2"
@@ -223,9 +259,12 @@
         android:id="@+id/LogoReg"
         android:layout_width="89dp"
         android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginBottom="48dp"
         app:layout_constraintBottom_toTopOf="@+id/regName"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/logo"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="3dp" />
+        tools:ignore="MissingConstraints" />
+
 </android.support.constraint.ConstraintLayout>

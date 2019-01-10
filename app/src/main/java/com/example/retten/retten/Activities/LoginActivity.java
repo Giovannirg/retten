@@ -236,9 +236,32 @@ public class LoginActivity extends AppCompatActivity {
                                     ValueEventListener valueEventListener = new ValueEventListener() {
                                         @Override
                                         public void onDataChange(DataSnapshot dataSnapshot) {
-                                            if(dataSnapshot.child("isAdmin") !=null) {
-                                                startActivity(new Intent(getApplicationContext(), AdminPage.class));
-                                            } /*else if (dataSnapshot.child("TYPE") == 2) {
+
+
+
+
+                                            if(dataSnapshot.child("isAdmin") != null || dataSnapshot.child("isSupermarkt") != null) {
+
+                                                if(dataSnapshot.child("isSupermarkt") != null) {
+
+                                                    startActivity(new Intent(getApplicationContext(), SupermarktActivity.class));
+
+
+                                                }
+
+                                                else if(dataSnapshot.child("isAdmin") != null) {
+
+                                                    startActivity(new Intent(getApplicationContext(), AdminPage.class));
+
+
+                                                }
+                                                else if(dataSnapshot.child("isAdmin") == null && dataSnapshot.child("isSupermarkt") == null) {
+                                                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                                                }
+
+                                            }
+
+                                            /*else if (dataSnapshot.child("TYPE") == 2) {
                                                 startActivity(new Intent(MainActivity.this, teacher.class));
                                             } else if (dataSnapshot.child("TYPE") == 3) {
                                                 startActivity(new Intent(MainActivity.this, admin.class));

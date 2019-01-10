@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.HomeActivity">
-
-  
-
+    tools:context=".Activities.SupermarktActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,41 +16,54 @@
             android:layout_gravity="center"
             android:orientation="vertical" >
 
+            <ImageView
+                android:id="@+id/Icon_Produkt_Liste"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/produkliste" />
+
+            <TextView
+                android:id="@+id/text_Icon_Produkt_Liste"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Produktlist" />
+
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/Icon_Reserviert"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/res_produkt"
+                tools:layout_editor_absoluteX="93dp"
+                tools:layout_editor_absoluteY="225dp" />
+            <TextView
+                android:gravity="center"
+                android:id="@+id/text_Icon_Reserviert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reservierte Produkten"/>
+
+
 
 
 
             <ImageView
                 android:layout_gravity="center"
-                android:id="@+id/Icon_Produkten"
+                android:id="@+id/Icon_VkBestaetigung"
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
-                app:srcCompat="@drawable/produkten" />
-
+                app:srcCompat="@drawable/vbesteatigung"
+                tools:layout_editor_absoluteX="101dp"
+                tools:layout_editor_absoluteY="417dp" />
             <TextView
                 android:gravity="center"
-                android:id="@+id/text_Icon_Produkten"
+                android:id="@+id/text_Icon_VkBestaetigung"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Produkten"/>
-
-
-            <ImageView
-                android:layout_gravity="center"
-                android:id="@+id/Icon_Maerten"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                app:srcCompat="@drawable/maerten"
-                android:text="Märkten"/>
-            <TextView
-                android:gravity="center"
-                android:id="@+id/text_Icon_Maerten"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Märkten"/>
-
-
+                android:text="Verkaufsbestätigung"/>
 
         </LinearLayout>
     </ScrollView>
-
 </android.support.constraint.ConstraintLayout>

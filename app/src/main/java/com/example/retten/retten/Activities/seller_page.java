@@ -53,6 +53,7 @@ public class seller_page extends AppCompatActivity {
             startActivity(new Intent(this, AddProductForm.class));
         }
     });*/
+
   public final String TAG = seller_page.class.getSimpleName();
     ListView shoppingItemView;
     ShoppingListAdapter adapter;
@@ -90,7 +91,7 @@ public class seller_page extends AppCompatActivity {
 
             addProduct = (Button) findViewById(R.id.sellerAddProduct);
 
-            DatabaseReference myref = database.getReference("sellers/" +
+            DatabaseReference myref = database.getReference("Supermarkt/" +
                     FirebaseAuth.getInstance().getCurrentUser().getUid());
             myref.addValueEventListener(new ValueEventListener() {
 

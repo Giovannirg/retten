@@ -45,7 +45,7 @@ public class AddProductForm extends AppCompatActivity {
 
 
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("Products/" +
+        mDatabase = FirebaseDatabase.getInstance().getReference("Produkt/" +
                 FirebaseAuth.getInstance().getCurrentUser().getUid());
 
 
@@ -59,14 +59,14 @@ public class AddProductForm extends AppCompatActivity {
 
                 //Barcode scanner
 
-      /* FirebaseVisionBarcodeDetectorOptions options =
+     /*  FirebaseVisionBarcodeDetectorOptions options =
                 new FirebaseVisionBarcodeDetectorOptions.Builder()
                         .setBarcodeFormats(
                                 FirebaseVisionBarcode.FORMAT_QR_CODE,
                                 FirebaseVisionBarcode.FORMAT_AZTEC)
-                        .build();*/
+                        .build();
 
-        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
+        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);*/
 
         findViewById(R.id.addProductSubmit).setOnClickListener(new View.OnClickListener() {
 
@@ -79,7 +79,7 @@ public class AddProductForm extends AppCompatActivity {
                         price.getText().toString().matches("") ||
                         quantity.getText().toString().matches("")) {
 
-                    Toast.makeText(getApplicationContext(), "Fill everything", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Bitte alles ausfullen", Toast.LENGTH_SHORT).show();
 
                 } else {
 
@@ -91,7 +91,7 @@ public class AddProductForm extends AppCompatActivity {
                             if (islistempty) {
                                 mDatabase.child("isProdsEmpty").setValue(Boolean.FALSE.toString());
                             } else {
-                                for (DataSnapshot snap : dataSnapshot.child("products").getChildren()) {
+                                for (DataSnapshot snap : dataSnapshot.child("Produkt").getChildren()) {
                                     int itemPrice = -1;
                                     try {
                                         itemPrice = Integer.valueOf(NumberFormat.getCurrencyInstance()

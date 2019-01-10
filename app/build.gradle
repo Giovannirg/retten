@@ -41,6 +41,7 @@ dependencies {
     //compile 'me.dm7.barcodescanner:zbar:1.9.8'
     implementation 'com.wonderkiln:camerakit:0.13.1'
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
 }
 
