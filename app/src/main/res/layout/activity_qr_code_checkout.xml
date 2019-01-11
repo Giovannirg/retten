@@ -14,11 +14,21 @@
 
     <ImageView
         android:id="@+id/qrcodebar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="323dp"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_marginBottom="267dp" />
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="243dp"
+        android:layout_height="169dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="84dp"
+        android:ems="10"
+        android:inputType="textMultiLine" />
 
 
 </RelativeLayout >

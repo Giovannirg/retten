@@ -60,39 +60,43 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.concurrent.CountDownLatch;
+
 
 public class HomeActivity extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-
-
+        mAuth=FirebaseAuth.getInstance();
+        DataHolder.getInstance().getUserData(mAuth.getCurrentUser().getEmail(),"jhghcfgh");
         if (DataHolder.getInstance().getUser() instanceof Supermarkt) {
 
 
             Intent inent = new Intent(getApplicationContext(), SupermarktActivity.class);
             startActivity(inent);
-                }
-
-
-
-
-         else {
-
-
-                    Intent intent = new Intent(getApplicationContext(), CustomerActivity.class);
-                    startActivity(intent);
-                }
-
 
 
         }
 
+
+         else{
+
+
+                Intent intent = new Intent(getApplicationContext(), CustomerActivity.class);
+                startActivity(intent);
+            }
+
+
+
+
     }
+}
 
 
 

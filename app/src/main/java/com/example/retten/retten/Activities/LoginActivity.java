@@ -63,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+
         HomeActivity = new Intent(this,com.example.retten.retten.Activities.HomeActivity.class);
         loginPhoto = findViewById(R.id.login_photo);
         loginPhoto.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                 final String password = userPassword.getText().toString();
 
                 if (mail.isEmpty() || password.isEmpty()) {
-                    showMessage("Please Verify All Field");
+                    showMessage("Bitte jeden Feld ausfüllen");
                     btnLogin.setVisibility(View.VISIBLE);
                     loginProgress.setVisibility(View.INVISIBLE);
                 }
@@ -378,6 +379,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         if(user != null) {
+
             //user is already connected  so we need to redirect him to home page
             updateUI();
 

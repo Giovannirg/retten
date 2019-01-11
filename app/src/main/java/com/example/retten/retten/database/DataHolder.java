@@ -15,6 +15,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class DataHolder {
     private static final DataHolder holder = new DataHolder();
@@ -105,6 +107,7 @@ public class DataHolder {
 
     public boolean getUserData (String email,String password) {
         try {
+            final AtomicBoolean done = new AtomicBoolean(false);
             Query query = FirebaseDatabase.getInstance().getReference("/User").orderByChild("email").equalTo(email);
             query.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -125,6 +128,7 @@ public class DataHolder {
                             DataHolder.getInstance().getUser().set_addresse(addresse);
                          //   DataHolder.getInstance().getUser().setAdmin((boolean)d.child("isAdmin").getValue());
                             DataHolder.getInstance().getUser().set_id((String)d.getKey());
+                            done.set(true);
                         }
                         else {
                             DataHolder.getInstance().setUser(new User());
@@ -140,6 +144,7 @@ public class DataHolder {
                             DataHolder.getInstance().getUser().set_addresse(addresse);
                             DataHolder.getInstance().getUser().setAdmin((boolean) d.child("isAdmin").getValue());
                             DataHolder.getInstance().getUser().set_id((String) d.getKey());
+                            done.set(true);
                         }
                     }
                 }
@@ -149,10 +154,13 @@ public class DataHolder {
 
                 }
             });
+
+                Thread.sleep(3000);
+
+            return true;
         }catch (Exception e) {
             return false;
         }
-        return true;
     }
 
 
