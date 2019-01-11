@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.CustomerActivity">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical" >
+
+
+
+
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/Icon_Produkten"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/produkten" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/text_Icon_Produkten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Produkten"/>
+
+
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/Icon_Maerten"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/maerten"
+                android:text="Märkten"/>
+            <TextView
+                android:gravity="center"
+                android:id="@+id/text_Icon_Maerten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Märkten"/>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

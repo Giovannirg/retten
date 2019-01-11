@@ -36,17 +36,15 @@
         <activity android:name=".Activities.forgotPassword" />
         <activity android:name=".Activities.AdminPage" />
         <activity android:name=".Activities.SupermarktActivity" />
-        <activity android:name=".Activities.SaleConfirm"/>
+        <activity android:name=".Activities.CustomerActivity" />
+        <activity android:name=".Activities.SaleConfirm" />
+
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="barcode" />
-          <!-- android:name="com.google.android.gms.vision.DEPENDENCIES" -->
+        <!-- android:name="com.google.android.gms.vision.DEPENDENCIES" -->
 
-
-
-
-
-
+        <activity android:name=".Activities.QrCodeCheckoutActivity"></activity>
     </application>
 
 </manifest>

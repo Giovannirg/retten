@@ -157,9 +157,9 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-     Thread thread=new Thread();
+   //  Thread thread=new Thread();
 
-    private void updateUI() {
+  /*  private void updateUI() {
 
         if(mAuth.getCurrentUser()!=null)
         { loginProgress = (ProgressBar) findViewById(R.id.loginProgress);
@@ -176,8 +176,67 @@ public class LoginActivity extends AppCompatActivity {
                                 if (progressStatus > 100) {
                                     loginProgress.setVisibility(View.GONE);
 
-                                    Intent inent = new Intent(getApplicationContext(),HomeActivity.class);
+                                   /* Intent inent = new Intent(getApplicationContext(),HomeActivity.class);
                                     startActivity(inent);
+
+                                    String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                                    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+                                    DatabaseReference uidRef = rootRef.child("user").child(uid);
+                                    ValueEventListener valueEventListener = new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+
+
+                                            if(dataSnapshot.child("isAdmin") != null || dataSnapshot.child("isSupermarkt") != null) {
+
+                                                if(dataSnapshot.child("isSupermarkt") != null) {
+
+                                                  //  startActivity(new Intent(getApplicationContext(), SupermarktActivity.class));
+                                                    Intent inent = new Intent(getApplicationContext(),SupermarktActivity.class);
+                                                    startActivity(inent);
+
+                                                }
+
+                                                else if(dataSnapshot.child("isAdmin") != null) {
+
+                                                //    startActivity(new Intent(getApplicationContext(), AdminPage.class));
+                                                    Intent inent = new Intent(getApplicationContext(),AdminPage.class);
+                                                    startActivity(inent);
+
+
+                                                }
+                                                else if(dataSnapshot.child("isAdmin") == null && dataSnapshot.child("isSupermarkt") == null) {
+                                                   // startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+
+                                                    Intent inent = new Intent(getApplicationContext(),HomeActivity.class);
+                                                    startActivity(inent);
+                                                }
+
+                                            }
+
+
+                                        }
+
+                                        private static final String TAG = "LoginActivity";
+                                        @Override
+
+                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            Log.d(TAG, databaseError.getMessage());
+                                        }
+                                    };
+                                    uidRef.addListenerForSingleValueEvent(valueEventListener);
+
+
+
+
+
+
+
+
+
                                     thread.interrupt();
                                 }
 
@@ -196,7 +255,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-    }
+    }*/
 
     private void showMessage(String text) {
 
@@ -206,7 +265,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    @Override
+  /*  @Override
     protected void onStart() {
         super.onStart();
         user = mAuth.getCurrentUser();
@@ -244,28 +303,30 @@ public class LoginActivity extends AppCompatActivity {
 
                                                 if(dataSnapshot.child("isSupermarkt") != null) {
 
-                                                    startActivity(new Intent(getApplicationContext(), SupermarktActivity.class));
-
+                                                  //  startActivity(new Intent(getApplicationContext(), SupermarktActivity.class));
+                                                    Intent inent = new Intent(getApplicationContext(),SupermarktActivity.class);
+                                                    startActivity(inent);
 
                                                 }
 
                                                 else if(dataSnapshot.child("isAdmin") != null) {
 
-                                                    startActivity(new Intent(getApplicationContext(), AdminPage.class));
+                                               //     startActivity(new Intent(getApplicationContext(), AdminPage.class));
+                                                    Intent inent = new Intent(getApplicationContext(),AdminPage.class);
+                                                    startActivity(inent);
 
 
                                                 }
                                                 else if(dataSnapshot.child("isAdmin") == null && dataSnapshot.child("isSupermarkt") == null) {
-                                                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                                                 //   startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+
+                                                    Intent inent = new Intent(getApplicationContext(),HomeActivity.class);
+                                                    startActivity(inent);
                                                 }
 
                                             }
 
-                                            /*else if (dataSnapshot.child("TYPE") == 2) {
-                                                startActivity(new Intent(MainActivity.this, teacher.class));
-                                            } else if (dataSnapshot.child("TYPE") == 3) {
-                                                startActivity(new Intent(MainActivity.this, admin.class));
-                                            }*/
+
                                         }
 
                                         private static final String TAG = "LoginActivity";
@@ -299,10 +360,35 @@ public class LoginActivity extends AppCompatActivity {
             });
             thread.start();
         }
+}*/
+
+    private void updateUI() {
+
+        startActivity(HomeActivity);
+        finish();
+
+    }
 
 
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if(user != null) {
+            //user is already connected  so we need to redirect him to home page
+            updateUI();
+
+        }
 
 
 
     }
+
+
+
+
+
 }

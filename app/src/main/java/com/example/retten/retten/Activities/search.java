@@ -103,8 +103,8 @@ public class search extends AppCompatActivity {
 
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    if(Boolean.valueOf(dataSnapshot.child("isProdsEmpty").getValue().toString())){
-                 //   if(dataSnapshot.child("Anzahl") == null) {
+               //     if(Boolean.valueOf(dataSnapshot.child("isProdsEmpty").getValue().toString())){
+                    if(dataSnapshot.child("Anzahl") == null) {
                         shoppingItemView.setVisibility(View.GONE);
                         searchbar.setVisibility(View.GONE);
                         ifSellerListEmpty.setVisibility(View.VISIBLE);
@@ -112,7 +112,7 @@ public class search extends AppCompatActivity {
                         shoppingItemView.setVisibility(View.VISIBLE);
                         ifSellerListEmpty.setVisibility(View.GONE);
 
-                        shoppingItems = setUpList(dataSnapshot.child("Product"));
+                        shoppingItems = setUpList(dataSnapshot.child("Produkt"));
                         adapter = new ShoppingListAdapter(getApplicationContext(), shoppingItems);
                         shoppingItemView.setAdapter(adapter);
 
@@ -148,7 +148,7 @@ public class search extends AppCompatActivity {
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-                    Log.w(TAG, "Failed to read value.", databaseError.toException());
+                    Log.w(TAG, "Database könnte nicht gelesen werden", databaseError.toException());
                 }
             });
 

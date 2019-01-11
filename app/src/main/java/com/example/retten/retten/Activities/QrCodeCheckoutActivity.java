@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.example.retten.retten.R;
 
-public class cart_item extends AppCompatActivity {
+public class QrCodeCheckoutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cart_item);
+        setContentView(R.layout.activity_qr_code_checkout);
     }
 }

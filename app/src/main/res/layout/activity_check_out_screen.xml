@@ -28,7 +28,7 @@
         android:textSize="16sp" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/iconBar"
         android:layout_width="122dp"
         android:layout_height="115dp"
         android:layout_alignStart="@+id/congrats"
@@ -38,7 +38,7 @@
         android:src="@drawable/bar" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/iconKarte"
         android:layout_width="120dp"
         android:layout_height="115dp"
         android:layout_alignParentEnd="true"

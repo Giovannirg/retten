@@ -64,9 +64,11 @@ public class ShoppingCartWindow extends AppCompatActivity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (dataSnapshot.getKey().equals(user.getUid())) {
-                                Log.e("CART", dataSnapshot.child("isCartEmpty").getValue().toString());
-                                isCartEmpty = (Boolean) dataSnapshot.child("isCartEmpty").getValue();
-                                if (isCartEmpty) {
+                            //    Log.e("CART", dataSnapshot.child("isCartEmpty").getValue().toString());
+                               // isCartEmpty = (Boolean) dataSnapshot.child("isCartEmpty").getValue();
+                                //if (isCartEmpty) {
+                                if (dataSnapshot.child("isCartEmpty") == null) {
+
                                     priceView.setText(NumberFormat.getCurrencyInstance().format(0));
                                 } else {
                                     setUpShoppingCart(dataSnapshot.child("cartItems"));

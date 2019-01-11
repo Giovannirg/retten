@@ -4,27 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/individialListItemForAdapter"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cartitemstyle"
     android:orientation="horizontal"
-    android:paddingEnd="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
     android:paddingStart="16dp"
+    android:paddingLeft="16dp"
+    android:paddingEnd="16dp"
+    android:paddingRight="16dp"
     tools:context=".Activities.ShoppingCartWindow">
 
     <ImageView
         android:id="@+id/itemIcon"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
         android:layout_width="60dp"
-        android:layout_height="60dp" />
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -32,9 +33,9 @@
             android:id="@+id/itemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
             android:ellipsize="end"
             android:maxLines="2"
+            android:textColor="@android:color/black"
             android:textSize="16sp"
             tools:text="Name" />
 
@@ -45,18 +46,18 @@
             android:ellipsize="end"
             android:fontFamily="sans-serif-medium"
             android:maxLines="1"
+            android:textColor="@android:color/white"
             android:textSize="12sp"
-            android:textColor="@android:color/darker_gray"
             tools:text="Item Descrition" />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/itemPrice"
-        android:textColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:textSize="16sp"
-        android:text="big bucks"/>
+        android:text="big bucks"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
 </LinearLayout>

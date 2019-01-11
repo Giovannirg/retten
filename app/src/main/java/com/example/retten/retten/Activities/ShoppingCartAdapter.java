@@ -36,7 +36,7 @@ public class ShoppingCartAdapter extends ArrayAdapter {
 
         View listItemView = convertView;
         if (listItemView == null) listItemView = LayoutInflater.from(getContext()).inflate(
-                R.layout.activity_cart_item, parent, false
+                R.layout.cart_item, parent, false
         );
 
         ShoppingItem currentItem = (ShoppingItem) getItem(position);

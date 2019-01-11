@@ -87,8 +87,11 @@ public class AddProductForm extends AppCompatActivity {
                         ArrayList<ShoppingItem> productList = new ArrayList<>();
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            Boolean islistempty = Boolean.valueOf(dataSnapshot.child("isProdsEmpty").getValue().toString());
-                            if (islistempty) {
+                         //   Boolean islistempty = Boolean.valueOf(dataSnapshot.child("isProdsEmpty").getValue().toString());
+
+                           // if (islistempty) {
+                          if  (dataSnapshot.child("islistempty") == null) {
+
                                 mDatabase.child("isProdsEmpty").setValue(Boolean.FALSE.toString());
                             } else {
                                 for (DataSnapshot snap : dataSnapshot.child("Produkt").getChildren()) {
