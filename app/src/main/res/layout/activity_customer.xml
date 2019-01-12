@@ -7,49 +7,49 @@
     tools:context=".Activities.CustomerActivity">
 
 
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:orientation="vertical" >
-
-
+            android:orientation="vertical">
 
 
             <ImageView
-                android:layout_gravity="center"
                 android:id="@+id/Icon_Produkten"
                 android:layout_width="wrap_content"
-                android:layout_height="150dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
                 app:srcCompat="@drawable/produkten" />
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/text_Icon_Produkten"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Produkten"/>
-
+                android:gravity="center"
+                android:text="Produkten" />
 
             <ImageView
-                android:layout_gravity="center"
                 android:id="@+id/Icon_Maerten"
                 android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                app:srcCompat="@drawable/maerten"
-                android:text="Märkten"/>
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:text="Märkten"
+                app:srcCompat="@drawable/maerten" />
+
             <TextView
-                android:gravity="center"
                 android:id="@+id/text_Icon_Maerten"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Märkten"/>
-
+                android:gravity="center"
+                android:text="Märkten" />
 
 
         </LinearLayout>

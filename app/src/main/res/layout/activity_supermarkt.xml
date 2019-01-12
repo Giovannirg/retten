@@ -18,7 +18,7 @@
 
             <ImageView
                 android:id="@+id/Icon_Produkt_Liste"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/produkliste" />
@@ -31,10 +31,10 @@
                 android:text="Produktlist" />
 
             <ImageView
-                android:layout_gravity="center"
                 android:id="@+id/Icon_Reserviert"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:layout_gravity="center"
                 app:srcCompat="@drawable/res_produkt"
                 tools:layout_editor_absoluteX="93dp"
                 tools:layout_editor_absoluteY="225dp" />
@@ -46,14 +46,11 @@
                 android:text="Reservierte Produkten"/>
 
 
-
-
-
             <ImageView
-                android:layout_gravity="center"
                 android:id="@+id/Icon_VkBestaetigung"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:layout_gravity="center"
                 app:srcCompat="@drawable/vbesteatigung"
                 tools:layout_editor_absoluteX="101dp"
                 tools:layout_editor_absoluteY="417dp" />

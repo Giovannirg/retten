@@ -45,7 +45,7 @@ public class AddProductForm extends AppCompatActivity {
 
 
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("Produkt/" +
+        mDatabase = FirebaseDatabase.getInstance().getReference("Supermarkt/" +
                 FirebaseAuth.getInstance().getCurrentUser().getUid());
 
 
@@ -87,14 +87,15 @@ public class AddProductForm extends AppCompatActivity {
                         ArrayList<ShoppingItem> productList = new ArrayList<>();
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                         //   Boolean islistempty = Boolean.valueOf(dataSnapshot.child("isProdsEmpty").getValue().toString());
+                   //       boolean islistempty = Boolean.valueOf(dataSnapshot.child("isProdsEmpty").getValue().toString());
 
-                           // if (islistempty) {
-                          if  (dataSnapshot.child("islistempty") == null) {
+                            //       if (islistempty) {
+                            //
+                            if (dataSnapshot.child("islistempty") == null){
 
                                 mDatabase.child("isProdsEmpty").setValue(Boolean.FALSE.toString());
                             } else {
-                                for (DataSnapshot snap : dataSnapshot.child("Produkt").getChildren()) {
+                                for (DataSnapshot snap : dataSnapshot.child("Products").getChildren()) {
                                     int itemPrice = -1;
                                     try {
                                         itemPrice = Integer.valueOf(NumberFormat.getCurrencyInstance()
@@ -116,8 +117,7 @@ public class AddProductForm extends AppCompatActivity {
                                     ));
                                 }
                             }
-//                            same product id can be added. note to future devs. remove that feature.
-//                            and change the way ids are generated
+
                             productList.add(new ShoppingItem(
                                     productid.getText().toString(),
                                     title.getText().toString(),

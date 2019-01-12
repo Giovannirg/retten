@@ -68,13 +68,16 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
 
+
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        mAuth=FirebaseAuth.getInstance();
+       mAuth=FirebaseAuth.getInstance();
         DataHolder.getInstance().getUserData(mAuth.getCurrentUser().getEmail(),"jhghcfgh");
+    //    DataHolder.getInstance().getUserData.getContentResolver();
         if (DataHolder.getInstance().getUser() instanceof Supermarkt) {
 
 
@@ -85,12 +88,22 @@ public class HomeActivity extends AppCompatActivity {
         }
 
 
-         else{
+
+
+        else {
 
 
                 Intent intent = new Intent(getApplicationContext(), CustomerActivity.class);
                 startActivity(intent);
             }
+
+
+    
+
+
+
+
+
 
 
 

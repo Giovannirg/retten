@@ -155,7 +155,7 @@ public class DataHolder {
                 }
             });
 
-                Thread.sleep(3000);
+                Thread.sleep(4000);
 
             return true;
         }catch (Exception e) {

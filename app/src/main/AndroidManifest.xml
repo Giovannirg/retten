@@ -29,7 +29,11 @@
         <activity android:name=".Activities.seller_page" />
         <activity android:name=".Activities.cart_item" />
         <activity android:name=".Activities.ShoppingCartWindow" />
-        <activity android:name=".Activities.IndividualProduct" />
+        <activity
+            android:name="Activities.IndividualProduct"
+            android:label="@string/title_activity_individual_product"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.IndividualProductSeller" />
         <activity android:name=".Activities.CheckOutScreen" />
         <activity android:name=".Activities.AddProductForm" />

@@ -76,7 +76,7 @@ public class seller_page extends AppCompatActivity {
             setContentView(R.layout.activity_seller_page);
 
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-            toolbar.setTitle("Rett€n");
+            toolbar.setTitle("Rett€n Supermärkten");
             setSupportActionBar(toolbar);
 
             searchbar = (EditText)findViewById(R.id.searchBar);

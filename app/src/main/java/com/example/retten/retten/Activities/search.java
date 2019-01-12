@@ -39,7 +39,7 @@ public class search extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
 
-   /* @Override
+  /*  @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
@@ -55,7 +55,7 @@ public class search extends AppCompatActivity {
             }
         });
     }*/
-   public final String TAG = HomeActivity.class.getSimpleName();
+   public final String TAG = search.class.getSimpleName();
     ListView shoppingItemView;
     ShoppingListAdapter adapter;
     EditText toolbar;
@@ -64,8 +64,7 @@ public class search extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
 
-    TextView ifSellerListEmpty;
-    Button addProduct;
+
 
     private Boolean exit = false;
     private ArrayList<ShoppingItem> shoppingItems;
@@ -77,101 +76,7 @@ public class search extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        if (DataHolder.getInstance().getUser() instanceof Supermarkt) {
-       // if(getIntent().getExtras().getBoolean("isuserseller")){
-            setContentView(R.layout.activity_seller_page);
-
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-            toolbar.setTitle("Rett€n Supermarkt");
-            setSupportActionBar(toolbar);
-
-            searchbar = (EditText)findViewById(R.id.searchBar);
-
-            progressBar = (ProgressBar) findViewById(R.id.sellerPageProgressBar);
-            progressBar.setVisibility(View.VISIBLE);
-
-            addProduct = (Button) findViewById(R.id.sellerAddProduct);
-            shoppingItemView = (ListView) findViewById(R.id.sellerProductList);
-
-            ifSellerListEmpty = (TextView) findViewById(R.id.ifSellerListEmpty);
-
-             addProduct = (Button) findViewById(R.id.sellerAddProduct);
-
-            DatabaseReference myref = database.getReference("Produkt/" +
-                    FirebaseAuth.getInstance().getCurrentUser().getUid());
-            myref.addValueEventListener(new ValueEventListener() {
-
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-               //     if(Boolean.valueOf(dataSnapshot.child("isProdsEmpty").getValue().toString())){
-                    if(dataSnapshot.child("Anzahl") == null) {
-                        shoppingItemView.setVisibility(View.GONE);
-                        searchbar.setVisibility(View.GONE);
-                        ifSellerListEmpty.setVisibility(View.VISIBLE);
-                    } else {
-                        shoppingItemView.setVisibility(View.VISIBLE);
-                        ifSellerListEmpty.setVisibility(View.GONE);
-
-                        shoppingItems = setUpList(dataSnapshot.child("Produkt"));
-                        adapter = new ShoppingListAdapter(getApplicationContext(), shoppingItems);
-                        shoppingItemView.setAdapter(adapter);
-
-                        shoppingItemView.setTextFilterEnabled(true);
-                        searchbar.addTextChangedListener(new TextWatcher() {
-                            @Override
-                            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                            }
-
-                            @Override
-                            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                                int textlength = charSequence.length();
-                                ArrayList<ShoppingItem> tempShoppingItems = new ArrayList<>();
-                                for(ShoppingItem x: shoppingItems){
-                                    if (textlength <= x.getTitle().length()) {
-                                        if (x.getTitle().toLowerCase().contains(charSequence.toString().toLowerCase())) {
-                                            tempShoppingItems.add(x);
-                                        }
-                                    }
-                                }
-                                shoppingItemView.setAdapter(new ShoppingListAdapter(getApplicationContext(), tempShoppingItems));
-                            }
-
-                            @Override
-                            public void afterTextChanged(Editable editable) {
-
-                            }
-                        });
-                    }
-                    progressBar.setVisibility(View.GONE);
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                    Log.w(TAG, "Database könnte nicht gelesen werden", databaseError.toException());
-                }
-            });
-
-            addProduct.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // add new layout and add product
-                    // then search
-                    startActivity(new Intent(search.this, AddProductForm.class));
-                }
-            });
-
-            shoppingItemView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Intent productIntent = new Intent(search.this, IndividualProductSeller.class);
-                    productIntent.putExtra("Produkt", shoppingItems.get(i));
-                    startActivity(productIntent);
-                }
-            });
-
-        } else {
-            setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_search);
 
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             toolbar.setTitle("Rett€n");
@@ -192,13 +97,12 @@ public class search extends AppCompatActivity {
 
             DatabaseReference myRef = database.getReference("items");
             myRef.addValueEventListener(new ValueEventListener() {
-                // This listener is only for database with reference of key "items"
+                //  listener von items
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    // This method is called once with the initial value and again
-                    // whenever data at this location is updated.
+                    //dieser Methode lädt die Information jedes mal die es sich ändert
 
-                    // Now the Shopping List gets updated whenever the data changes in the server
+                    // Query Daten aus dem Server
                     shoppingItems = getAllItems(dataSnapshot);
                     adapter = new ShoppingListAdapter(getApplicationContext(), shoppingItems);
                     progressBar.setVisibility(View.GONE);
@@ -248,7 +152,7 @@ public class search extends AppCompatActivity {
                 }
             });
 
-        }
+
     }
 
 
@@ -300,7 +204,7 @@ public class search extends AppCompatActivity {
         for (DataSnapshot item : dataSnapshot.getChildren()) {
 
             items.add(new ShoppingItem(
-                    item.child("productID").getValue().toString(),
+                    item.child("productid").getValue().toString(),
                     item.child("name").getValue().toString(),
                     item.child("type").getValue().toString(),
                     item.child("description").getValue().toString(),

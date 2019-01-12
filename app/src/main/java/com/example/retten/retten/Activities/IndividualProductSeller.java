@@ -55,12 +55,12 @@ public class IndividualProductSeller extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.individualProductPageProgressBarSeller);
         progressBar.setVisibility(View.VISIBLE);
 
-        item = (ShoppingItem) getIntent().getSerializableExtra("Produkt");
+        item = (ShoppingItem) getIntent().getSerializableExtra("Products");
         quantity = item.getQuantity();
 
         removeProduct = (Button) findViewById(R.id.deleteProductSeller);
 
-        mDatabase = database.getReference("sellers/" +
+        mDatabase = database.getReference("Supermarkt/" +
                 FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         removeProduct.setOnClickListener(new View.OnClickListener() {
@@ -72,18 +72,18 @@ public class IndividualProductSeller extends AppCompatActivity {
 
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        // for getting the list of products. should probably make this a new class tbh.
-                        for (DataSnapshot snap : dataSnapshot.child("Produkten").getChildren()) {
+                        // lieber neue Klass erstellen
+                        for (DataSnapshot snap : dataSnapshot.child("Products").getChildren()) {
                             int itemPrice = -1;
                             try {
                                 itemPrice = Integer.valueOf(NumberFormat.getCurrencyInstance()
-                                        .parse(String.valueOf(snap.child("Preis").getValue()))
+                                        .parse(String.valueOf(snap.child("Price").getValue()))
                                         .toString());
                             } catch (ParseException e) {
                                 e.printStackTrace();
                             }
 
-                            String productID = snap.child("productID").getValue().toString();
+                            String productID = snap.child("productid").getValue().toString();
 
                             productList.add(new ShoppingItem(
                                     productID,
@@ -105,9 +105,9 @@ public class IndividualProductSeller extends AppCompatActivity {
                             productList.add(new ShoppingItem("", "", "", "", -1, -1));
                         }
 
-                        Map<String, Object> seller_products = new HashMap<>();
-                        seller_products.put("Produkten", productList);
-                        mDatabase.updateChildren(seller_products);
+                        Map<String, Object> supermarkt_products = new HashMap<>();
+                        supermarkt_products.put("Products", productList);
+                        mDatabase.updateChildren(supermarkt_products);
                         Toast.makeText(getApplicationContext(), "gelöscht!", Toast.LENGTH_SHORT).show();
                         finish();
                     }

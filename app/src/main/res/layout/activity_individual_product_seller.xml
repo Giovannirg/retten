@@ -109,9 +109,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right|bottom|end"
         android:layout_margin="8dp"
+        android:background="@drawable/button_style"
         android:drawableStart="@drawable/ic_remove_black_24dp"
         android:drawableLeft="@drawable/ic_remove_black_24dp"
-        android:text="löschen" />
+        android:text="löschen"
+        android:textColor="#fff"/>
 
     <ProgressBar
         android:id="@+id/individualProductPageProgressBarSeller"
