@@ -84,8 +84,6 @@ Zu Beginn des Projektes wurden verschiedene Soll- sowie Kann-Ziele determiniert,
 3. Es kann eine Möglichkeit implementiert werden, mit welcher die Kaufabwicklung beim Supermarkt vereinfacht wird. Ein Beispiel hierfür ist ein generierter QR-Code, welcher auf einen bestimmten Warenkorb referenziert.
 In der finalen Zusammenfassung wird näher auf den Erfolg sowie den Abschluss der Soll- und Kann-Ziele eingegangen. 
 
-
-```
 ## Produktmodelle <a name="Produktmodelle"></a>
 
 In dem Punkt Produktmodelle wird näher auf die Planung der Datenbank und den Ablauf unserer Screens eingegangen. Als Erstes wird der Punkt „Datenbank“ näher diskutiert und über der konzeptionelle und relationale Datenbankentwurf erläutert. 
@@ -231,6 +229,9 @@ assertEquals(result, "Straße");
 
 
 Im Android Studio lassen sich mit einem Rechtsklick auf die Test-Klasse mit ‚Run UnitTest‘ die Tests ausführen. In der Console werden die Ergebnisse angezeigt.
+
+4. [Zusammenfassung](#Fazit)
+
 
 
 
