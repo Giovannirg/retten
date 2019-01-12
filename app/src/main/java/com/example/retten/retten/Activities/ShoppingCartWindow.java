@@ -64,10 +64,10 @@ public class ShoppingCartWindow extends AppCompatActivity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (dataSnapshot.getKey().equals(user.getUid())) {
-                            //    Log.e("CART", dataSnapshot.child("isCartEmpty").getValue().toString());
-                               // isCartEmpty = (Boolean) dataSnapshot.child("isCartEmpty").getValue();
-                                //if (isCartEmpty) {
-                                if (dataSnapshot.child("isCartEmpty") == null) {
+                                Log.e("CART", dataSnapshot.child("isCartEmpty").getValue().toString());
+                               isCartEmpty = (Boolean) dataSnapshot.child("isCartEmpty").getValue();
+                              if  (isCartEmpty) {
+                                //if (dataSnapshot.child("isCartEmpty") == null) {
 
                                     priceView.setText(NumberFormat.getCurrencyInstance().format(0));
                                 } else {
@@ -178,8 +178,8 @@ public class ShoppingCartWindow extends AppCompatActivity {
             DatabaseReference myRefClear = FirebaseDatabase.getInstance().getReference("users").child(user.getUid());
             myRefClear.child(user.getUid()).push();
 
-            // As firebase does not accept keys with empty values, I'm putting a dummy item with empty Strings and -1 as ints
-            // Quantity of items in cart is not realtime database quantity but the quantity the user wants
+            // Da Firebase keine Schlüssel mit leeren Werten akzeptiert, setze ich ein Dummy-Element mit leeren Strings und -1 als Ints ein
+            // Die Menge der Artikel im Warenkorb ist nicht die Menge der Echtzeitdatenbank, sondern die Menge, die der Benutzer wünscht
             ArrayList<ShoppingItem> cart = new ArrayList<>();
             cart.add(new ShoppingItem("", "", "", "", -1, -1));
             Map<String, Object> cartItems = new HashMap<>();

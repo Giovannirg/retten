@@ -48,7 +48,7 @@
             android:maxLines="1"
             android:textColor="@android:color/white"
             android:textSize="12sp"
-            tools:text="Item Descrition" />
+            tools:text="Item Description" />
 
     </LinearLayout>
 
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="big bucks"
+        android:text="€"
         android:textColor="@android:color/white"
         android:textSize="16sp" />
 </LinearLayout>

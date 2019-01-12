@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        HomeActivity = new Intent(this,com.example.retten.retten.Activities.HomeActivity.class);
+        HomeActivity = new Intent(this,com.example.retten.retten.Activities.CustomerActivity.class);
         loginPhoto = findViewById(R.id.login_photo);
         loginPhoto.setOnClickListener(new View.OnClickListener() {
             @Override

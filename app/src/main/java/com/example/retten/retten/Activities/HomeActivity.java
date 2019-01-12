@@ -45,10 +45,20 @@ import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.example.retten.retten.R;
 import com.example.retten.retten.database.DataHolder;
@@ -60,55 +70,39 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 
 
 public class HomeActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
 
 
 
+    Button addProduct;
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private Boolean exit = false;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-       mAuth=FirebaseAuth.getInstance();
-        DataHolder.getInstance().getUserData(mAuth.getCurrentUser().getEmail(),"jhghcfgh");
-    //    DataHolder.getInstance().getUserData.getContentResolver();
-        if (DataHolder.getInstance().getUser() instanceof Supermarkt) {
+
+        if(getIntent().getExtras().getBoolean("isSupermarkt")){
+            setContentView(R.layout.activity_supermarkt);
 
 
-            Intent inent = new Intent(getApplicationContext(), SupermarktActivity.class);
-            startActivity(inent);
+        } else {
+            setContentView(R.layout.activity_customer);
 
 
         }
-
-
-
-
-        else {
-
-
-                Intent intent = new Intent(getApplicationContext(), CustomerActivity.class);
-                startActivity(intent);
-            }
-
-
-    
-
-
-
-
-
-
-
-
-
     }
+
+
 }
 
 
