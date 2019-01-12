@@ -30,7 +30,7 @@
         <activity android:name=".Activities.cart_item" />
         <activity android:name=".Activities.ShoppingCartWindow" />
         <activity
-            android:name="Activities.IndividualProduct"
+            android:name=".Activities.IndividualProduct"
             android:label="@string/title_activity_individual_product"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />

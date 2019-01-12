@@ -141,15 +141,15 @@ public class IndividualProduct extends AppCompatActivity {
             public void onClick(View view) {
                 progressBar.setVisibility(View.VISIBLE);
 
-                // Probably a redundant if condition below, but I don't trust computers. :P
+
                 if (dataSnapshot.getKey().equals(user.getUid())){
                     isCartEmpty = (Boolean) dataSnapshot.child("isCartEmpty").getValue();
-                    // if is cart empty, create new arraylist when user wants to add to cart
-                    //      this is to prevent creation of new cart every time user wants to see stuff
-                    // else create a new cart and update
+                    // Warenkorb empty, dann erstellt eine neue Liste
+                    //      vermeindet ein neuen Korb zu erstellen jedes mal das etwas hingeguckt wird
+                    // sonst neuer Korb wird erstell
 
                     if (!isCartEmpty){
-                        // Get the cart contents and then update as necessary
+                        // bekommt and update den Inhalt des Korbs
                         cartItems = new ArrayList<>();
                         int tempIndex = 0;
                         for (DataSnapshot snap : dataSnapshot.child("cartItems").getChildren()){
@@ -186,10 +186,10 @@ public class IndividualProduct extends AppCompatActivity {
 
                 Snackbar.make(
                         findViewById(R.id.addToCartProductPage),
-                        "Adding to cart " + quantity + " items.",
+                        "in den Warenkorb hinzugefügt " + quantity + " items.",
                         Snackbar.LENGTH_SHORT).show();
 
-                // if cart is empty, then create new cart and push when user adds stuff
+                // Wenn der Einkaufswagen leer ist, wird  einen neuen Einkaufswagen erstellt und wird hinzigefuegt, wenn der Benutzer etwas hinzufuegt
                 if(isCartEmpty){
                     cartItems = new ArrayList<>();
                     Map<String, Object> cartState = new HashMap<>();
@@ -246,7 +246,7 @@ public class IndividualProduct extends AppCompatActivity {
         } else {
             Toast.makeText(
                     getApplicationContext(),
-                    "Limit of 5 products only",
+                    "Max 5 Produkten, soweit",
                     Toast.LENGTH_SHORT)
                     .show();
         }

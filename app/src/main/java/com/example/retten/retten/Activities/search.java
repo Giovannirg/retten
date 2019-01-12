@@ -158,7 +158,7 @@ public class search extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu;
         getMenuInflater().inflate(R.menu.menu_main_app_page, menu);
         return true;
     }
@@ -186,7 +186,7 @@ public class search extends AppCompatActivity {
         if (exit) {
             finish();
         } else {
-            Snackbar.make(findViewById(R.id.main_content), "Press back again to exit", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(findViewById(R.id.main_content), "um zu schliessen, noch einmal die Zurücktaste druecken", Snackbar.LENGTH_SHORT).show();
             exit = true;
             new Handler().postDelayed(new Runnable() {
                 @Override

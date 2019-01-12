@@ -71,8 +71,7 @@ public class ShoppingCartAdapter extends ArrayAdapter {
         ((TextView) listItemView.findViewById(R.id.cartItemTotal))
                 .setText(NumberFormat.getCurrencyInstance().format(itemPrice * currentItem.getQuantity()));
 
-        // No idea how to implement remove individual item from cart
-        // Appreciated if anyone can fix it.
+       //derzeit nicht möglich
 //        ImageView removeFromCart = (ImageView) listItemView.findViewById(R.id.removeFromCart);
 //        removeFromCart.setImageResource(R.drawable.ic_clear_black_24dp);
 //        removeFromCart.setOnClickListener(new View.OnClickListener() {

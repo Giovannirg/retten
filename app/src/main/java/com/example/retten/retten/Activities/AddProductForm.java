@@ -33,7 +33,7 @@ public class AddProductForm extends AppCompatActivity {
 
     TextView productid, title, type, description, price, quantity;
     Bitmap bitmap;
-
+    private Boolean islistempty = true;
 
 
     DatabaseReference mDatabase;
@@ -87,11 +87,12 @@ public class AddProductForm extends AppCompatActivity {
                         ArrayList<ShoppingItem> productList = new ArrayList<>();
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                   //       boolean islistempty = Boolean.valueOf(dataSnapshot.child("isProdsEmpty").getValue().toString());
 
-                            //       if (islistempty) {
+                   islistempty = Boolean.valueOf(dataSnapshot.child("isProdsEmpty").getValue().toString());
+
+                                  if (islistempty) {
                             //
-                            if (dataSnapshot.child("islistempty") == null){
+                            //if (dataSnapshot.child("islistempty") == null){
 
                                 mDatabase.child("isProdsEmpty").setValue(Boolean.FALSE.toString());
                             } else {
