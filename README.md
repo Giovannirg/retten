@@ -5,6 +5,8 @@
         <center>
         
 # Retten
+(<a href="https://imgur.com/hZDUXt6"><img src="https://i.imgur.com/hZDUXt6.jpg" title="source: imgur.com" /></a>)
+
 
 ### Projekt Softwareentwicklung - WiSe 18/19 
 
@@ -29,21 +31,23 @@ HTW Berlin
 #### Inhaltsverzeichnis
 
 1. [Einführung](#introduction)
+
+   1. [Abstrakt](#Abstrakt)
+   2. [Produktidee](#Produktidee)
+   3. [Ziele](#Ziele)
+
 2. [Produktmodelle](#Modellierung)
    1. [Datenbank](#db)
    2. [Zustandsdiagramm](#ZustandDiagramm)
    3. [Widgets](#Widgets)
    4. [Programme](#Programm)
-
-   
-3. [Implementierung](#ImplementierungDb)
-4. [Implementierung der Anwendung](#db)
+3. [Implementierung der Anwendung](#db)
    1. [Implementierung der Datenbank in Firebase](#dbFirebase)
    2. [Datenbank in Android Studio](#dbAndroidStudio)
    3. [Design](#Design)
    4. [Testing](#Test)
        
-5. [Zusammenfassung](#Fazit)
+4. [Zusammenfassung](#Fazit)
 
 
 
@@ -51,14 +55,18 @@ HTW Berlin
 
 (<a href="https://imgur.com/hZDUXt6"><img src="https://i.imgur.com/hZDUXt6.jpg" title="source: imgur.com" /></a>)
 
+1. [Abstrakt](#Abstrakt)
+
 ## Abstrakt
 
+2. [Produktidee](#Produktidee)
 
 ## Produktidee
 
 Unser Produkt soll helfen zu verhindern, dass Lebensmittel weggeschmissen werden, welche noch Verwendung finden können. In Deutschland und auch in vielen anderen Ländern landen noch intakte Produkte auf dem Müll. Auf der ganzen Welt werden rund 1,3 Milliarden Tonnen Lebensmittel jährlich entsorgt siehe https://www.wwf.de/themen-projekte/landwirtschaft/ernaehrung-konsum/verschwendung/ und  https://www.bzfe.de/inhalt/lebensmittelverschwendung-1868.html. Um diesen Trend zumindest marginal entgegenzuwirken, haben wir die App „retten“ entwickelt.
 Mit unserer App kann ein Supermarkt Produkte verkaufen, die er normalerweise entsorgen müsste. Die Kunden können mithilfe der App Produkte günstiger erwerben und direkt bei ihrem Supermarkt in der Nähe abholen. Die App versucht hierbei, möglichst einfach und schnell zwischen Kunde und Supermarkt zu vermitteln und den Gebrauch für beide Seiten so einfach wie möglich zu gestalten.
 
+3. [Ziele](#Ziele)
 ## Ziele 
 
 Zu Beginn des Projektes wurden verschiedene Soll- sowie Kann-Ziele determiniert, welche im Folgenden näher erläutert werden:
@@ -74,9 +82,9 @@ Zu Beginn des Projektes wurden verschiedene Soll- sowie Kann-Ziele determiniert,
 ```
   Kann-Ziele:```
 
-1. Es kann eine Karte entwickelt werden, auf welcher der aktuelle Standort angezeigt wird sowie die darum liegenden Märkte. Somit wird die Suche nach dem nächstgelegenen Markt erleichtert. 
-2. Es kann einen Barcodescanner geben, mit dessen Hilfe die Produkte leichter der Produktliste hinzugefügt werden können.
-3. Es kann eine Möglichkeit implementiert werden, mit welcher die Kaufabwicklung beim Supermarkt vereinfacht wird. Ein Beispiel hierfür ist ein generierter QR-Code, welcher auf einen bestimmten Warenkorb referenziert.
+1.Es kann eine Karte entwickelt werden, auf welcher der aktuelle Standort angezeigt wird sowie die darum liegenden Märkte. Somit wird die Suche nach dem nächstgelegenen Markt erleichtert. 
+2.Es kann einen Barcodescanner geben, mit dessen Hilfe die Produkte leichter der Produktliste hinzugefügt werden können.
+3.Es kann eine Möglichkeit implementiert werden, mit welcher die Kaufabwicklung beim Supermarkt vereinfacht wird. Ein Beispiel hierfür ist ein generierter QR-Code, welcher auf einen bestimmten Warenkorb referenziert.
 In der finalen Zusammenfassung wird näher auf den Erfolg sowie den Abschluss der Soll- und Kann-Ziele eingegangen. 
 
 
@@ -183,6 +191,8 @@ dataSnapshot.child("products").getChildren())
 
 Automatisiertes Testen
 Um die Funktionalität der App während der Entwicklung zu gewährleisten werden Tests durchgeführt. Dies geschieht manuell und auch automatisch. Manuelles Testen erfordert einen hohen Zeitaufwand. Es müssen Ergebnisse und das Verhalten der App überprüft und die Resultate übersichtlich aufgeschrieben werden. Dafür hat der Entwickler die Möglichkeit Einsichten durch Beobachten und Ausprobieren zu erhalten. Fehler fallen dem menschlichen Tester schnell auf. Dafür kann man nicht bei jeder Weiterentwicklung des Codes die komplette App manuell testen. Deswegen verlassen wir uns auf automatisierte Tests. Das Ausführen erfolgt automatisch. Entweder ausgelöst durch das Einbinden in eine Continous-Integration Umgebung wie Jenkins oder auf Wunsch des Entwicklers. Es gibt zwei Arten um Android-Applikation zu testen. Entweder lokal auf der JavaVirtualMachine oder auf einem echten Android-Gerät. Wir haben uns auf lokale Tests mit jUnit konzentriert. Damit werden die elementarsten Komponenten unserer App überprüft.
+
+
 Unit Testing
 Mit Unit-Tests werden einzelne Klassen isoliert voneinander getestet. Wir überprüfen ob Klassen nach Initialisierung den gewünschten Zustand haben und ob Methoden richtige Rückgabewerte liefern. Dazu muss in der app/build.gradle die jUnit Abhängigkeit eingetragen werden:
 
@@ -216,7 +226,6 @@ assertEquals(result, "Straße");
 
 
 Im Android Studio lassen sich mit einem Rechtsklick auf die Test-Klasse mit ‚Run UnitTest‘ die Tests ausführen. In der Console werden die Ergebnisse angezeigt.
-
 
 
 
