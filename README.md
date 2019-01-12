@@ -49,6 +49,12 @@ HTW Berlin
 
 ## Einführung <a name="introduction"></a>
 
+(<blockquote class="imgur-embed-pub" lang="en" data-id="hZDUXt6"><a href="//imgur.com/hZDUXt6">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>)
+
+(<a href="https://imgur.com/hZDUXt6"><img src="https://i.imgur.com/hZDUXt6.jpg" title="source: imgur.com" /></a>)
+
+(https://imgur.com/hZDUXt6)
+
 ## Abstrakt
 
 
