@@ -36,7 +36,7 @@ HTW Berlin
    4. [Programme](#Programm)
 
    
-3. [Implementierung](#Implementierung DB)
+3. [Implementierung](#ImplementierungDb)
 4. [Implementierung der Anwendung](#db)
    1. [Implementierung der Datenbank in Firebase](#dbFirebase)
    2. [Datenbank in Android Studio](#dbAndroidStudio)
@@ -49,11 +49,7 @@ HTW Berlin
 
 ## Einführung <a name="introduction"></a>
 
-(<blockquote class="imgur-embed-pub" lang="en" data-id="hZDUXt6"><a href="//imgur.com/hZDUXt6">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>)
-
-(<a href="https://imgur.com/hZDUXt6"><img src="https://i.imgur.com/hZDUXt6.jpg" title="source: imgur.com" /></a>)
-
-(https://imgur.com/hZDUXt6)
+(<img height="150px" width="250px" src <a href="https://imgur.com/hZDUXt6"><img src="https://i.imgur.com/hZDUXt6.jpg" title="source: imgur.com" /></a>)
 
 ## Abstrakt
 
@@ -75,15 +71,14 @@ Zu Beginn des Projektes wurden verschiedene Soll- sowie Kann-Ziele determiniert,
 4. Alle Produkte müssen nach Kategorien sortiert sein und gewisse Informationen wie beispielsweise Haltbarkeitsdatum und Preis enthalten.
 5. Supermärkte müssen Produkte hinzufügen und löschen können.
 6. Kunden müssen Produkte reservieren können.
-
 ```
 Kann-Ziele: ```
-
 
 1. Es kann eine Karte entwickelt werden, auf welcher der aktuelle Standort angezeigt wird sowie die darum liegenden Märkte. Somit wird die Suche nach dem nächstgelegenen Markt erleichtert. 
 2. Es kann einen Barcodescanner geben, mit dessen Hilfe die Produkte leichter der Produktliste hinzugefügt werden können.
 3. Es kann eine Möglichkeit implementiert werden, mit welcher die Kaufabwicklung beim Supermarkt vereinfacht wird. Ein Beispiel hierfür ist ein generierter QR-Code, welcher auf einen bestimmten Warenkorb referenziert.
 In der finalen Zusammenfassung wird näher auf den Erfolg sowie den Abschluss der Soll- und Kann-Ziele eingegangen. 
+```
 
 
 ## Produktmodelle <a name="Produktmodelle"></a>
