@@ -72,13 +72,12 @@ Zu Beginn des Projektes wurden verschiedene Soll- sowie Kann-Ziele determiniert,
 5. Supermärkte müssen Produkte hinzufügen und löschen können.
 6. Kunden müssen Produkte reservieren können.
 ```
-Kann-Ziele: ```
+  Kann-Ziele:```
 
 1. Es kann eine Karte entwickelt werden, auf welcher der aktuelle Standort angezeigt wird sowie die darum liegenden Märkte. Somit wird die Suche nach dem nächstgelegenen Markt erleichtert. 
 2. Es kann einen Barcodescanner geben, mit dessen Hilfe die Produkte leichter der Produktliste hinzugefügt werden können.
 3. Es kann eine Möglichkeit implementiert werden, mit welcher die Kaufabwicklung beim Supermarkt vereinfacht wird. Ein Beispiel hierfür ist ein generierter QR-Code, welcher auf einen bestimmten Warenkorb referenziert.
 In der finalen Zusammenfassung wird näher auf den Erfolg sowie den Abschluss der Soll- und Kann-Ziele eingegangen. 
-```
 
 
 ## Produktmodelle <a name="Produktmodelle"></a>
@@ -107,8 +106,6 @@ Der Admin kann Supermärkte hinzufügen oder Informationen über die Märkte än
 
 Der Entwurf der Widgets legt, wie auch in den Zielen festgelegt, zwei verschiedene Sichten fest. Die erste Sicht, in Bild (Nummer einfügen!) zu sehen, ist die eines Supermarktes. Dieser hat Links eine Anmeldeseite. Auf der nächsten Seite ist eine Auswahl zu erkennen, welche bereits im Zustandsdiagramm gezeigt wurde. Hier kann der Supermarkt eine Liste einsehen und mithilfe dieser neue Produkte hinzufügen oder löschen. Diese Liste ist exemplarisch auf „Sicht 3“ gezeigt. Das Löschen ist mit der Checkboxfunktion vereinfacht. Jedes Produkt kann zudem erweitert werden, um nähere Informationen zu erhalten. Im zweiten Auswahlpunkt, den reservierten Produkten, kann der Supermarkt die Kunden mit den jeweiligen Produktlisten einsehen. Diese Liste kann auf „Sicht 6“ gesehen werden. Unter Zuhilfenahme dieser Listen können somit die Produkte verpackt und abholfertig für den Kunden vorbereitet werden. Auch der Bezahlstatus kann dieser Liste entnommen werden.
 
-![Widgets](https://i.imgur.com/...)
-
 Bild:Supermarktsicht Widgets
 Auf dem Bild (Nummer einfügen!) ist die Sicht des Kunden dargestellt. Genauso wie beim Supermarkt gibt es auch hier die Anmeldung in „Sicht 1“. Auf der zweiten Sicht gibt es wieder eine Auswahl, mit dessen Hilfe zwischen einer Produktsuche nach Märkten und nach Produkten unterschieden wird. Auf der Märktesicht sind die verschiedenen Symbole der Märkte dargestellt. Jedes Symbol kann erweitert werden, um mehr Informationen, wie die Adresse oder Öffnungszeiten, preis zu geben. Unter dem Punkt „Produkte“ können die Waren nach Kategorien sortiert und mithilfe von Checkboxen in den Einkaufskorb gelegt werden. Im Einkaufskorb kann zwischen einer Bar- und einer Kartenzahlung gewählt werden.
 Bild:Kundensicht Widgets
@@ -117,9 +114,8 @@ Bild:Kundensicht Widgets
 
 Mithilfe des Programms „UMLET“ wurden die Bilder …, …, … (Nummern einfügen!) erstellt. Das Programm bietet die schnelle und einfache Möglichkeit, konzeptionelle und relationale Datenbankmodelle zu erstellen, sowie den Entwurf von Zustandsdiagrammen. „UMLET“ funktioniert mit einem Drag&Drop System und ein paar einfachen Kommandos innerhalb der Vorlagen. Mit jeweils vor und nach dem Wort eingefügten Unterstrichen, kann dieses unterstrichen eingetragen werden. Mit dem Schlüsselwort „bg=“ kann die Hintergrundfarbe geändert werden, um lediglich einige Beispiele zu nennen.
 
-
-
 ## Implementierung der Anwendung <a name="#db"></a>
+
 
 Bei der Wahl der Technologie haben wir uns für die Tool-Suite „Firebase“ von Google entschieden. Diese beinhaltet umfangreiche Funktionalitäten. Für die Datenbank wird die „Realtime Database“ genutzt. Damit ist es möglich sehr effizient zu entwickeln und es wird dem Programmierer viel Konfiguration abgenommen. Außerdem ist sichergestellt, dass diese Technologie fehlerfrei funktioniert und auch unter hohen Belastungen standhält. Es muss kein Server initialisiert werden. Daten werden in der Cloud gespeichert. Es handelt sich um eine nicht relationale Datenbank (NoSQL). Einer der Hauptgründe für die Wahl dieser Technologie sind die Synchronisationsmechanismen in Echtzeit. Sogenannte Event-Listener überprüfen dauerhaft ob sich Daten geändert haben. Jedes Gerät welches mit dieser Datenbank verbunden ist aktualisiert sich automatisch. Somit werden keine komplizierten Netzwerkbibliotheken benötigt. Ein weiterer Vorteil ist das garantierte Funktionieren der App bei Verbindungsunterbrechungen des Gerätes mit dem Internet. Der aktuelle Zustand der Datenbank wird lokal auf dem Gerät gespeichert. Auf diesen Datenbestand wird zugegriffen, wenn die Datenbank in der Cloud nicht erreichbar ist. Sobald die Internetverbindung wieder aufgebaut wird erhält der Klient den aktuellen Datenbestand.
 Im Gegensatz zu SQL-Datenbanken werden keine Tabellen und Relationen verwendet. Alle Daten sind JSON-Objekte. Beim Hinzufügen eines Objektes wird ein neuer Knoten in diesem Baum erzeugt. Jeder Knoten ist eindeutig durch einen Schlüssel identifizierbar. Das Datenbankmodell mit seinen Entitäten wird in Java-Klassen umgesetzt. Jede Entität entspricht eine Klasse mit Attributen. Attribute ergeben Kind-Knoten mit einem Schlüssel – Werte Paar. So ergibt sich eine Verschachtelung mit mehreren Ebenen. Beim Entwurf wurde darauf geachtet, dass die Verschachtelung eine geringe Anzahl von Ebenen, eine geringe Tiefe aufweist. Die Methoden sind nicht von Relevanz. Dazu wird im Projektverzeichnis ein neuer Ordner ‚database‘ angelegt. Dort entspricht jede Datei einer Java Klasse. Es wurden die Klassen  ‚Supermarkt‘ und ‚Produkt‘ angelegt. Die Attribute der Klassen wie z.B. ‚Marktname‘ oder ‚Öffnungszeit‘ entsprechen Einträge in den JSON-Objekten. Beim Erzeugen eines Objektes wird ein Knoten in der JSON-Baumstruktur angelegt.
