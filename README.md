@@ -62,7 +62,6 @@ Mit unserer App kann ein Supermarkt Produkte verkaufen, die er normalerweise ent
 Zu Beginn des Projektes wurden verschiedene Soll- sowie Kann-Ziele determiniert, welche im Folgenden näher erläutert werden:
 ```
   Soll-Ziele:```
-```
  
 1. Die App soll zwei Benutzerprofile haben – den Supermarkt und den Kunden. Beide Benutzertypen haben unterschiedliche Views zur Verfügung und können somit verschiedene Aktivitäten ausführen.
 2. Die Kunden sollen nach Märkten oder direkt nach Produkten suchen können.
@@ -72,17 +71,14 @@ Zu Beginn des Projektes wurden verschiedene Soll- sowie Kann-Ziele determiniert,
 6. Kunden müssen Produkte reservieren können.
 
 ```
-
 Kann-Ziele: ```
 
-```
 
 1. Es kann eine Karte entwickelt werden, auf welcher der aktuelle Standort angezeigt wird sowie die darum liegenden Märkte. Somit wird die Suche nach dem nächstgelegenen Markt erleichtert. 
 2. Es kann einen Barcodescanner geben, mit dessen Hilfe die Produkte leichter der Produktliste hinzugefügt werden können.
 3. Es kann eine Möglichkeit implementiert werden, mit welcher die Kaufabwicklung beim Supermarkt vereinfacht wird. Ein Beispiel hierfür ist ein generierter QR-Code, welcher auf einen bestimmten Warenkorb referenziert.
 In der finalen Zusammenfassung wird näher auf den Erfolg sowie den Abschluss der Soll- und Kann-Ziele eingegangen. 
 
-```
 
 ## Produktmodelle <a name="Produktmodelle"></a>
 
@@ -223,3 +219,7 @@ assertEquals(result, "Straße");
 
 
 Im Android Studio lassen sich mit einem Rechtsklick auf die Test-Klasse mit ‚Run UnitTest‘ die Tests ausführen. In der Console werden die Ergebnisse angezeigt.
+
+
+
+
