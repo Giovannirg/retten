@@ -8,6 +8,22 @@
     android:background="#ffffff"
     tools:context=".Activities.RegisterActivity">
 
+    <EditText
+        android:id="@+id/regLName"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/reg_edittext_style"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regName" />
+
     <ImageView
         android:id="@+id/regUserPhoto"
         android:layout_width="90dp"
@@ -21,9 +37,10 @@
         android:src="@drawable/userphoto"
         app:layout_constraintBottom_toTopOf="@+id/regName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.719"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791" />
+        app:layout_constraintVertical_bias="0.318" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
@@ -35,10 +52,10 @@
     <EditText
         android:id="@+id/regName"
         android:layout_width="265dp"
-        android:layout_height="wrap_content"
+        android:layout_height="53dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="72dp"
         android:background="@drawable/reg_edittext_style"
         android:ems="10"
         android:hint="Name"
@@ -133,6 +150,6 @@
         android:layout_height="85dp"
         app:srcCompat="@drawable/logo"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="6dp" />
 </android.support.constraint.ConstraintLayout>

@@ -32,6 +32,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.support.v7.widget.AppCompatDrawableManager.get;
+import static java.util.function.Predicate.isEqual;
+
 public class IndividualProduct extends AppCompatActivity {
 
     private final String TAG = IndividualProduct.class.getSimpleName();
@@ -143,12 +146,16 @@ public class IndividualProduct extends AppCompatActivity {
 
 
                 if (dataSnapshot.getKey().equals(user.getUid())){
-                    isCartEmpty = (Boolean) dataSnapshot.child("isCartEmpty").getValue();
+                    isCartEmpty = (boolean) dataSnapshot.child("isCartEmpty").getValue();
+
+               // if (dataSnapshot.getKey().equals(user.getUid())){
+
+
                     // Warenkorb empty, dann erstellt eine neue Liste
                     //      vermeindet ein neuen Korb zu erstellen jedes mal das etwas hingeguckt wird
                     // sonst neuer Korb wird erstell
 
-                    if (!isCartEmpty){
+                  if (!isCartEmpty){
                         // bekommt and update den Inhalt des Korbs
                         cartItems = new ArrayList<>();
                         int tempIndex = 0;
@@ -181,7 +188,7 @@ public class IndividualProduct extends AppCompatActivity {
 
                             tempIndex++;
                         }
-                    }
+                  }
                 }
 
                 Snackbar.make(
