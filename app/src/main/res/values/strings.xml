@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Retten</string>
     <string name="login">Login</string>
-    <string name="title_activity_search">search</string>
-    <string name="ifsellerlistempty">ifSellerListEmpty</string>
+    <string name="title_activity_search">Suche/string>
+    <string name="ifsellerlistempty">Supermarktlist leer</string>
     <string name="ip">ip</string>
-    <string name="quantity_available">Quantity Available:</string>
-    <string name="title_activity_individual_product">IndividualProduct</string>
+    <string name="quantity_available">noch erhärtlich:</string>
+    <string name="title_activity_individual_product">Einzelprodukt</string>
 </resources>
