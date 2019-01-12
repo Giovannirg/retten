@@ -49,14 +49,14 @@ HTW Berlin
 
 ## Einführung <a name="introduction"></a>
 
-(<img height="150px" width="250px" src <a href="https://imgur.com/hZDUXt6"><img src="https://i.imgur.com/hZDUXt6.jpg" title="source: imgur.com" /></a>)
+(<a href="https://imgur.com/hZDUXt6"><img src="https://i.imgur.com/hZDUXt6.jpg" title="source: imgur.com" /></a>)
 
 ## Abstrakt
 
 
 ## Produktidee
 
-Unser Produkt soll helfen zu verhindern, dass Lebensmittel weggeschmissen werden, welche noch Verwendung finden können. In Deutschland und auch in vielen anderen Ländern landen noch intakte Produkte auf dem Müll. Auf der ganzen Welt werden rund 1,3 Milliarden Tonnen Lebensmittel jährlich entsorgt. (Verweis!) Um diesen Trend zumindest marginal entgegenzuwirken, haben wir die App „retten“ entwickelt.
+Unser Produkt soll helfen zu verhindern, dass Lebensmittel weggeschmissen werden, welche noch Verwendung finden können. In Deutschland und auch in vielen anderen Ländern landen noch intakte Produkte auf dem Müll. Auf der ganzen Welt werden rund 1,3 Milliarden Tonnen Lebensmittel jährlich entsorgt siehe https://www.wwf.de/themen-projekte/landwirtschaft/ernaehrung-konsum/verschwendung/ und  https://www.bzfe.de/inhalt/lebensmittelverschwendung-1868.html. Um diesen Trend zumindest marginal entgegenzuwirken, haben wir die App „retten“ entwickelt.
 Mit unserer App kann ein Supermarkt Produkte verkaufen, die er normalerweise entsorgen müsste. Die Kunden können mithilfe der App Produkte günstiger erwerben und direkt bei ihrem Supermarkt in der Nähe abholen. Die App versucht hierbei, möglichst einfach und schnell zwischen Kunde und Supermarkt zu vermitteln und den Gebrauch für beide Seiten so einfach wie möglich zu gestalten.
 
 ## Ziele 
