@@ -244,6 +244,7 @@ Im Laufe des Projektes waren Aufgaben des Projekt-Managements zu entdecken. Wir 
 Allerdings ist es hier zu bemerken, dass es uns schwer fiel eine klare Aufgabenverteilung zu erreichen und diese entsprechend zu folgen. Eine reibungsfrei Kommunikation war nicht leicht. 
 Viele von uns besaßen  nicht so große Kenntnisse in Java, deswegen war das Programmieren unter Android Studio eine Herausforderung. 
 Wir haben dieses Projekt zusammen geararbeitet und haben Lehren daraus gezogen. 
+Wir bedanken uns für die Tools, die wir nutzen dürften. 
 
 
 
