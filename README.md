@@ -55,7 +55,7 @@ HTW Berlin
 (<a href="https://imgur.com/hZDUXt6"><img src="https://i.imgur.com/hZDUXt6.jpg" title="source: imgur.com" /></a>)
 
 1. [Abstrakt](#Abstrakt)
-
+Für unser Projekt im Rahmen der Veranstaltung Softwareentwicklung im Wintersemester 18/19 haben wir nach Ideen gesuckt und geguckt wie eine gesellschaftliche Aufgabe übernehmen können. Diese soll interessant für die Nutzer sein und uns vielleicht einen wirtschaftlichen Gewinn erzielen könnte. Die App Retten ist die Dienstleistung, die wir präsentieren wollen.   
 
 2. [Produktidee](#Produktidee)
 
@@ -231,6 +231,20 @@ assertEquals(result, "Straße");
 Im Android Studio lassen sich mit einem Rechtsklick auf die Test-Klasse mit ‚Run UnitTest‘ die Tests ausführen. In der Console werden die Ergebnisse angezeigt.
 
 4. [Zusammenfassung](#Fazit)
+Im Laufe des Projektes waren Aufgaben des Projekt-Managements zu entdecken. Wir fanden das alle interessant diese Phasen der Software Entwicklung kennengelernt zu haben und den Entwicklungsvorgang in 5 Phasen unterteilt:
+
+```
+1.Konzeptphase
+2.Definitionsphase
+3.Entwurfsphase
+4.Fertigungsphase
+5.Wartungsphase
+```
+
+Allerdings ist es hier zu bemerken, dass es uns schwer fiel eine klare Aufgabenverteilung zu erreichen und diese entsprechend zu folgen. Eine reibungsfrei Kommunikation war nicht leicht. 
+Viele von uns besaßen  nicht so große Kenntnisse in Java, deswegen war das Programmieren unter Android Studio eine Herausforderung. 
+Wir haben dieses Projekt zusammen geararbeitet und haben Lehren daraus gezogen. 
+
 
 
 
