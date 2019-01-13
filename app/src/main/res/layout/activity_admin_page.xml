@@ -39,7 +39,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:padding="16dp"
-        android:text="Registration"
+        android:text=""
         android:textSize="32sp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="32dp" />
