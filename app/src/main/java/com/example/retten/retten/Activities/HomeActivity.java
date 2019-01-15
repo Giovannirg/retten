@@ -83,12 +83,12 @@ public class HomeActivity extends AppCompatActivity {
 
     public final String TAG = HomeActivity.class.getSimpleName();
 
-  //  FirebaseDatabase database = FirebaseDatabase.getInstance();
+   FirebaseDatabase database = FirebaseDatabase.getInstance();
 
 
 
     private Boolean exit = false;
-    private ArrayList<ShoppingItem> shoppingItems;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

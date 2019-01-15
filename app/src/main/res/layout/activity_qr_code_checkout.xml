@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_qr_code_checkout"
     android:layout_width="match_parent"
@@ -13,22 +14,22 @@
 
 
     <ImageView
-        android:id="@+id/qrcodebar"
-        android:layout_width="323dp"
-        android:layout_height="300dp"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/imageView4"
+        android:layout_width="228dp"
+        android:layout_height="229dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="267dp" />
+        android:layout_marginTop="82dp"
+        android:background="@drawable/qrcodewiki" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="243dp"
-        android:layout_height="169dp"
+        android:id="@+id/editText2"
+        android:layout_width="231dp"
+        android:layout_height="115dp"
+        android:layout_alignStart="@+id/imageView4"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="94dp"
         android:ems="10"
-        android:inputType="textMultiLine" />
-
-
+        android:inputType="textMultiLine"
+        tools:text="Abholung bei: \nPark Center \nam Treptowerpark 14, 12435 Berlin" />
 </RelativeLayout >
