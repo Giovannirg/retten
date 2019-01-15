@@ -65,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
     private String email, password, passwordVerification;
    // private EditText email, password, passwordVerification;
     private EditText username, pass, passVerification, firstname, lastname;
-    private boolean isRegistrationClicked = false, isSeller = false;
+    private boolean isRegistrationClicked = false, isSupermarkt = false;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -99,8 +99,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                     DatabaseReference myRef;
 
-
-                        myRef = FirebaseDatabase.getInstance().getReference("users").child(user.getUid());
+                    if (!isSupermarkt){
+                        myRef = FirebaseDatabase.getInstance().getReference("User/").child(user.getUid());
                         myRef.child(user.getUid()).push();
 
                         // As firebase does not accept keys with empty values, I'm putting a dummy item with empty Strings and -1 as ints
@@ -118,9 +118,23 @@ public class RegisterActivity extends AppCompatActivity {
                         // Updating the database for the user
                         myRef.updateChildren(cartItems);
                         myRef.updateChildren(cartState);
+                    } else {
+                        myRef = FirebaseDatabase.getInstance().getReference("Supermarkt").child(user.getUid());
+                        myRef.child(user.getUid()).push();
 
+//                        Dummy product sold by any seller who has 0 products
+                        ArrayList<ShoppingItem> prods = new ArrayList<>();
+                        prods.add(new ShoppingItem("", "", "", "", -1, -1));
+                        Map<String, Object> prodslist = new HashMap<>();
+                        prodslist.put("products", prods);
 
-                    sendVerificationEmail();
+                        Map<String, Object> state = new HashMap<>();
+                        state.put("isProdsEmpty", Boolean.TRUE);
+
+                        // Updating the database for the seller
+                        myRef.updateChildren(prodslist);
+                        myRef.updateChildren(state);
+                    }
 
                 } else {
                     // User is signed out

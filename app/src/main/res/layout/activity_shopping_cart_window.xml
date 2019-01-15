@@ -80,7 +80,7 @@
             android:layout_weight="3"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            android:text="0" />
+            android:text="0€" />
 
     </LinearLayout>
 

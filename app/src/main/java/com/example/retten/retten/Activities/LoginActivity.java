@@ -34,6 +34,149 @@ import java.time.Instant;
 public class LoginActivity extends AppCompatActivity {
 
 
+    private static final String TAG = LoginActivity.class.getSimpleName();
+    ProgressBar progressBar;
+    private Button loginButton;
+    private EditText user, pass;
+    private TextView newUser, resetPassword, newSeller;
+    private String username, password;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+        loginButton = (Button) findViewById(R.id.loginBtn);
+        user = (EditText) findViewById(R.id.userMail);
+        pass = (EditText) findViewById(R.id.userPassword);
+        setInputs(true);
+        newUser = (TextView) findViewById(R.id.newuserbutton);
+        newSeller = (TextView) findViewById(R.id.newsuperreg);
+        resetPassword = (TextView) findViewById(R.id.forgotPassword);
+        progressBar = (ProgressBar) findViewById(R.id.loginProgress);
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                final FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    // User is signed in
+                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                    FirebaseDatabase.getInstance().getReference("Supermarkt/" + user.getUid())
+                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                    if (dataSnapshot.exists()) {
+                                        intent.putExtra("isSupermarkt", true);
+                                    } else {
+                                        intent.putExtra("isSupermarkt", false);
+                                    }
+                                    Toast.makeText(getApplicationContext(), "Eingelogt!", Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.GONE);
+                                    startActivity(intent);
+                                    finish();
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+                                    // Failed to read value
+                                    Log.w(TAG, "Wert könnte nicht gelesen werden.", databaseError.toException());
+                                }
+                            });
+                } else {
+                    // User is signed out
+                    Log.d(TAG, "onAuthStateChanged:signed_out");
+                }
+                // ...
+            }
+        };
+        progressBar.setVisibility(View.INVISIBLE);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
+                username = user.getText().toString();
+                password = pass.getText().toString();
+                setInputs(false);
+                signIn(username, password);
+            }
+        });
+
+        resetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, forgotPassword.class));
+            }
+        });
+
+        newUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newUserReg = new Intent(LoginActivity.this, RegisterActivity.class);
+                newUserReg.putExtra("isSupermarkt", false);
+                startActivity(newUserReg);
+                finish();
+            }
+        });
+
+        newSeller.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newSellerReg = new Intent(LoginActivity.this, RegisterActivity.class);
+                newSellerReg.putExtra("isSupermarkt", true);
+                startActivity(newSellerReg);
+                finish();
+            }
+        });
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
+
+    public void signIn(String user, String password) {
+        mAuth.signInWithEmailAndPassword(user, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
+
+                        // If sign in fails, display a message to the user. If sign in succeeds
+                        // the auth state listener will be notified and logic to handle the
+                        // signed in user can be handled in the listener.
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "signInWithEmail:failed", task.getException());
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(getApplicationContext(), R.string.auth_failed,
+                                    Toast.LENGTH_SHORT).show();
+                            setInputs(true);
+                        }
+
+                        // ...
+                    }
+                });
+    }
+
+    private void setInputs(boolean val) {
+        user.setEnabled(val);
+        pass.setEnabled(val);
+    }
+
+/*
     private EditText userMail,userPassword;
     private Button btnLogin, newuserbutton;
     private ProgressBar loginProgress;
@@ -64,7 +207,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        HomeActivity = new Intent(this,com.example.retten.retten.Activities.CustomerActivity.class);
+        HomeActivity = new Intent(this,com.example.retten.retten.Activities.HomeActivity.class);
         loginPhoto = findViewById(R.id.login_photo);
         loginPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -258,10 +401,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }*/
 
-    private void showMessage(String text) {
+   /* private void showMessage(String text) {
 
         Toast.makeText(getApplicationContext(),text,Toast.LENGTH_LONG).show();
-    }
+    }*/
 
 
 
@@ -361,7 +504,7 @@ public class LoginActivity extends AppCompatActivity {
             });
             thread.start();
         }
-}*/
+}//comment
 
     private void updateUI() {
 
@@ -387,7 +530,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    }
+    }*/
 
 
 

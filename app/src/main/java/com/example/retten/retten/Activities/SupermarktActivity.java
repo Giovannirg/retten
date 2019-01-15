@@ -23,7 +23,7 @@ public class SupermarktActivity extends AppCompatActivity {
 
 
 
-        if (DataHolder.getInstance().getUser() instanceof Supermarkt) {
+      //  if (DataHolder.getInstance().getUser() instanceof Supermarkt) {
 
             findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.VISIBLE);
             findViewById(R.id.Icon_Reserviert).setVisibility(View.VISIBLE);
@@ -59,14 +59,8 @@ public class SupermarktActivity extends AppCompatActivity {
                 }
             });
 
-        } else {
+     //   } else {
 
-            findViewById(R.id.Icon_Produkt_Liste).setVisibility(View.GONE);
-            findViewById(R.id.Icon_Reserviert).setVisibility(View.GONE);
-            findViewById(R.id.Icon_VkBestaetigung).setVisibility(View.GONE);
-            findViewById(R.id.text_Icon_Produkt_Liste).setVisibility(View.GONE);
-            findViewById(R.id.text_Icon_Reserviert).setVisibility(View.GONE);
-            findViewById(R.id.text_Icon_VkBestaetigung).setVisibility(View.GONE);
 
             /* ImageView produkten = findViewById(R.id.Icon_Produkten);
 
@@ -86,7 +80,7 @@ public class SupermarktActivity extends AppCompatActivity {
                 }
             });*/
 
-        }
+     //   }
 
     }
 

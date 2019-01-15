@@ -28,45 +28,24 @@ import java.util.Map;
 
 public class AddProductForm extends AppCompatActivity {
 
-  // public void set_pUID(String m_pUID) {this.m_pUID = m_pUID;}
-
-
     TextView productid, title, type, description, price, quantity;
-    Bitmap bitmap;
-    private Boolean islistempty = true;
 
-
-    DatabaseReference mDatabase;
+    DatabaseReference myref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product_form);
 
-
-
-        mDatabase = FirebaseDatabase.getInstance().getReference("Supermarkt/" +
+        myref = FirebaseDatabase.getInstance().getReference("Supermarkt/" +
                 FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-
-      //  m_pUID.set_pUID(mAuth.getUid());
         productid = (TextView) findViewById(R.id.addProductId);
         title = (TextView) findViewById(R.id.addProductTitle);
         type = (TextView) findViewById(R.id.addProductType);
         description = (TextView) findViewById(R.id.addProductDescription);
         price = (TextView) findViewById(R.id.addProductPrice);
         quantity = (TextView) findViewById(R.id.addProductQuantity);
-
-                //Barcode scanner
-
-     /*  FirebaseVisionBarcodeDetectorOptions options =
-                new FirebaseVisionBarcodeDetectorOptions.Builder()
-                        .setBarcodeFormats(
-                                FirebaseVisionBarcode.FORMAT_QR_CODE,
-                                FirebaseVisionBarcode.FORMAT_AZTEC)
-                        .build();
-
-        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);*/
 
         findViewById(R.id.addProductSubmit).setOnClickListener(new View.OnClickListener() {
 
@@ -79,24 +58,19 @@ public class AddProductForm extends AppCompatActivity {
                         price.getText().toString().matches("") ||
                         quantity.getText().toString().matches("")) {
 
-                    Toast.makeText(getApplicationContext(), "Bitte alles ausfullen", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Bitte alles ausfüllen", Toast.LENGTH_SHORT).show();
 
                 } else {
 
-                    mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+                    myref.addListenerForSingleValueEvent(new ValueEventListener() {
                         ArrayList<ShoppingItem> productList = new ArrayList<>();
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-
-                   islistempty = Boolean.valueOf(dataSnapshot.child("isProdsEmpty").getValue().toString());
-
-                                  if (islistempty) {
-                            //
-                            //if (dataSnapshot.child("islistempty") == null){
-
-                                mDatabase.child("isProdsEmpty").setValue(Boolean.FALSE.toString());
+                            Boolean islistempty  = Boolean.valueOf(dataSnapshot.child("isProdsEmpty").getValue().toString());
+                            if (islistempty) {
+                                myref.child("isProdsEmpty").setValue(Boolean.FALSE.toString());
                             } else {
-                                for (DataSnapshot snap : dataSnapshot.child("Products").getChildren()) {
+                                for (DataSnapshot snap : dataSnapshot.child("products").getChildren()) {
                                     int itemPrice = -1;
                                     try {
                                         itemPrice = Integer.valueOf(NumberFormat.getCurrencyInstance()
@@ -118,7 +92,7 @@ public class AddProductForm extends AppCompatActivity {
                                     ));
                                 }
                             }
-
+//
                             productList.add(new ShoppingItem(
                                     productid.getText().toString(),
                                     title.getText().toString(),
@@ -130,13 +104,13 @@ public class AddProductForm extends AppCompatActivity {
 
                             Map<String, Object> cartItemsMap = new HashMap<>();
                             cartItemsMap.put("products", productList);
-                            mDatabase.updateChildren(cartItemsMap);
+                            myref.updateChildren(cartItemsMap);
                             finish();
                         }
 
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
-                            Log.w("", "Failed to read value.", databaseError.toException());
+                            Log.w("", "Wert könnte nicht gelesen werden", databaseError.toException());
                         }
                     });
 
@@ -145,3 +119,5 @@ public class AddProductForm extends AppCompatActivity {
         });
     }
 }
+
+
