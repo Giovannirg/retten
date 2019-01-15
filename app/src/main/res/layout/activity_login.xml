@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
+        app:layout_constraintGuide_percent="0.53" />
 
     <EditText
         android:id="@+id/userPassword"
@@ -76,10 +76,10 @@
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userPassword"
-        app:layout_constraintVertical_bias="0.591" />
+        app:layout_constraintVertical_bias="0.455" />
 
     <TextView
         android:id="@+id/forgotPassword"
@@ -140,10 +140,10 @@
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintHorizontal_bias="0.319"
         app:layout_constraintStart_toEndOf="@+id/loginBtn"
         app:layout_constraintTop_toBottomOf="@+id/userPassword"
-        app:layout_constraintVertical_bias="0.591" />
+        app:layout_constraintVertical_bias="0.455" />
 
     <TextView
         android:id="@+id/newsuperreg"
@@ -165,6 +165,6 @@
         app:layout_constraintHorizontal_bias="0.836"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newuserbutton"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.29" />
 
 </android.support.constraint.ConstraintLayout>

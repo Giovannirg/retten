@@ -103,9 +103,9 @@ public class HomeActivity extends AppCompatActivity {
         } else
           // setContentView(R.layout.activity_supermarkt);
 
-         //   startActivity(new Intent(getApplicationContext(), CustomerActivity.class));
+         //  startActivity(new Intent(getApplicationContext(), CustomerActivity.class));
 
-        startActivity(new Intent(getApplicationContext(), SupermarktActivity.class));
+       startActivity(new Intent(getApplicationContext(), SupermarktActivity.class));
     }
 
 

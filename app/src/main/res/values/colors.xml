@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
    <!-- <color name="actionbar_opacity">#33000000</color>-->
-    <color name="actionbar_opacity">#f7f307</color>
-    <color name="colorPrimary">#02bcff92</color>
+    <color name="actionbar_opacity">#FF9800</color>
+    <color name="colorPrimary">#bcff92</color>
     <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorAccent">#479722</color>
     <color name="colorAccentCart">#0095d6</color>

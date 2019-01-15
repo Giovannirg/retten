@@ -67,6 +67,8 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText username, pass, passVerification, firstname, lastname;
     private boolean isRegistrationClicked = false, isSupermarkt = false;
 
+
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                     DatabaseReference myRef;
 
                     if (!isSupermarkt){
-                        myRef = FirebaseDatabase.getInstance().getReference("User/").child(user.getUid());
+                        myRef = FirebaseDatabase.getInstance().getReference("users/").child(user.getUid());
                         myRef.child(user.getUid()).push();
 
                         // As firebase does not accept keys with empty values, I'm putting a dummy item with empty Strings and -1 as ints
@@ -163,6 +165,13 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+
+
+
+
+
+
+
     @Override
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
         super.onSaveInstanceState(outState, outPersistentState);
@@ -204,6 +213,8 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
                         isRegistrationClicked = true;
+
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.

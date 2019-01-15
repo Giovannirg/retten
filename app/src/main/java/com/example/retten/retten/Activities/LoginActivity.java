@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = LoginActivity.class.getSimpleName();
     ProgressBar progressBar;
     private Button loginButton;
+    private ImageView loginPhoto;
     private EditText user, pass;
     private TextView newUser, resetPassword, newSeller;
     private String username, password;
@@ -175,6 +176,8 @@ public class LoginActivity extends AppCompatActivity {
         user.setEnabled(val);
         pass.setEnabled(val);
     }
+
+
 
 /*
     private EditText userMail,userPassword;

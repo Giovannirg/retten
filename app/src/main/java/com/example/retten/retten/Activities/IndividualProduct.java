@@ -146,8 +146,8 @@ public class IndividualProduct extends AppCompatActivity {
 
 
                 if (dataSnapshot.getKey().equals(user.getUid())){
-                    isCartEmpty = (boolean) dataSnapshot.child("isCartEmpty").getValue();
-
+                 //   isCartEmpty = (boolean) dataSnapshot.child("isCartEmpty").getValue();
+                    isCartEmpty = (Boolean) dataSnapshot.child("isCartEmpty").getValue();
                // if (dataSnapshot.getKey().equals(user.getUid())){
 
 
