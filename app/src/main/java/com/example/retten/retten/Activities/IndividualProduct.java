@@ -88,7 +88,7 @@ public class IndividualProduct extends AppCompatActivity {
 
                         @Override
                         public void onCancelled(DatabaseError error) {
-                            Log.w(TAG, "Failed to read value.", error.toException());
+                            Log.w(TAG, "Wert könnte nicht gelesen werden", error.toException());
                         }
                     });
 

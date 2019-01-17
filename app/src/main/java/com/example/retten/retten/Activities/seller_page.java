@@ -34,25 +34,6 @@ import java.util.ArrayList;
 
 public class seller_page extends AppCompatActivity {
 
-  /*  Button addProduct;
-
-    addProduct = (Button) findViewById(R.id.sellerAddProduct);
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seller_page);
-        }
-
-        addProduct.setOnClickListener(new View.OnClickListener() {
-
-        @Override
-        public void onClick(View Object view;view) {
-            // add new layout and add product
-            // then search
-            startActivity(new Intent(this, AddProductForm.class));
-        }
-    });*/
 
   public final String TAG = seller_page.class.getSimpleName();
     ListView shoppingItemView;
@@ -141,7 +122,7 @@ public class seller_page extends AppCompatActivity {
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-                    Log.w(TAG, "Failed to read value.", databaseError.toException());
+                    Log.w(TAG, "wert kann nicht gelesen werden", databaseError.toException());
                 }
             });
 
@@ -163,85 +144,6 @@ public class seller_page extends AppCompatActivity {
                 }
             });
 
-        /*}*/ /*else {
-            setContentView(R.layout.activity_seller_page);
-
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-            toolbar.setTitle("Rett€n");
-            setSupportActionBar(toolbar);
-
-            searchbar = (EditText)findViewById(R.id.searchBar);
-
-            FloatingActionButton shoppingCart = (FloatingActionButton) findViewById(R.id.cartMainPage);
-            shoppingCart.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(getApplicationContext(), ShoppingCartWindow.class));
-                }
-            });
-
-            progressBar = (ProgressBar) findViewById(R.id.mainPageProgressBar);
-            shoppingItemView = (ListView) findViewById(R.id.shoppingList);
-
-            DatabaseReference myRef = database.getReference("items");
-            myRef.addValueEventListener(new ValueEventListener() {
-                // This listener is only for database with reference of key "items"
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    // This method is called once with the initial value and again
-                    // whenever data at this location is updated.
-
-                    // Now the Shopping List gets updated whenever the data changes in the server
-                    shoppingItems = getAllItems(dataSnapshot);
-                    adapter = new ShoppingListAdapter(getApplicationContext(), shoppingItems);
-                    progressBar.setVisibility(View.GONE);
-                    shoppingItemView.setAdapter(adapter);
-
-                    shoppingItemView.setTextFilterEnabled(true);
-                    searchbar.addTextChangedListener(new TextWatcher() {
-                        @Override
-                        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                        }
-
-                        @Override
-                        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                            int textlength = charSequence.length();
-                            ArrayList<ShoppingItem> tempShoppingItems = new ArrayList<>();
-                            for(ShoppingItem x: shoppingItems){
-                                if (textlength <= x.getTitle().length()) {
-                                    if (x.getTitle().toLowerCase().contains(charSequence.toString().toLowerCase())) {
-                                        tempShoppingItems.add(x);
-                                    }
-                                }
-                            }
-                            shoppingItemView.setAdapter(new ShoppingListAdapter(getApplicationContext(), tempShoppingItems));
-                        }
-
-                        @Override
-                        public void afterTextChanged(Editable editable) {
-
-                        }
-                    });
-                }
-
-                @Override
-                public void onCancelled(DatabaseError error) {
-                    // Failed to read value
-                    Log.w(TAG, "Failed to read value.", error.toException());
-                }
-            });
-
-            shoppingItemView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Intent productIntent = new Intent(seller_page.this, IndividualProduct.class);
-                    productIntent.putExtra("product", shoppingItems.get(i));
-                    startActivity(productIntent);
-                }
-            });
-
-        }*/
     }
 
 
@@ -254,9 +156,7 @@ public class seller_page extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -275,7 +175,7 @@ public class seller_page extends AppCompatActivity {
         if (exit) {
             finish();
         } else {
-            Snackbar.make(findViewById(R.id.main_content), "Press back again to exit", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(findViewById(R.id.main_content), "Drücken sie zurück zu beenden", Snackbar.LENGTH_SHORT).show();
             exit = true;
             new Handler().postDelayed(new Runnable() {
                 @Override

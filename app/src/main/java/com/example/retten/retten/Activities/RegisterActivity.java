@@ -69,7 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-    @SuppressLint("WrongViewCast")
+    @SuppressLint("")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -156,7 +156,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (password.equals(passwordVerification) && !password.equals("") && !passwordVerification.equals("")) {
                     createAccount();
                 } else {
-                    Snackbar.make(findViewById(R.id.regProgressBar2), "Passwords don't match", Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(findViewById(R.id.regProgressBar2), "Passworte sind nicht gleich", Snackbar.LENGTH_SHORT).show();
                     pass.setText("");
                     passVerification.setText("");
                     setViews(true);
