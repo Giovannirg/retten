@@ -121,27 +121,19 @@ Der Admin kann Supermärkte hinzufügen oder Informationen über die Märkte än
 
 3. [Widgets](#Widgets)
 
+<a href="https://imgur.com/XbYl2hR"><img src="https://i.imgur.com/XbYl2hR.jpg" title="source: imgur.com" /></a>
+![Anmeldung Profile] 
 
 Der Entwurf der Widgets legt, wie auch in den Zielen festgelegt, zwei verschiedene Sichten fest. Die erste Sicht, in Bild (Nummer einfügen!) zu sehen, ist die eines Supermarktes. Dieser hat Links eine Anmeldeseite. Auf der nächsten Seite ist eine Auswahl zu erkennen, welche bereits im Zustandsdiagramm gezeigt wurde. Hier kann der Supermarkt eine Liste einsehen und Mithilfe dieser neue Produkte hinzufügen oder löschen. Diese Liste ist exemplarisch auf „Sicht 3“ gezeigt. Das Löschen ist mit der Checkboxfunktion vereinfacht. Jedes Produkt kann zudem erweitert werden, um nähere Informationen zu erhalten. Im zweiten Auswahlpunkt, den reservierten Produkten, kann der Supermarkt die Kunden mit den jeweiligen Produktlisten einsehen. Diese Liste kann auf „Sicht 6“ gesehen werden. Unter Zuhilfenahme dieser Listen können somit die Produkte verpackt und abholfertig für den Kunden vorbereitet werden. Auch der Bezahlstatus kann dieser Liste entnommen werden.
 
-Bild:Supermarktsicht Widgets
 <a href="https://imgur.com/0v6PPnz"><img src="https://i.imgur.com/0v6PPnz.jpg" title="source: imgur.com" /></a>
-
-<a href="https://imgur.com/EXfZYly"><img src="https://i.imgur.com/EXfZYly.jpg" title="source: imgur.com" /></a>
-
-<a href="https://imgur.com/jGqYBch"><img src="https://i.imgur.com/jGqYBch.jpg" title="source: imgur.com" /></a>
-
+![Panaroma Supermarktsicht]
 
 Auf dem Bild (Nummer einfügen!) ist die Sicht des Kunden dargestellt. Genauso wie beim Supermarkt gibt es auch hier die Anmeldung in „Sicht 1“. Auf der zweiten Sicht gibt es wieder eine Auswahl, mit dessen Hilfe zwischen einer Produktsuche nach Märkten und nach Produkten unterschieden wird. Auf der Märktesicht sind die verschiedenen Symbole der Märkte dargestellt. Jedes Symbol kann erweitert werden, um mehr Informationen, wie die Adresse oder Öffnungszeiten, preis zu geben. Unter dem Punkt „Produkte“ können die Waren nach Kategorien sortiert und Mithilfe von Checkboxen in den Einkaufskorb gelegt werden. Im Einkaufskorb kann zwischen einer Bar- und einer Kartenzahlung gewählt werden.
 
-Bild:Kundensicht Widgets
 
 <a href="https://imgur.com/qiuIfQu"><img src="https://i.imgur.com/qiuIfQu.jpg" title="source: imgur.com" /></a>
-
-<a href="https://imgur.com/TF1oZX1"><img src="https://i.imgur.com/TF1oZX1.jpg" title="source: imgur.com" /></a>
-
-<a href="https://imgur.com/IAlvl1Q"><img src="https://i.imgur.com/IAlvl1Q.jpg" title="source: imgur.com" /></a>
-
+![Panaroma Kundensicht]
 
 
 4. [Programme](#Programm)
@@ -150,7 +142,7 @@ Im Rahmen des Projekts haben wir verschiedene Tools genutzt.
 
 Mithilfe des Programms „UMLET“ wurden Bilder, die dem Entwurf der Datenbank dient, erstellt. Das Programm bietet die schnelle und einfache Möglichkeit, konzeptionelle und relationale Datenbankmodelle zu erstellen, sowie den Entwurf von Zustandsdiagrammen. „UMLET“ funktioniert mit einem Drag&Drop System und ein paar einfachen Kommandos innerhalb der Vorlagen. Mit jeweils vor und nach dem Wort eingefügten Unterstrichen, kann dieses unterstrichen eingetragen werden. Mit dem Schlüsselwort „bg=“ kann die Hintergrundfarbe geändert werden, um lediglich einige Beispiele zu nennen.
  Für die Kommunikation zwischen einzelne Teammitglieder haben wir Slack als zentrale Dienst für die Organisation damit wir Aufgaben dort erledigen können. Ein sogenannter Workspace wurde dort erstellt und alle Teammiglieder haben dort kommuniziert. 
-Hinzu kommt, dass wir ein Git-Repository erstellt haben wo die Teammitglieder verschiedene Versionen deren persönlichen Arbeit hochgeladen haben. Damit konnten die anderen die Versionen der Software herunterladen und Änderungen anpassen. Diese Plattform eignen sich für vieles mehr. Aber einige Teammitglieder hatten Schwierigkeiten damit zu arbeiten. Deswegen dürften nur einige von uns Änderungen, je nach Bereiche, vornehmen. 
+Hinzu kommt, dass wir ein Git-Repository erstellt haben wo die Teammitglieder verschiedene Versionen deren persönlichen Arbeit hochgeladen haben. Damit konnten die anderen die Versionen der Software herunterladen und Änderungen anpassen. Diese Plattform eignen sich für vieles mehr. Aber einige Teammitglieder hatten Schwierigkeiten damit zu arbeiten. Deswegen dürften nur einige von uns Änderungen, je nach Bereiche, vornehmen. Nicht zu vergessen sind die Dienste der Website imgur um Bilder hochzuladen, um diese später ins Htmldokument der Belegarbeit hinzuzufügen. Imgur ist als Workloadspace, was für jeden kostenlos verfügbar ist.   
 Die zusätzliche Werkzeuge, die wir bei der Implementierung benutzt haben, werden in folgenden Zeilen näher erläutert. 
 
 ## 3.Implementierung der Anwendung <a name="#db"></a>
@@ -228,6 +220,9 @@ dataSnapshot.child("products").getChildren())
 Zuerst einmal ist es wichtig aufzuzeigen, dass die Anmeldung zu der Applikation der erster Eindruck bei dem Nutzer machen soll. Somit haben wir uns vorgenommen die Anwendung so zu gestalten, dass der Nutzer zu einer schönen beziehungsweise tollen Anmeldeseite stoßen kann. Dadurch dass wir mit Lebensmitteln arbeiten werden, sollte der Punkt Geschmack und Ästhetik nicht vernachlässigt werden. Um diesen Punkt nachzugehen, haben wir Mithilfe einer Graphikerin ein Logo erstellt. Hinzu kommt, dass die Benutzerfreundlichkeit von höchste Priorität sein soll, damit wir möglichst viele Menschen dazu bewegen können diese Anwendung zu benutzen. Das Anmeldefenster soll dem Nutzer kurze und nötigsten Informationen abfragen, sodass er/sie danach direkt zu den wichtigsten Sachen wie Kaufsuche oder Angebote je nach Orten und Produktbereiche gelangen kann. 
 
 Die Supermärkte sollten sich auch genauso wie die Nutzer anmelden können und wichtige Informationen für die Nutzer bereitstellen können. Es ist hier außerst wichtig zu wissen, dass sie mit wenig Aufwand Produkte, die noch zur Verwendung dienen können, auch in Betracht von Vorschriften der gesetzlichen Rahmenbedingungen anbieten können. Somit können sie Produkte schnell wählen und diese in der Anwendung stellen können. 
+
+Dementsprechend haben wir gesehen mit den Panorama-Bilder in Abschnitt 2.2 und 2.3 wie das aussieht nach dem Testing und wie der Nutzer sowie Supermarkt in verschiedenen Prozessen Schritt für Schritt gelangen wird. 
+
  
 4. [Testing](#Test)
 
@@ -278,11 +273,13 @@ Im Laufe des Projektes waren Aufgaben des Projekt-Managements zu entdecken. Wir 
 4.Fertigungsphase
 5.Wartungsphase
 ```
-
+Während der ersten zwei Phasen war die Suche nach möglichst gute Ideen und eine Vorstellung von dem was einem erwartet von größer Bedeutung. Danach ging in die konkrete Aufgaben um die Entwürfe vorzustellen und diese zu implementieren. Bei der Implementierung sind wir auf viele Probleme, die wir teilweise lösen konnten, gestoßen. Wir haben viel Zeit an die Bearbeitung der Benutzeroberfläche, die als erste Fenster der Interaktion zwischen Nutzer und Anwendung gilt, gewidmet.  
+Wenn man auf die Lasten und-Pflichtenheft zurückgreiftl, merkt man, dass wir es zeitlich nicht geschafft haben die Kann-Option mit einer Karte zur geographischen Orientierung einzubinden. Somit wurde leider der Weg vom Nutzerstandort bis zum Supermarkt nicht berechnenbar sein. Denn wir wollten das so integrieren, dass der Nutzer keinen großen Aufwand verspüren wird, um Produkte, die gleich um die Ecke vorhanden sind, abzuholen.   
 Allerdings ist es hier zu bemerken, dass es uns schwer fiel eine klare Aufgabenverteilung zu erreichen und diese entsprechend zu folgen. Eine reibungsfrei Kommunikation war nicht leicht. 
 Viele von uns besaßen  nicht so große Kenntnisse in Java, deswegen war das Programmieren unter Android Studio eine Herausforderung. 
-Wir haben dieses Projekt zusammen geararbeitet und haben Lehren daraus gezogen. 
-Wir bedanken uns für die Tools, die wir nutzen dürften. 
+Wir haben dieses Projekt zusammen geararbeitet und jeder von uns hat Lehren daraus gezogen. In Hinblick auf die Zusammenarbeit sollte man in Zukunft sich mehr sehen und gemeinsam die einzelnen Aufgaben durchgehen, sodass jeder konkret sehen kann was noch fehlt.  
+Wir bedanken uns für die Tools, die wir im Rahmen dieses Projekts kennenlernen dürften. Anschließend können wir alle bestätigen, dass wir dieses Projekts sehr interessant war und sehr viel Wissen uns geschenkt hat. 
+ 
 
 
 
