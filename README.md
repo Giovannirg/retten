@@ -124,7 +124,11 @@ Der Admin kann Supermärkte hinzufügen oder Informationen über die Märkte än
 <a href="https://imgur.com/XbYl2hR"><img src="https://i.imgur.com/XbYl2hR.jpg" title="source: imgur.com" /></a>
 ![Anmeldung Profile] 
 Das Login ist der erste Eindruck, den der Nutzer oder der Supermarkt zusehen bekommt. Hier soll jeder für sich die primären Informationen ausfüllen und diese speichern. 
-Der Entwurf der Widgets legt, wie auch in den Zielen festgelegt, zwei verschiedene Sichten fest. Die erste Sicht, in Bild zu sehen, ist die eines Supermarktes. Dieser hat Links eine Anmeldeseite. Auf der nächsten Seite ist eine Auswahl zu erkennen, welche bereits im Zustandsdiagramm gezeigt wurde. Hier kann der Supermarkt eine Liste einsehen und Mithilfe dieser neue Produkte hinzufügen oder löschen. Diese Liste ist exemplarisch auf „Sicht 3“ gezeigt. Das Löschen ist mit der Checkboxfunktion vereinfacht. Jedes Produkt kann zudem erweitert werden, um nähere Informationen zu erhalten. Im zweiten Auswahlpunkt, den reservierten Produkten, kann der Supermarkt die Kunden mit den jeweiligen Produktlisten einsehen. Diese Liste kann auf „Sicht 6“ gesehen werden. Unter Zuhilfenahme dieser Listen können somit die Produkte verpackt und abholfertig für den Kunden vorbereitet werden. Auch der Bezahlstatus kann dieser Liste entnommen werden. Hier folgend sind die vier Schritte als zusammengefasste Panaroma zu sehen.
+Der Entwurf der Widgets legt, wie auch in den Zielen festgelegt, zwei verschiedene Sichten fest.
+
+<a href="https://imgur.com/vBKc0Qz"><img src="https://i.imgur.com/vBKc0Qz.jpg" title="source: imgur.com" /></a>
+
+ Die erste Sicht, in Bild zu sehen, ist die eines Supermarktes. Dieser hat Links eine Anmeldeseite. Auf der nächsten Seite ist eine Auswahl zu erkennen, welche bereits im Zustandsdiagramm gezeigt wurde. Hier kann der Supermarkt eine Liste einsehen und Mithilfe dieser neue Produkte hinzufügen oder löschen. Diese Liste ist exemplarisch auf dem Panaromabild gezeigt. Das Löschen ist mit der Checkboxfunktion vereinfacht. Jedes Produkt kann zudem erweitert werden, um nähere Informationen zu erhalten. Im zweiten Auswahlpunkt, den reservierten Produkten, kann der Supermarkt die Kunden mit den jeweiligen Produktlisten einsehen. Diese Liste kann auf die nächste Sicht gesehen werden. Unter Zuhilfenahme dieser Listen können somit die Produkte verpackt und abholfertig für den Kunden vorbereitet werden. Auch der Bezahlstatus kann dieser Liste entnommen werden. Hier folgend sind die vier Schritte als zusammengefasste Panaroma zu sehen.
 
 <a href="https://imgur.com/0v6PPnz"><img src="https://i.imgur.com/0v6PPnz.jpg" title="source: imgur.com" /></a>
 ![Panaroma Supermarktsicht]
@@ -262,7 +266,8 @@ assertEquals(result, "Straße");
 Im Android Studio lassen sich mit einem Rechtsklick auf die Test-Klasse mit ‚Run UnitTest‘ die Tests ausführen. In der Console werden die Ergebnisse angezeigt.
 Wir können sehen, dass bei uns fast alle Module einzeln genommen funktionniert haben. Das Scannen von QR-Code seitens der Supermärkte nach dem Kaufvorgang hat einige Debugging Probleme uns bereiten, aber am Ende waren diese mit einer akzeptablen Variante gelöst. 
 
-4. [Zusammenfassung](#Fazit)
+## 4. Zusammenfassung <a name="Fazit"></a>
+
 
 Im Laufe des Projektes waren Aufgaben des Projekt-Managements zu entdecken. Wir fanden das alle interessant diese Phasen der Software Entwicklung kennengelernt zu haben und den Entwicklungsvorgang in 5 Phasen unterteilt:
 
