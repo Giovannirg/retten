@@ -125,10 +125,24 @@ Der Admin kann Supermärkte hinzufügen oder Informationen über die Märkte än
 Der Entwurf der Widgets legt, wie auch in den Zielen festgelegt, zwei verschiedene Sichten fest. Die erste Sicht, in Bild (Nummer einfügen!) zu sehen, ist die eines Supermarktes. Dieser hat Links eine Anmeldeseite. Auf der nächsten Seite ist eine Auswahl zu erkennen, welche bereits im Zustandsdiagramm gezeigt wurde. Hier kann der Supermarkt eine Liste einsehen und Mithilfe dieser neue Produkte hinzufügen oder löschen. Diese Liste ist exemplarisch auf „Sicht 3“ gezeigt. Das Löschen ist mit der Checkboxfunktion vereinfacht. Jedes Produkt kann zudem erweitert werden, um nähere Informationen zu erhalten. Im zweiten Auswahlpunkt, den reservierten Produkten, kann der Supermarkt die Kunden mit den jeweiligen Produktlisten einsehen. Diese Liste kann auf „Sicht 6“ gesehen werden. Unter Zuhilfenahme dieser Listen können somit die Produkte verpackt und abholfertig für den Kunden vorbereitet werden. Auch der Bezahlstatus kann dieser Liste entnommen werden.
 
 Bild:Supermarktsicht Widgets
+<a href="https://imgur.com/0v6PPnz"><img src="https://i.imgur.com/0v6PPnz.jpg" title="source: imgur.com" /></a>
+
+<a href="https://imgur.com/EXfZYly"><img src="https://i.imgur.com/EXfZYly.jpg" title="source: imgur.com" /></a>
+
+<a href="https://imgur.com/jGqYBch"><img src="https://i.imgur.com/jGqYBch.jpg" title="source: imgur.com" /></a>
+
 
 Auf dem Bild (Nummer einfügen!) ist die Sicht des Kunden dargestellt. Genauso wie beim Supermarkt gibt es auch hier die Anmeldung in „Sicht 1“. Auf der zweiten Sicht gibt es wieder eine Auswahl, mit dessen Hilfe zwischen einer Produktsuche nach Märkten und nach Produkten unterschieden wird. Auf der Märktesicht sind die verschiedenen Symbole der Märkte dargestellt. Jedes Symbol kann erweitert werden, um mehr Informationen, wie die Adresse oder Öffnungszeiten, preis zu geben. Unter dem Punkt „Produkte“ können die Waren nach Kategorien sortiert und Mithilfe von Checkboxen in den Einkaufskorb gelegt werden. Im Einkaufskorb kann zwischen einer Bar- und einer Kartenzahlung gewählt werden.
 
 Bild:Kundensicht Widgets
+
+<a href="https://imgur.com/qiuIfQu"><img src="https://i.imgur.com/qiuIfQu.jpg" title="source: imgur.com" /></a>
+
+<a href="https://imgur.com/TF1oZX1"><img src="https://i.imgur.com/TF1oZX1.jpg" title="source: imgur.com" /></a>
+
+<a href="https://imgur.com/IAlvl1Q"><img src="https://i.imgur.com/IAlvl1Q.jpg" title="source: imgur.com" /></a>
+
+
 
 4. [Programme](#Programm)
 
