@@ -55,6 +55,8 @@ HTW Berlin
 
 <a href="https://imgur.com/hZDUXt6"><img src="https://i.imgur.com/hZDUXt6.jpg" title="source: imgur.com" /></a>
 
+![Logo App]
+
 
 1. [Abstrakt](#Abstrakt)
 
@@ -142,6 +144,8 @@ Das Login ist der erste Eindruck, den der Nutzer oder der Supermarkt zusehen bek
 Der Entwurf der Widgets legt, wie auch in den Zielen festgelegt, zwei verschiedene Sichten fest.
 
 <a href="https://imgur.com/vBKc0Qz"><img src="https://i.imgur.com/vBKc0Qz.jpg" title="source: imgur.com" /></a>
+
+![Supermärkte in der Datenbanken mit Kontaktdaten]
 
  Die erste Sicht, in Bild zu sehen, ist die eines Supermarktes. Dieser hat Links eine Anmeldeseite. Auf der nächsten Seite ist eine Auswahl zu erkennen, welche bereits im Zustandsdiagramm gezeigt wurde. Hier kann der Supermarkt eine Liste einsehen und Mithilfe dieser neue Produkte hinzufügen oder löschen. Diese Liste ist exemplarisch auf dem Panaromabild gezeigt. Das Löschen ist mit der Checkboxfunktion vereinfacht. Jedes Produkt kann zudem erweitert werden, um nähere Informationen zu erhalten. Im zweiten Auswahlpunkt, den reservierten Produkten, kann der Supermarkt die Kunden mit den jeweiligen Produktlisten einsehen. Diese Liste kann auf die nächste Sicht gesehen werden. Unter Zuhilfenahme dieser Listen können somit die Produkte verpackt und abholfertig für den Kunden vorbereitet werden. Auch der Bezahlstatus kann dieser Liste entnommen werden. Hier folgend sind die vier Schritte als zusammengefasste Panaroma zu sehen.
 
@@ -306,9 +310,10 @@ Im Laufe des Projektes waren Aufgaben des Projekt-Managements zu entdecken. Wir 
 5.Wartungsphase
 ```
 Während der ersten zwei Phasen war die Suche nach möglichst gute Ideen und eine Vorstellung von dem was einem erwartet von größer Bedeutung. Danach ging in die konkrete Aufgaben um die Entwürfe vorzustellen und diese zu implementieren. Bei der Implementierung sind wir auf viele Probleme, die wir teilweise lösen konnten, gestoßen. Wir haben viel Zeit an die Bearbeitung der Benutzeroberfläche, die als erste Fenster der Interaktion zwischen Nutzer und Anwendung gilt, gewidmet.  
-Wenn man auf die Lasten und-Pflichtenheft zurückgreiftl, merkt man, dass wir es zeitlich nicht geschafft haben die Kann-Option mit einer Karte zur geographischen Orientierung einzubinden. Somit wurde leider der Weg vom Nutzerstandort bis zum Supermarkt nicht berechnenbar sein. Denn wir wollten das so integrieren, dass der Nutzer keinen großen Aufwand verspüren wird, um Produkte, die gleich um die Ecke vorhanden sind, abzuholen.   
-Allerdings ist es hier zu bemerken, dass es uns schwer fiel eine klare Aufgabenverteilung zu erreichen und diese entsprechend zu folgen. Eine reibungsfrei Kommunikation war nicht leicht. 
-Viele von uns besaßen  nicht so große Kenntnisse in Java, deswegen war das Programmieren unter Android Studio eine Herausforderung. 
+Wenn man auf die Lasten und-Pflichtenheft zurückgreift, merkt man, dass wir es zeitlich nicht geschafft haben die Kann-Option mit einer Karte zur geographischen Orientierung einzubinden. Somit wurde leider der Weg vom Nutzerstandort bis zum Supermarkt nicht berechnenbar sein. Denn wir wollten das so integrieren, dass der Nutzer keinen großen Aufwand verspüren wird, um Produkte, die gleich um die Ecke vorhanden sind, abzuholen. Danach käme die Bewertung der Dienstleistung wo der Kunde die Möglichkeit hätte einige Sternchen für den Service oder den Zustand der Produkte zu geben. Diese Feature wurde leider aus zeitlichen Gründen vernachlässigt. 
+Als Entwickler verdienen wir etwas mit der Anwendung indem wir Prozente vor der verkauften Produkten dem Supermarkt zurechnen. Hinzu kommen die Anträge, die wir an dem zuständigen Bundesministerien gestellt hätte, um die Wirtschaftlichkeit unsere Anwendung mitzufinanzieren und auf diesen Punkt einzugehen. 
+   
+Allerdings ist es hier zu bemerken, dass es uns schwer fiel eine klare Aufgabenverteilung zu erreichen und diese entsprechend zu folgen. Eine reibungsfrei Kommunikation war nicht leicht. Viele von uns besaßen  nicht so große Kenntnisse in Java, deswegen war das Programmieren unter Android Studio eine Herausforderung. 
 Wir haben dieses Projekt zusammen geararbeitet und jeder von uns hat Lehren daraus gezogen. In Hinblick auf die Zusammenarbeit sollte man in Zukunft sich mehr sehen und gemeinsam die einzelnen Aufgaben durchgehen, sodass jeder konkret sehen kann was noch fehlt.  
 Wir bedanken uns für die Tools, die wir im Rahmen dieses Projekts kennenlernen dürften. Anschließend können wir alle bestätigen, dass wir dieses Projekts sehr interessant war und sehr viel Wissen uns geschenkt hat. 
  
