@@ -217,7 +217,6 @@ dataSnapshot.child("products").getChildren())
 
 ```
 
-## Implementierung in Android Studio <a name="dbAndroidStudio"></a>
 
 3. [Design](#Design)
 
