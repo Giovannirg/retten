@@ -52,18 +52,25 @@ HTW Berlin
 
 ## 1. Einführung <a name="introduction"></a>
 
+
 <a href="https://imgur.com/hZDUXt6"><img src="https://i.imgur.com/hZDUXt6.jpg" title="source: imgur.com" /></a>
+
 
 1. [Abstrakt](#Abstrakt)
 
+
 Für unser Projekt im Rahmen der Veranstaltung Softwareentwicklung im Wintersemester 18/19 haben wir nach Ideen gesucht und geguckt wie wir eine gesellschaftliche Aufgabe übernehmen können. Nach und nach hat sich herausgestellt, dass wir einen kleinen Beitrag leisten wollen. Diese Aufgabe soll interessant für die Nutzer sein und uns vielleicht einen wirtschaftlichen Gewinn erzielen. Somit haben wir uns entschieden Lebensmitteln zu retten.  Diese Anwendung soll der Name Retten haben und ist die Dienstleistung, die wir präsentieren wollen. Wir haben für uns ein akutes Problem in der Gesellschaft, die immer dazu neigt mehr und mehr zu konsumieren,entdeckt. Deswegen dachten wir uns, dass das Konzumentverhalten möglichst reguliert werden sollte. Aufgrund der höheren Nutzerzahl von Handys oder Smartphones sollte eine fähige Anwendung auf dem Telefon von größer Hilfe sein. Diese würde der Nutzer dazu bringen Angebote von Supermärkte zu finden und diese noch in kürzer Zeit verwenden können. Wie das alles geschehen soll, wollen wir in den nächsten Schritte aufzeigen.     
 
+
 2. [Produktidee](#Produktidee)
+
 
 Unser Produkt soll helfen zu verhindern, dass Lebensmitteln weggeschmissen werden, welche noch Verwendung finden können. Bei der höheren Anzahl an Produkten mit Haltbarkeitsdaten hat der Nutzer keinen Überblick mehr. Denn es gibt viele Produkte, die laut den Daten nicht zur Verwendung kommen dürfen aber wiederrum noch im guten Zustand sich befinden. Alleine in Deutschland und auch in vielen anderen Ländern landen noch intakte Produkte auf dem Müll. Auf der ganzen Welt werden rund 1,3 Milliarden Tonnen Lebensmittel jährlich entsorgt. Siehe dazu  https://www.wwf.de/themen-projekte/landwirtschaft/ernaehrung-konsum/verschwendung/ und  https://www.bzfe.de/inhalt/lebensmittelverschwendung-1868.html. Um diesen Trend zumindest marginal entgegenzuwirken, wollen wir die App „retten“ entwickeln.
 Mit unserer Applikation kann ein Supermarkt Produkte verkaufen, die er normalerweise entsorgen müsste. Die Kunden können Mithilfe der Applikation Produkte günstiger erwerben und direkt bei ihrem Supermarkt in der Nähe abholen. Die Supermärkte bieten die Produkte, die eigentlich aus dem Sortiment entfernt werden sollten, zu einem billigeren Preis an. Die Applikation versucht hierbei, möglichst einfach und schnell zwischen Kunde und Supermarkt zu vermitteln und den Gebrauch für beide Seiten so einfach wie möglich zu gestalten. Diese Anwendung sollte die Schnittstelle zwischen beide Parteien sein und somit einen günstigeren Austausch ermöglichen. 
 
+
 3. [Ziele](#Ziele) 
+
 
 Die Erstellung eines Pflichtenheft sowie Lastenheft in Rahmen eines Softwareprojekts ist von größer Bedeutung, um die Anforderung einer Applikation am Anfang definieren zu können. Diese würden dazu beitragen eine klare Sicht der Organisatiion und auch die Anforderungen unsere Software zu unterteilen. Deswegen haben wir grobe Ziele definiert. 
 Zu Beginn des Projektes wurden verschiedene Soll- sowie Kann-Ziele determiniert, welche im Folgenden näher erläutert werden:
@@ -89,10 +96,13 @@ Zum Schluss in der Zusammenfassung wird näher auf den Erfolg sowie den Abschlus
 
 ## 2. Produktmodelle <a name="Produktmodelle"></a>
 
+
 In dem Punkt Produktmodelle wird näher auf die Planung der Datenbank und den Ablauf unserer Screens eingegangen. Als Erstes wird der Punkt „Datenbank“ näher diskutiert und über der konzeptionelle und relationale Datenbankentwurf erläutert. 
 .....
 
+
 1. [Datenbank](#db)
+
 
 <a href="https://imgur.com/eSOT5mS"><img src="https://i.imgur.com/eSOT5mS.jpg" title="source: imgur.com" /></a>
 
@@ -101,7 +111,9 @@ In dem Punkt Produktmodelle wird näher auf die Planung der Datenbank und den Ab
 
 In dieser Graphik hat man die Vision definiert wie einzelnen Komponenten und zwar mit welchen Eigenschaften auszusehen haben. Sowohl Supermärkte als auch Kunden besitzen Grundelemente, die deren Funktionen erläutern. Hiermit zeichen wir auf wie verschiedene Module miteinander kommunizieren.  
 
+
  2. [Zustandsdiagramm](#ZustandDiagramm)
+
 
 In folgendem Zustandsdiagramm auf Bild  wird der Ablauf unserer App verdeutlicht.
 
@@ -121,8 +133,11 @@ Der Admin kann Supermärkte hinzufügen oder Informationen über die Märkte än
 
 3. [Widgets](#Widgets)
 
+
 <a href="https://imgur.com/XbYl2hR"><img src="https://i.imgur.com/XbYl2hR.jpg" title="source: imgur.com" /></a>
+
 ![Anmeldung Profile] 
+
 Das Login ist der erste Eindruck, den der Nutzer oder der Supermarkt zusehen bekommt. Hier soll jeder für sich die primären Informationen ausfüllen und diese speichern. 
 Der Entwurf der Widgets legt, wie auch in den Zielen festgelegt, zwei verschiedene Sichten fest.
 
@@ -131,16 +146,19 @@ Der Entwurf der Widgets legt, wie auch in den Zielen festgelegt, zwei verschiede
  Die erste Sicht, in Bild zu sehen, ist die eines Supermarktes. Dieser hat Links eine Anmeldeseite. Auf der nächsten Seite ist eine Auswahl zu erkennen, welche bereits im Zustandsdiagramm gezeigt wurde. Hier kann der Supermarkt eine Liste einsehen und Mithilfe dieser neue Produkte hinzufügen oder löschen. Diese Liste ist exemplarisch auf dem Panaromabild gezeigt. Das Löschen ist mit der Checkboxfunktion vereinfacht. Jedes Produkt kann zudem erweitert werden, um nähere Informationen zu erhalten. Im zweiten Auswahlpunkt, den reservierten Produkten, kann der Supermarkt die Kunden mit den jeweiligen Produktlisten einsehen. Diese Liste kann auf die nächste Sicht gesehen werden. Unter Zuhilfenahme dieser Listen können somit die Produkte verpackt und abholfertig für den Kunden vorbereitet werden. Auch der Bezahlstatus kann dieser Liste entnommen werden. Hier folgend sind die vier Schritte als zusammengefasste Panaroma zu sehen.
 
 <a href="https://imgur.com/0v6PPnz"><img src="https://i.imgur.com/0v6PPnz.jpg" title="source: imgur.com" /></a>
+
 ![Panaroma Supermarktsicht]
 
 Auf dem folgen Panaroma-Bild wird die Sicht des Kunden dargestellt. Genauso wie beim Supermarkt gibt es auch hier die Anmeldung erforderlich. Auf der zweiten Sicht gibt es wieder eine Auswahl, mit dessen Hilfe zwischen einer Produktsuche nach Märkten und nach Produkten unterschieden wird. Auf der Märktesicht sind die verschiedenen Symbole der Märkte dargestellt. Jedes Symbol kann erweitert werden, um mehr Informationen, wie die Adresse oder Öffnungszeiten, preis zu geben. Unter dem Punkt „Produkte“ können die Waren nach Kategorien sortiert und Mithilfe von Checkboxen in den Einkaufskorb gelegt werden. Im Einkaufskorb kann zwischen einer Bar- und einer Kartenzahlung gewählt werden. Hier unter sehen wir wie die einzelnen Schritte erfolgen. 
 
 
 <a href="https://imgur.com/qiuIfQu"><img src="https://i.imgur.com/qiuIfQu.jpg" title="source: imgur.com" /></a>
+
 ![Panaroma Kundensicht]
 
 
 4. [Programme](#Programm)
+
 
 Im Rahmen des Projekts haben wir verschiedene Tools genutzt. 
 
@@ -149,16 +167,23 @@ Mithilfe des Programms „UMLET“ wurden Bilder, die dem Entwurf der Datenbank 
 Hinzu kommt, dass wir ein Git-Repository erstellt haben wo die Teammitglieder verschiedene Versionen deren persönlichen Arbeit hochgeladen haben. Damit konnten die anderen die Versionen der Software herunterladen und Änderungen anpassen. Diese Plattform eignen sich für vieles mehr. Aber einige Teammitglieder hatten Schwierigkeiten damit zu arbeiten. Deswegen dürften nur einige von uns Änderungen, je nach Bereiche, vornehmen. Nicht zu vergessen sind die Dienste der Website imgur um Bilder hochzuladen, um diese später ins Htmldokument der Belegarbeit hinzuzufügen. Imgur ist als Workloadspace, was für jeden kostenlos verfügbar ist.   
 Die zusätzliche Werkzeuge, die wir bei der Implementierung benutzt haben, werden in folgenden Zeilen näher erläutert. 
 
+
+
 ## 3.Implementierung der Anwendung <a name="#db"></a>
+
 
 Bei der Wahl der Technologie haben wir uns für die Tool-Suite „Firebase“ von Google entschieden. Diese beinhaltet umfangreiche Funktionalitäten. Am Anfang hatten wir überlegt die Datenbank ,,Open Food Facts" miteinzubinden damit wir schon eine umfangreiche Liste von Produkten mit einer detaillierten Beschreibung verfügen können. Leider war es schwierig die Json-Files in die Androiddatenbank zu implementieren. Firebase war die plausible Lösung für die Implementierung der Datenbank. Die Option Kamera müsste aktiviert werden damit wir die generierte QR-Code scannen können. Android Studio verfügt über verschiedene Dienste, wie wir das zusammen einbinden können. Diese werden  wir demnächst erläutern.
 
+
 1. [Implementierung der Datenbank in Firebase](#dbFirebase)
+
 
 Für die Datenbank wird die „Realtime Database“ genutzt. Damit ist es möglich sehr effizient zu entwickeln und es wird dem Programmierer viel Konfiguration abgenommen. Außerdem ist sichergestellt, dass diese Technologie fehlerfrei funktioniert und auch unter hohen Belastungen standhält. Es muss kein Server initialisiert werden. Daten werden in der Cloud gespeichert. Es handelt sich um eine nicht relationale Datenbank (NoSQL). Einer der Hauptgründe für die Wahl dieser Technologie sind die Synchronisationsmechanismen in Echtzeit. Sogenannte Event-Listener überprüfen dauerhaft ob sich Daten geändert haben. Jedes Gerät welches mit dieser Datenbank verbunden ist aktualisiert sich automatisch. Somit werden keine komplizierten Netzwerkbibliotheken benötigt. Ein weiterer Vorteil ist das garantierte Funktionieren der Applikation bei Verbindungsunterbrechungen des Gerätes mit dem Internet. Der aktuelle Zustand der Datenbank wird lokal auf dem Gerät gespeichert. Auf diesen Datenbestand wird zugegriffen, wenn die Datenbank in der Cloud nicht erreichbar ist. Sobald die Internetverbindung wieder aufgebaut wird erhält der Klient den aktuellen Datenbestand.
 Im Gegensatz zu SQL-Datenbanken werden keine Tabellen und Relationen verwendet. Alle Daten sind JSON-Objekte. Beim Hinzufügen eines Objektes wird ein neuer Knoten in diesem Baum erzeugt. Jeder Knoten ist eindeutig durch einen Schlüssel identifizierbar. Das Datenbankmodell mit seinen Entitäten wird in Java-Klassen umgesetzt. Jede Entität entspricht eine Klasse mit Attributen. Attribute ergeben Kind-Knoten mit einem Schlüssel – Werte Paar. So ergibt sich eine Verschachtelung mit mehreren Ebenen. Beim Entwurf wurde darauf geachtet, dass die Verschachtelung eine geringe Anzahl von Ebenen, eine geringe Tiefe aufweist. Die Methoden sind nicht von Relevanz. Dazu wird im Projektverzeichnis ein neuer Ordner ‚database‘ angelegt. Dort entspricht jede Datei einer Java Klasse. Es wurden die Klassen  ‚Supermarkt‘ und ‚Produkt‘ angelegt. Die Attribute der Klassen wie z.B. ‚Marktname‘ oder ‚Öffnungszeit‘ entsprechen Einträge in den JSON-Objekten. Beim Erzeugen eines Objektes wird ein Knoten in der JSON-Baumstruktur angelegt. 
 
+
 2. [Datenbank in Android Studio](#dbAndroidStudio)
+
 
 Im Android-Studio ist Firebase bereits installiert. Es muss dem Projekt als Abhängigkeit hinzugefügt werden. Dazu wird in der build.gradle Datei ein entsprechender Eintrag im ‚dependency‘ Codeabschnitt eingefügt.
 
@@ -220,6 +245,7 @@ dataSnapshot.child("products").getChildren())
 
 3. [Design](#Design)
 
+
 Zuerst einmal ist es wichtig aufzuzeigen, dass die Anmeldung zu der Applikation der erster Eindruck bei dem Nutzer machen soll. Somit haben wir uns vorgenommen die Anwendung so zu gestalten, dass der Nutzer zu einer schönen beziehungsweise tollen Anmeldeseite stoßen kann. Dadurch dass wir mit Lebensmitteln arbeiten werden, sollte der Punkt Geschmack und Ästhetik nicht vernachlässigt werden. Um diesen Punkt nachzugehen, haben wir Mithilfe einer Graphikerin ein Logo erstellt. Hinzu kommt, dass die Benutzerfreundlichkeit von höchste Priorität sein soll, damit wir möglichst viele Menschen dazu bewegen können diese Anwendung zu benutzen. Das Anmeldefenster soll dem Nutzer kurze und nötigsten Informationen abfragen, sodass er/sie danach direkt zu den wichtigsten Sachen wie Kaufsuche oder Angebote je nach Orten und Produktbereiche gelangen kann. 
 
 Die Supermärkte sollten sich auch genauso wie die Nutzer anmelden können und wichtige Informationen für die Nutzer bereitstellen können. Es ist hier außerst wichtig zu wissen, dass sie mit wenig Aufwand Produkte, die noch zur Verwendung dienen können, auch in Betracht von Vorschriften der gesetzlichen Rahmenbedingungen anbieten können. Somit können sie Produkte schnell wählen und diese in der Anwendung stellen können. 
@@ -228,6 +254,7 @@ Dementsprechend haben wir gesehen mit den Panorama-Bilder in Abschnitt 2.2 und 2
 
  
 4. [Testing](#Test)
+
 
 Um dieses Vorgehen einzuleiten kann man der automatisierte Testvorgang wahrnehmen. 
 Um die Funktionalität der App während der Entwicklung zu gewährleisten werden Tests durchgeführt. Dies geschieht manuell und auch automatisch. Manuelles Testen erfordert einen hohen Zeitaufwand. Es müssen Ergebnisse und das Verhalten der App überprüft und die Resultate übersichtlich aufgeschrieben werden. Dafür hat der Entwickler die Möglichkeit Einsichten durch Beobachten und Ausprobieren zu erhalten. Fehler fallen dem menschlichen Tester schnell auf. Dafür kann man nicht bei jeder Weiterentwicklung des Codes die komplette App manuell testen. Deswegen verlassen wir uns auf automatisierte Tests. Das Ausführen erfolgt automatisch. Entweder ausgelöst durch das Einbinden in eine Continous-Integration Umgebung wie Jenkins oder auf Wunsch des Entwicklers. Es gibt zwei Arten um Android-Applikation zu testen. Entweder lokal auf der JavaVirtualMachine oder auf einem echten Android-Gerät. Wir haben uns auf lokale Tests mit jUnit konzentriert. Damit werden die elementarsten Komponenten unserer App überprüft.
@@ -264,6 +291,7 @@ assertEquals(result, "Straße");
 
 Im Android Studio lassen sich mit einem Rechtsklick auf die Test-Klasse mit ‚Run UnitTest‘ die Tests ausführen. In der Console werden die Ergebnisse angezeigt.
 Wir können sehen, dass bei uns fast alle Module einzeln genommen funktionniert haben. Das Scannen von QR-Code seitens der Supermärkte nach dem Kaufvorgang hat einige Debugging Probleme uns bereiten, aber am Ende waren diese mit einer akzeptablen Variante gelöst. 
+
 
 ## 4. Zusammenfassung <a name="Fazit"></a>
 
