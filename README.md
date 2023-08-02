@@ -14,7 +14,7 @@ HTW Berlin
 
 
 
-##### [Giovanni Rodriguez](https://github.com/whiterabbit-ce) 
+
 
 
 
