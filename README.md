@@ -13,13 +13,10 @@ HTW Berlin
 
 
 
-##### [Max Ruhnau](https://github.com/MaxArne) 
 
 ##### [Giovanni Rodriguez](https://github.com/whiterabbit-ce) 
 
-##### [Alain C.Mendy](https://github.com/amendy) 
 
-##### [Paul Senff](https://github.com/PaulKetchup)
 
 </center>
 </div>
